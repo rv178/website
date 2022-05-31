@@ -1,4 +1,4 @@
-baseURL: "https://rv178.github.io/hugo-website-papermod/"
+baseURL: "https://rv178.is-a.dev"
 title: rv178
 paginate: 5
 theme: PaperMod
@@ -8,22 +8,20 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-googleAnalytics: UA-123-45
-
 minify:
   disableXML: true
   minifyOutput: true
 
 params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  env: production
   title: rv178
-  description: "My portfolio and other stuff"
+  description: "My blog and other stuff."
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme: dark # dark, light
   disableThemeToggle: false
 
   ShowReadingTime: true
@@ -54,13 +52,13 @@ params:
   label:
     text: "rv178"
     #icon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
-    iconHeight: 35
+    #iconHeight: 35
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: rv178 
-    subtitle: "I do stuff"
+    enabled: true # needs to be explicitly set
+    #title: Keep it simple, stupid. 
+    subtitle: "Keep it simple, stupid."
     imageUrl: "https://avatars.githubusercontent.com/u/69449141?s=300"
     imageWidth: 120
     imageHeight: 120
@@ -68,8 +66,8 @@ params:
     buttons:
       - name: Posts
         url: posts
-      - name: Tags
-        url: tags
+      - name: About
+        url: about
 
   # home-info mode
   homeInfoParams:
@@ -100,7 +98,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/rv178/papermod-site/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -116,14 +114,25 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: posts
+      name: Posts
+      url: /posts/
       weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
+    - identifier: search
+      name: Search
+      url: /search/
       weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON # is necessary
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
