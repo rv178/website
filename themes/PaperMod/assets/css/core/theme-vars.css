@@ -1,0 +1,38 @@
+:root {
+	--gap: 24px;
+	--content-gap: 20px;
+	--nav-width: 1024px;
+	--main-width: 720px;
+	--header-height: 60px;
+	--footer-height: 60px;
+	--radius: 0px;
+	--theme: #e5e9f0;
+	--entry: #d8dee9;
+	--primary: #5e81ac;
+	--secondary: #4c566a;
+	--tertiary: #5e81ac;
+	--content: #2e3440;
+	--hljs-bg: #d8dee9;
+	--code-bg: #d8dee9;
+	--border: #5e81ac;
+}
+
+.dark {
+	--theme: #3b4252;
+	--entry: #434c5e;
+	--primary: #81a1c1;
+	--secondary: #a3afc6;
+	--tertiary: #4c566a;
+	--content: #d8dee9;
+	--hljs-bg: #434c5e;
+	--code-bg: #434c5e;
+	--border: #81a1c1;
+}
+
+.list {
+	background: var(--code-bg);
+}
+
+.dark.list {
+	background: var(--theme);
+}

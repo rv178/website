@@ -1,0 +1,135 @@
+baseURL: "https://rv178.github.io/hugo-website-papermod/"
+title: rv178
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics: UA-123-45
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: rv178
+  description: "My portfolio and other stuff"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: Me
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+    favicon16x16: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+    favicon32x32: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+    apple_touch_icon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+    safari_pinned_tab: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+
+  label:
+    text: "rv178"
+    #icon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+    iconHeight: 35
+
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: rv178 
+    subtitle: "I do stuff"
+    imageUrl: "https://avatars.githubusercontent.com/u/69449141?s=300"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Keep it simple, stupid."
+    Content: Hi there! I'm rv178.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/rv178"
+    - name: youtube
+      url: "https://youtube.com/Idlidev"
+    - name: reddit
+      url: "https://reddit.com/u/Idli_codes"
+    - name: discord
+      url: "https://discord.gg/UpFrCBmmtP"
+
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+
+  editPost:
+    URL: "https://github.com/<path_to_repo>/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: categories
+      name: categories
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 20
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# pygmentsUseClasses: true
+# markup:
+#     highlight:
+#         # anchorLineNos: true
+#         codeFences: true
+#         guessSyntax: true
+#         lineNos: true
+#         style: monokai
