@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>rv178</title>
+    <link>https://rv178.is-a.dev/</link>
+    <description>Recent content on rv178</description>
+    <image>
+      <url>https://rv178.is-a.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://rv178.is-a.dev/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 Jun 2022 13:59:55 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chess tutorial</title>
+      <link>https://rv178.is-a.dev/posts/chess/</link>
+      <pubDate>Wed, 01 Jun 2022 13:59:55 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/posts/chess/</guid>
+      <description>Chess is good
+why? because I say so
+you have 16 pieces in chess which u move
+very good piece = queen good piece = rooks medium piece = bishop and knight weak piece = pawn queen queen is very good piece because it can move all direction
+rook rook is good piece because it can move straight
+bishop and knight bishop and knight medium piece because bishop only move diagonally and knight move two times straight and one time diagonally</description>
+    </item>
+    
+    <item>
+      <title>A brief recap of my Linux journey up until now</title>
+      <link>https://rv178.is-a.dev/posts/my-linux-journey/</link>
+      <pubDate>Wed, 01 Jun 2022 09:47:49 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/posts/my-linux-journey/</guid>
+      <description>So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.
+When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, an Ubuntu based distro. So, I installed it and it was my first Linux distribution. My experience using Pop!_OS was amazing and it still is one of my favourite distributions.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://rv178.is-a.dev/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rv178.is-a.dev/about/</guid>
+      <description>about</description>
+    </item>
+    
+    
+  </channel>
+</rss>
