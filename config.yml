@@ -64,10 +64,10 @@ params:
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: Posts
-        url: posts
       - name: About
         url: about
+      - name: Projects
+        url: projects
 
   # home-info mode
   homeInfoParams:

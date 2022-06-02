@@ -1,5 +1,7 @@
 ---
 title: "About me"
+layout: "single"
+hideMeta: true
 url: "/about"
 summary: "about"
 ---
