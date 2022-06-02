@@ -36,7 +36,7 @@
 }
 
 .social-icons {
-	padding: 12px 0;
+	padding: 18px 0;
 }
 
 .social-icons a:not(:last-of-type) {
@@ -62,8 +62,8 @@ pre {
 	position: absolute;
 	top: 4px;
 	right: 4px;
-	color: rgba(255, 255, 255, 0.8);
-	background: rgba(78, 78, 78, 0.8);
+	color: var(--content);
+	background: var(--tertiary);
 	border-radius: var(--radius);
 	padding: 0 5px;
 	font-size: 14px;

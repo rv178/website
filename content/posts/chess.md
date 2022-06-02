@@ -12,7 +12,7 @@ because I say so
 
 **you have 16 pieces in chess which u move**
 
-```toml
+```diff
 very good piece = queen
 
 good piece = rooks
