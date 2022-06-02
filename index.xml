@@ -44,5 +44,14 @@ When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, a
     </item>
     
     
+    <item>
+      <title>Projects</title>
+      <link>https://rv178.is-a.dev/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rv178.is-a.dev/projects/</guid>
+      <description>projects</description>
+    </item>
+    
   </channel>
 </rss>
