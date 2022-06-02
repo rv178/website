@@ -15,11 +15,11 @@ minify:
 params:
   env: production
   title: rv178
-  description: "My blog and other stuff."
-  keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  description: "Keep it simple, stupid."
+  keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
+  #author: Me
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["https://avatars.githubusercontent.com/u/69449141?s=300"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: false
@@ -64,10 +64,9 @@ params:
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: About
+      - name: About Me
         url: about
-      - name: Projects
-        url: projects
+
 
   # home-info mode
   homeInfoParams:
