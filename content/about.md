@@ -6,7 +6,9 @@ url: "/about"
 summary: "about"
 ---
 
-I am a Linux and computer enthusiast from Kerala, India. I do programming as a hobby :) **I use [arch](https://archlinux.org) btw.**
+I am a Linux and computer enthusiast from Kerala, India. I do programming as a hobby!
+
+**I use [arch](https://archlinux.org) btw.**
 You can find my (x11) dotfiles [here](https://github.com/rv178/.dotfiles).
 I like writing open source software and most of them are hosted on [GitHub](https://github.com/rv178).
 
