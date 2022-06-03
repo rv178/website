@@ -41,5 +41,14 @@ When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, a
     </item>
     
     
+    <item>
+      <title>Public GPG key</title>
+      <link>https://rv178.is-a.dev/gpg/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rv178.is-a.dev/gpg/</guid>
+      <description>gpg</description>
+    </item>
+    
   </channel>
 </rss>
