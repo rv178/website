@@ -2,6 +2,7 @@
 title: "Learning Chess"
 date: 2022-06-03T12:10:51+05:30
 draft: false
+tags: ["chess", "chess engines", "lichess"]
 ---
 
 ---
