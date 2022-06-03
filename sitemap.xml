@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rv178.is-a.dev/posts/learning-chess/</loc>
+    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/posts/</loc>
+    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/</loc>
+    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
+  </url><url>
     <loc>https://rv178.is-a.dev/posts/my-linux-journey/</loc>
     <lastmod>2022-01-19T09:47:49+05:30</lastmod>
   </url><url>
@@ -11,13 +20,7 @@
     <loc>https://rv178.is-a.dev/tags/linux/</loc>
     <lastmod>2022-01-19T09:47:49+05:30</lastmod>
   </url><url>
-    <loc>https://rv178.is-a.dev/posts/</loc>
-    <lastmod>2022-01-19T09:47:49+05:30</lastmod>
-  </url><url>
     <loc>https://rv178.is-a.dev/tags/ricing/</loc>
-    <lastmod>2022-01-19T09:47:49+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/</loc>
     <lastmod>2022-01-19T09:47:49+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/</loc>

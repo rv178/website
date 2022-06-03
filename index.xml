@@ -9,7 +9,18 @@
       <link>https://avatars.githubusercontent.com/u/69449141?s=300</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 19 Jan 2022 09:47:49 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 12:10:51 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Chess</title>
+      <link>https://rv178.is-a.dev/posts/learning-chess/</link>
+      <pubDate>Fri, 03 Jun 2022 12:10:51 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/posts/learning-chess/</guid>
+      <description>So a while ago after being absolutely destroyed by a friend in a game of chess, I decided to actually learn the game.
+What&amp;rsquo;s chess? Chess is a popular game of strategy where two players play against each other. It involves a chess board containing 64 squares and 16 pieces on each side.
+The players have a pair of rooks, bishops and knights. They also have eight pawns, a queen and a king.</description>
+    </item>
+    
     <item>
       <title>A brief recap of my Linux journey up until now</title>
       <link>https://rv178.is-a.dev/posts/my-linux-journey/</link>
