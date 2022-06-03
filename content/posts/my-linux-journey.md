@@ -1,8 +1,10 @@
 ---
 title: "A brief recap of my Linux journey up until now"
-date: 2022-06-01T09:47:49+05:30
+date: 2022-01-19T09:47:49+05:30
 draft: false
 tags: ["linux", "ricing", "coding"]
+---
+
 ---
 
 So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.

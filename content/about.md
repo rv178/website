@@ -6,6 +6,8 @@ url: "/about"
 summary: "about"
 ---
 
+---
+
 I am a Linux and computer enthusiast from Kerala, India. I do programming as a hobby!
 
 **I use [arch](https://archlinux.org) btw.**
