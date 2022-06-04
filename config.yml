@@ -17,8 +17,7 @@ params:
   title: rv178
   description: "Keep it simple, stupid."
   keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
-  #author: Me
-  # author: ["Me", "You"] # multiple authors
+  author: rv178
   images: ["https://avatars.githubusercontent.com/u/69449141?s=300"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
