@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+@font-face {
+	font-family: Jetbrains Mono;
+	font-weight: 400;
+	font-display: auto;
+	src: url("/fonts/JetbrainsMono-Regular.ttf");
+	unicode-range: U+000-5FF;
+}
 
 *,
 ::after,
