@@ -1,7 +1,7 @@
 @font-face {
 	font-family: Jetbrains Mono;
 	font-weight: 400;
-	font-display: auto;
+	font-display: swap;
 	src: url("/fonts/JetbrainsMono-Regular.ttf");
 	unicode-range: U+000-5FF;
 }
