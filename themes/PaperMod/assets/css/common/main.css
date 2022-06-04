@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
-
 *::selection {
 	color: inherit;
 	background-color: var(--tertiary);
@@ -11,7 +9,6 @@
 	max-width: calc(var(--main-width) + var(--gap) * 2);
 	margin: auto;
 	padding: var(--gap);
-	font-family: "JetBrains Mono", monospace;
 }
 
 .page-header h1 {
