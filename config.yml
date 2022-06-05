@@ -17,8 +17,8 @@ params:
   title: rv178
   description: "Keep it simple, stupid."
   keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
-  author: rv178
-  images: ["https://avatars.githubusercontent.com/u/69449141?s=300"]
+  #author: rv178
+  #images: ["https://avatars.githubusercontent.com/u/69449141?s=300"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: false
@@ -40,8 +40,8 @@ params:
   tocopen: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
+    #disableHLJS: true # to disable highlight.js
+    #disableFingerprinting: true
     favicon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
     favicon16x16: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
     favicon32x32: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
@@ -58,7 +58,7 @@ params:
     enabled: true # needs to be explicitly set
     #title: Keep it simple, stupid. 
     subtitle: "Keep it simple, stupid."
-    imageUrl: "https://avatars.githubusercontent.com/u/69449141?s=300"
+    imageUrl: "https://media.discordapp.net/attachments/898590979655884810/983039923835793468/20220605_213925.gif" 
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
@@ -75,12 +75,11 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/rv178"
-    - name: youtube
-      url: "https://youtube.com/Idlidev"
     - name: reddit
       url: "https://reddit.com/u/Idli_codes"
-    - name: discord
-      url: "https://discord.gg/UpFrCBmmtP"
+    - name: youtube
+      url: "https://youtube.com/Idlidev"
+
 
   analytics:
     google:
