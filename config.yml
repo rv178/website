@@ -68,9 +68,9 @@ params:
 
 
   # home-info mode
-  homeInfoParams:
-    Title: "Keep it simple, stupid."
-    Content: Hi there! I'm rv178.
+  #homeInfoParams:
+    #Title: "Keep it simple, stupid."
+    #Content: Hi there! I'm rv178.
 
   socialIcons:
     - name: github
@@ -95,10 +95,10 @@ params:
     hiddenInList: true # hide on list pages and home
     hiddenInSingle: true # hide on single page
 
-  editPost:
-    URL: "https://github.com/rv178/blog-site/tree/main/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+  #editPost:
+    #URL: "https://github.com/rv178/blog-site/tree/main/content"
+    #Text: "Suggest Changes" # edit text
+    #appendFilePath: true # to append file path to Edit link
 
   # for search
   # https://fusejs.io/api/options.html

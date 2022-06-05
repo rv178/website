@@ -4,6 +4,7 @@ layout: "single"
 hideMeta: true
 url: "/about"
 summary: "about"
+searchHidden: true
 ---
 
 ---

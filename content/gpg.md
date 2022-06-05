@@ -4,6 +4,7 @@ layout: "single"
 hideMeta: true
 url: "/gpg"
 summary: "gpg"
+searchHidden: true
 ---
 
 ---
