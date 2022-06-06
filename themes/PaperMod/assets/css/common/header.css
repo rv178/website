@@ -71,6 +71,7 @@ body:not(.dark) #sun {
 
 #menu .active {
 	font-weight: 500;
+	padding-bottom: 3px;
 	border-bottom: 2px solid currentColor;
 }
 
