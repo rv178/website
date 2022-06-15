@@ -49,7 +49,7 @@ params:
     safari_pinned_tab: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
 
   label:
-    text: "rv178"
+    text: " "
     #icon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
     #iconHeight: 35
 
@@ -111,18 +111,22 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 10
     - identifier: posts
       name: Posts
       url: /posts/
-      weight: 10
+      weight: 20
     - identifier: search
       name: Search
       url: /search/
-      weight: 20
+      weight: 30
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 30
+      weight: 40
 
 outputs:
     home:
