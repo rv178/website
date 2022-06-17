@@ -29,8 +29,11 @@ After playing a few games I decided to check out [lichess.org/learn](https://lic
 I didn't become a grandmaster after finishing it (unfortunately) so I played more games, particularly against the [Stockfish chess engine](https://stockfishchess.org/)
 because my friends wouldn't agree to play with me.
 
-Around this time I was extremely interested in making a chess engine (inspired by stockfish) and I created a project in Rust, but eventually gave up because it was a lot of work.
-I had managed to create a board implementation but after trying to implement FEN string parsing I gave up midway.
+> Around this time I was extremely interested in making a chess engine (inspired by stockfish) and I created a project in Rust, but eventually gave up because it was a lot of work.
+> I had managed to create a board implementation but after trying to implement FEN string parsing I gave up midway.
+
+Hi it's me from the future and I've decided to rewrite the engine. I got a working FEN string parsing implementation by first splitting the FEN string using
+whitespaces and then parsing each string individually. It's still not that polished and I aim to refactor it soon and implement game state tracking.
 
 However for the fellow devs who are reading this, [chessprogramming.org](https://www.chessprogramming.org/Main_Page) covers a lot of information regarding engine development in detail.
 
