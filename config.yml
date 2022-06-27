@@ -79,6 +79,8 @@ params:
       url: "https://reddit.com/u/Idli_codes"
     - name: youtube
       url: "https://youtube.com/Idlidev"
+    - name: lichess
+      url: "https://lichess.org/@/rv107"
 
 
   analytics:
