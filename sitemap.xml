@@ -3,7 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://rv178.is-a.dev/tags/chess/</loc>
-    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/fen/</loc>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</loc>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/posts/</loc>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/rust/</loc>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/</loc>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/</loc>
+    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/chess-engines/</loc>
     <lastmod>2022-06-03T12:10:51+05:30</lastmod>
@@ -12,15 +30,6 @@
     <lastmod>2022-06-03T12:10:51+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/lichess/</loc>
-    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/posts/</loc>
-    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/</loc>
-    <lastmod>2022-06-03T12:10:51+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/tags/</loc>
     <lastmod>2022-06-03T12:10:51+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/posts/my-linux-journey/</loc>

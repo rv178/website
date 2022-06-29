@@ -5,13 +5,31 @@
     <link>https://rv178.is-a.dev/tags/</link>
     <description>Recent content in Tags on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Jun 2022 12:10:51 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 14:54:23 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>chess</title>
       <link>https://rv178.is-a.dev/tags/chess/</link>
-      <pubDate>Fri, 03 Jun 2022 12:10:51 +0530</pubDate>
+      <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
       <guid>https://rv178.is-a.dev/tags/chess/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fen</title>
+      <link>https://rv178.is-a.dev/tags/fen/</link>
+      <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/fen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://rv178.is-a.dev/tags/rust/</link>
+      <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/rust/</guid>
       <description></description>
     </item>
     
