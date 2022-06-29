@@ -169,7 +169,7 @@ fn castling_ability(input: &str) -> [bool; 4] {
 
 For parsing en passant squares the solution I came up with was rather stupid.
 
-Since the input can either be `-` or multiple squares like `e4e5g6` etc., I wanted a vec that contained each square name.
+Since the input can either be `-` or multiple squares like `e4e5g6` etc., I wanted a vector that contained each square name.
 
 So basically,
 
@@ -270,7 +270,7 @@ pub enum Kind {
 }
 ```
 
-And according to the input given, a value is returned that is later pushed to a vec.
+And according to the input given, a value is returned that is later pushed to a vector.
 
 ```rust
 let (color, kind, symbol) = match piece_char {
@@ -310,7 +310,7 @@ for i in 0..game_state.pieces.len() {
 }
 ```
 
-Then I used a function to make a new 2d vec that contains the piece chars.
+Then I used a function to make a new 2d vector that contains the piece chars.
 
 ```rust
 fn vec_to_2d_vec(vec: Vec<char>) -> Vec<Vec<char>> {
