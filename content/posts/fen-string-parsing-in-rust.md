@@ -1,7 +1,7 @@
 ---
-title: "Fen String Parsing in Rust"
+title: "FEN String Parsing in Rust"
 date: 2022-06-29T14:54:23+05:30
-draft: false 
+draft: false
 tags: ["fen", "chess", "rust"]
 ---
 
@@ -378,7 +378,6 @@ Output:
 | P | N | B | Q | K | B |   | R | 1
 +---+---+---+---+---+---+---+---+
   a   b   c   d   e   f   g   h
-
 ```
 
 Anyways that's it for this blog see you soon 👋.
