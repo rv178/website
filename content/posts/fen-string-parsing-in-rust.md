@@ -16,7 +16,7 @@ So a FEN string looks like this:
 rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 ```
 
-This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but trust me,
+This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but
 this string conveys a lot of information.
 
 So let's divide it into parts.
@@ -40,7 +40,7 @@ Now, moving on to the second part.
 
 ### Side to move
 
-The second part consists of a just letter which can either be `b` or `w`.
+The second part consists of just a letter which can either be `b` or `w`.
 
 Here we can observe that it's `w`.
 
@@ -134,11 +134,11 @@ the string.
 
 Index `0` checks if the white king can castle kingside. ie, `K` and so on.
 
-`1` => can white king castle queenside?
+Index `1` => can white king castle queenside?
 
-`2` => can black king castle kingside?
+Index `2` => can black king castle kingside?
 
-`3` => can black king castle queenside?
+Index `3` => can black king castle queenside?
 
 So I made a function that returns this array of bools.
 
