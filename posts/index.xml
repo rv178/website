@@ -14,7 +14,8 @@
       <guid>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</guid>
       <description>I finally finished the FEN string parsing part of my chess engine after days of procrastinating and I just wanted to share my experience with everyone.
 So a FEN string looks like this:
-rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but trust me, this string conveys a lot of information.</description>
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but this string conveys a lot of information.
+So let&amp;rsquo;s divide it into parts.</description>
     </item>
     
     <item>
