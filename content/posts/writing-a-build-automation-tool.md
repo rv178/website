@@ -103,6 +103,8 @@ run = false
 
 You can run `bake setup` to directly execute the command inside the field.
 
+I accidentally discovered that Baker also supports [recursion](https://www.gnu.org/software/make/manual/html_node/Recursion.html), ie. invoking baker inside baker.
+
 Baker is open source and you can find the repo [here](https://github.com/rv178/baker).
 I wrote it in like 2 days, so it may have bugs which I was not able to find, so all suggestions are welcome!
 
