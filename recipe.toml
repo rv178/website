@@ -1,0 +1,5 @@
+[build]
+cmd = "hugo server -D"
+
+[prod]
+cmd = "hugo minify -D"

@@ -4,12 +4,14 @@ Nord themed blog site with [PaperMod](https://github.com/adityatelange/hugo-Pape
 
 ### Run
 
+You can run this via `hugo server -D` or install [baker](https://github.com/rv178/baker).
+
 ```
-make
+bake
 ```
 
 ### Build
 
 ```
-make build
+bake prod
 ```
