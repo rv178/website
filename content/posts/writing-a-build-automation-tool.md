@@ -10,7 +10,7 @@ tags: ["rust", "automation", "GNU make"]
 After using GNU Make for automating the build step in my projects, I had this idea of making my own build automation tool like Make.
 
 I originally wanted to use Makefile-like syntax for the config file but instead settled with [TOML](https://toml.io) after thinking about it for a while.
-I also used Rust to write this since I am familiar with the language.
+I also used Rust to write this since I am kinda familiar with the language.
 
 Rust has a [TOML crate](https://docs.rs/toml/latest/toml/) for parsing TOML files.
 It also provides support for deserialization and serialization using [serde](https://docs.rs/serde/latest/serde/).
