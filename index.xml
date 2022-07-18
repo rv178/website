@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rv178</title>
-    <link>https://rv178.is-a.dev/</link>
+    <link>https://rv178.github.io/website/</link>
     <description>Recent content on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jul 2022 15:20:06 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jul 2022 15:20:06 +0530</lastBuildDate><atom:link href="https://rv178.github.io/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Writing a Build Automation Tool</title>
-      <link>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</link>
+      <link>https://rv178.github.io/website/posts/writing-a-build-automation-tool/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</guid>
+      <guid>https://rv178.github.io/website/posts/writing-a-build-automation-tool/</guid>
       <description>After using GNU Make for automating the build step in my projects, I had this idea of making my own build automation tool like Make.
 I originally wanted to use Makefile-like syntax for the config file but instead settled with TOML after thinking about it for a while. I also used Rust to write this since I am kinda familiar with the language.
 Rust has a TOML crate for parsing TOML files.</description>
@@ -19,10 +19,10 @@ Rust has a TOML crate for parsing TOML files.</description>
     
     <item>
       <title>FEN String Parsing in Rust</title>
-      <link>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</link>
+      <link>https://rv178.github.io/website/posts/fen-string-parsing-in-rust/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</guid>
+      <guid>https://rv178.github.io/website/posts/fen-string-parsing-in-rust/</guid>
       <description>I finally finished the FEN string parsing part of my chess engine after days of procrastinating and I just wanted to share my experience with everyone.
 So a FEN string looks like this:
 rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but this string conveys a lot of information.
@@ -31,10 +31,10 @@ So let&amp;rsquo;s divide it into parts.</description>
     
     <item>
       <title>Learning Chess</title>
-      <link>https://rv178.is-a.dev/posts/learning-chess/</link>
+      <link>https://rv178.github.io/website/posts/learning-chess/</link>
       <pubDate>Fri, 03 Jun 2022 12:10:51 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/learning-chess/</guid>
+      <guid>https://rv178.github.io/website/posts/learning-chess/</guid>
       <description>So a while ago after being absolutely destroyed by a friend in a game of chess, I decided to actually learn the game.
 What&amp;rsquo;s chess? Chess is a popular game of strategy where two players play against each other. It involves a chess board containing 64 squares and 16 pieces on each side.
 The players have a pair of rooks, bishops and knights. They also have eight pawns, a queen and a king.</description>
@@ -42,29 +42,29 @@ The players have a pair of rooks, bishops and knights. They also have eight pawn
     
     <item>
       <title>A brief recap of my Linux journey up until now</title>
-      <link>https://rv178.is-a.dev/posts/my-linux-journey/</link>
+      <link>https://rv178.github.io/website/posts/my-linux-journey/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/my-linux-journey/</guid>
+      <guid>https://rv178.github.io/website/posts/my-linux-journey/</guid>
       <description>So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.
 When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, an Ubuntu based distro. So, I installed it and it was my first Linux distribution. My experience using Pop!_OS was amazing and it still is one of my favourite distributions.</description>
     </item>
     
     <item>
       <title>About me</title>
-      <link>https://rv178.is-a.dev/about/</link>
+      <link>https://rv178.github.io/website/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rv178.is-a.dev/about/</guid>
+      <guid>https://rv178.github.io/website/about/</guid>
       <description>about</description>
     </item>
     
     <item>
       <title>Find</title>
-      <link>https://rv178.is-a.dev/search/</link>
+      <link>https://rv178.github.io/website/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rv178.is-a.dev/search/</guid>
+      <guid>https://rv178.github.io/website/search/</guid>
       <description>search</description>
     </item>
     

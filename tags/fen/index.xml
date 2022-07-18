@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fen on rv178</title>
-    <link>https://rv178.is-a.dev/tags/fen/</link>
+    <link>https://rv178.github.io/website/tags/fen/</link>
     <description>Recent content in fen on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 29 Jun 2022 14:54:23 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/fen/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 14:54:23 +0530</lastBuildDate><atom:link href="https://rv178.github.io/website/tags/fen/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FEN String Parsing in Rust</title>
-      <link>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</link>
+      <link>https://rv178.github.io/website/posts/fen-string-parsing-in-rust/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</guid>
+      <guid>https://rv178.github.io/website/posts/fen-string-parsing-in-rust/</guid>
       <description>I finally finished the FEN string parsing part of my chess engine after days of procrastinating and I just wanted to share my experience with everyone.
 So a FEN string looks like this:
 rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1 This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but this string conveys a lot of information.

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lichess on rv178</title>
-    <link>https://rv178.is-a.dev/tags/lichess/</link>
+    <link>https://rv178.github.io/website/tags/lichess/</link>
     <description>Recent content in lichess on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Jun 2022 12:10:51 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/lichess/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 12:10:51 +0530</lastBuildDate><atom:link href="https://rv178.github.io/website/tags/lichess/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Learning Chess</title>
-      <link>https://rv178.is-a.dev/posts/learning-chess/</link>
+      <link>https://rv178.github.io/website/posts/learning-chess/</link>
       <pubDate>Fri, 03 Jun 2022 12:10:51 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/learning-chess/</guid>
+      <guid>https://rv178.github.io/website/posts/learning-chess/</guid>
       <description>So a while ago after being absolutely destroyed by a friend in a game of chess, I decided to actually learn the game.
 What&amp;rsquo;s chess? Chess is a popular game of strategy where two players play against each other. It involves a chess board containing 64 squares and 16 pieces on each side.
 The players have a pair of rooks, bishops and knights. They also have eight pawns, a queen and a king.</description>

@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>linux on rv178</title>
-    <link>https://rv178.is-a.dev/tags/linux/</link>
+    <link>https://rv178.github.io/website/tags/linux/</link>
     <description>Recent content in linux on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 19 Jan 2022 09:47:49 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Jan 2022 09:47:49 +0530</lastBuildDate><atom:link href="https://rv178.github.io/website/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A brief recap of my Linux journey up until now</title>
-      <link>https://rv178.is-a.dev/posts/my-linux-journey/</link>
+      <link>https://rv178.github.io/website/posts/my-linux-journey/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/my-linux-journey/</guid>
+      <guid>https://rv178.github.io/website/posts/my-linux-journey/</guid>
       <description>So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.
 When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, an Ubuntu based distro. So, I installed it and it was my first Linux distribution. My experience using Pop!_OS was amazing and it still is one of my favourite distributions.</description>
     </item>

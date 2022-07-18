@@ -2,97 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on rv178</title>
-    <link>https://rv178.is-a.dev/tags/</link>
+    <link>https://rv178.github.io/website/tags/</link>
     <description>Recent content in Tags on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jul 2022 15:20:06 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jul 2022 15:20:06 +0530</lastBuildDate><atom:link href="https://rv178.github.io/website/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>automation</title>
-      <link>https://rv178.is-a.dev/tags/automation/</link>
+      <link>https://rv178.github.io/website/tags/automation/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/automation/</guid>
+      <guid>https://rv178.github.io/website/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GNU make</title>
-      <link>https://rv178.is-a.dev/tags/gnu-make/</link>
+      <link>https://rv178.github.io/website/tags/gnu-make/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/gnu-make/</guid>
+      <guid>https://rv178.github.io/website/tags/gnu-make/</guid>
       <description></description>
     </item>
     
     <item>
       <title>rust</title>
-      <link>https://rv178.is-a.dev/tags/rust/</link>
+      <link>https://rv178.github.io/website/tags/rust/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/rust/</guid>
+      <guid>https://rv178.github.io/website/tags/rust/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chess</title>
-      <link>https://rv178.is-a.dev/tags/chess/</link>
+      <link>https://rv178.github.io/website/tags/chess/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/chess/</guid>
+      <guid>https://rv178.github.io/website/tags/chess/</guid>
       <description></description>
     </item>
     
     <item>
       <title>fen</title>
-      <link>https://rv178.is-a.dev/tags/fen/</link>
+      <link>https://rv178.github.io/website/tags/fen/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/fen/</guid>
+      <guid>https://rv178.github.io/website/tags/fen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>chess engines</title>
-      <link>https://rv178.is-a.dev/tags/chess-engines/</link>
+      <link>https://rv178.github.io/website/tags/chess-engines/</link>
       <pubDate>Fri, 03 Jun 2022 12:10:51 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/chess-engines/</guid>
+      <guid>https://rv178.github.io/website/tags/chess-engines/</guid>
       <description></description>
     </item>
     
     <item>
       <title>lichess</title>
-      <link>https://rv178.is-a.dev/tags/lichess/</link>
+      <link>https://rv178.github.io/website/tags/lichess/</link>
       <pubDate>Fri, 03 Jun 2022 12:10:51 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/lichess/</guid>
+      <guid>https://rv178.github.io/website/tags/lichess/</guid>
       <description></description>
     </item>
     
     <item>
       <title>coding</title>
-      <link>https://rv178.is-a.dev/tags/coding/</link>
+      <link>https://rv178.github.io/website/tags/coding/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/coding/</guid>
+      <guid>https://rv178.github.io/website/tags/coding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>linux</title>
-      <link>https://rv178.is-a.dev/tags/linux/</link>
+      <link>https://rv178.github.io/website/tags/linux/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/linux/</guid>
+      <guid>https://rv178.github.io/website/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ricing</title>
-      <link>https://rv178.is-a.dev/tags/ricing/</link>
+      <link>https://rv178.github.io/website/tags/ricing/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/ricing/</guid>
+      <guid>https://rv178.github.io/website/tags/ricing/</guid>
       <description></description>
     </item>
     
