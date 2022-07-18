@@ -56,9 +56,10 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    #title: Keep it simple, stupid. 
+    #title: Keep it simple, stupid.
     subtitle: "Keep it simple, stupid."
-    imageUrl: "https://media.discordapp.net/attachments/898590979655884810/983039923835793468/20220605_213925.gif" 
+    #imageUrl: "https://media.discordapp.net/attachments/898590979655884810/983039923835793468/20220605_213925.gif"
+    imageUrl: "https://avatars.githubusercontent.com/u/69449141?v=4"
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
@@ -66,11 +67,10 @@ params:
       - name: About Me
         url: about
 
-
   # home-info mode
   #homeInfoParams:
-    #Title: "Keep it simple, stupid."
-    #Content: Hi there! I'm rv178.
+  #Title: "Keep it simple, stupid."
+  #Content: Hi there! I'm rv178.
 
   socialIcons:
     - name: github
@@ -81,7 +81,6 @@ params:
       url: "https://youtube.com/Idlidev"
     - name: lichess
       url: "https://lichess.org/@/rv107"
-
 
   analytics:
     google:
@@ -97,9 +96,9 @@ params:
     hiddenInSingle: true # hide on single page
 
   #editPost:
-    #URL: "https://github.com/rv178/blog-site/tree/main/content"
-    #Text: "Suggest Changes" # edit text
-    #appendFilePath: true # to append file path to Edit link
+  #URL: "https://github.com/rv178/blog-site/tree/main/content"
+  #Text: "Suggest Changes" # edit text
+  #appendFilePath: true # to append file path to Edit link
 
   # for search
   # https://fusejs.io/api/options.html
@@ -127,10 +126,10 @@ menu:
       weight: 30
 
 outputs:
-    home:
-        - HTML
-        - RSS
-        - JSON # is necessary
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
