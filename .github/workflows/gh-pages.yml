@@ -1,29 +1,47 @@
-name: github pages
+name: Build GH-Pages
 
 on:
   push:
+    paths-ignore:
+      - "images/**"
+      - "LICENSE"
+      - "README.md"
     branches:
-      - main # Set a branch to deploy
-  pull_request:
+      - master
+      - exampleSite
+  workflow_dispatch:
+    # manual run
+    inputs:
+      hugoVersion:
+        description: "Hugo Version"
+        required: false
+        default: "0.83.0"
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Git checkout
+        uses: actions/checkout@v2
+        with:
+          ref: exampleSite
 
-      - name: Setup Hugo
+      - name: Get Theme
+        run: git submodule update --init --recursive
+
+      - name: Update theme to Latest commit
+        run: git submodule update --remote --merge
+
+      - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "latest"
-          # extended: true
+          hugo-version: "${{ github.event.inputs.hugoVersion }}"
 
       - name: Build
-        run: hugo --minify
+        run: hugo --buildDrafts --gc --verbose --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN }}
           publish_dir: ./public
