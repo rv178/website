@@ -1,7 +1,6 @@
 [build]
 cmd = "hugo server -D"
 
-[[custom]]
-name = "prod"
+[custom.prod]
 cmd = "hugo --minify -D"
 run = false
