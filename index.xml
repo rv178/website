@@ -5,7 +5,19 @@
     <link>https://rv178.is-a.dev/</link>
     <description>Recent content on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Jul 2022 15:20:06 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switching to Wayland</title>
+      <link>https://rv178.is-a.dev/posts/switching-to-wayland/</link>
+      <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/posts/switching-to-wayland/</guid>
+      <description>Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.
+Now what is wayland, you may ask? Wayland is like a replacement to the traditional x11 display protocol. You can read more about it here.
+My x11 setup consisted of the following software:
+DWM as the window manager. Polybar for the status bar. Dunst as the notification daemon. ST as my terminal emulator.</description>
+    </item>
+    
     <item>
       <title>Writing a Build Automation Tool</title>
       <link>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</link>
