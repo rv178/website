@@ -58,23 +58,22 @@ macro_rules! printb {
 
 The configuration file is put in the root directory of the project, just like the Makefile.
 If Baker is unable to find a config file (called `recipe.toml`), it auto generates one.
-For example, I use this config for my chess engine:
+Here's an example config:
 
 ```toml
+[env]
+BIN_NAME="bake"
+COMPILER_FLAGS="--release"
+INSTALL_PREFIX="/usr/bin"
+
 [build]
-cmd = "cargo build && cp -r ./target/debug/cranium ./bin/cranium"
+cmd = """
+cargo build $COMPILER_FLAGS &&
+cp -r ./target/release/$BIN_NAME ./bin/$BIN_NAME
+"""
 
 [custom.clean]
 cmd = "cargo clean"
-run = false
-
-[custom.setup]
-cmd = "mkdir -p bin && rustup install stable && rustup default stable"
-run = false
-
-[custom.release]
-name = "release"
-cmd = "cargo build --release && cp -r ./target/release/cranium ./bin/cranium"
 run = false
 
 [pre.fmt]
@@ -83,6 +82,8 @@ cmd = "cargo fmt"
 
 Baker is invoked using `bake` and by default checks for the `build` field in the `recipe.toml`.
 The `cmd` value is then executed during build.
+
+You can set environment variables using the `env` field.
 
 You can also add custom fields using `custom`. It also checks for a `run` value that is used to check whether the command should be run
 after build or not. So if `run = true`, then the command is run after build.
