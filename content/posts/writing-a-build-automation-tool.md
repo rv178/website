@@ -60,23 +60,20 @@ For example, I use this config for my chess engine:
 [build]
 cmd = "cargo build && cp -r ./target/debug/cranium ./bin/cranium"
 
-[[custom]]
-name = "clean"
+[custom.clean]
 cmd = "cargo clean"
 run = false
 
-[[custom]]
-name = "setup"
+[custom.setup]
 cmd = "mkdir -p bin && rustup install stable && rustup default stable"
 run = false
 
-[[custom]]
+[custom.release]
 name = "release"
 cmd = "cargo build --release && cp -r ./target/release/cranium ./bin/cranium"
 run = false
 
-[[pre]]
-name = "fmt"
+[pre.fmt]
 cmd = "cargo fmt"
 ```
 
@@ -89,28 +86,21 @@ after build or not. So if `run = true`, then the command is run after build.
 Baker also checks for an optional `pre` field that contains commands which should be run **before** build. Like for example, if you wish to
 format your code or something before compiling.
 
-You may have noticed a `name` value in the `custom` and `pre` fields. This is used to identify each field, and for the `custom` field,
+You may have noticed a `name` value in the `custom` and `pre` fields (`[custom.name]`). This is used to identify each field, and for the `custom` field,
 the `name` is set as an argument when Baker is invoked.
 
 For example, if I have a `custom` field called `setup`:
 
 ```toml
-[[custom]]
-name = "setup"
+[custom.setup]
 cmd = "mkdir -p bin && rustup install stable && rustup default stable"
 run = false
 ```
 
 You can run `bake setup` to directly execute the command inside the field.
 
-I accidentally discovered that Baker also supports [recursion](https://www.gnu.org/software/make/manual/html_node/Recursion.html), ie. invoking baker inside baker.
-
 Baker is open source and you can find the repo [here](https://github.com/rv178/baker).
 I wrote it in like 2 days, so it may have bugs which I was not able to find, so all suggestions are welcome!
-
-Here's a screenshot of Baker in action:
-
-![Alt](https://media.discordapp.net/attachments/985433521084563486/994926621226172467/unknown.png)
 
 That's it for this blog, see you soon!
 
