@@ -18,11 +18,15 @@ It also provides support for deserialization and serialization using [serde](htt
 It's also extremely easy to use:
 
 ```rust
+// we store custom and pre as HashMap<String, Struct> so that in the TOML file we can use dynamic table names.
+// for environment variables, it's stored as HashMap<String, String> so we can specify as many env vars as we like.
+
 #[derive(Debug, Deserialize)]
 struct Recipe {
     build: Build,
-    custom: Option<Vec<Custom>>,
-    pre: Option<Vec<Pre>>,
+    custom: Option<HashMap<String, Custom>>, // custom commands
+    pre: Option<HashMap<String, Pre>>, // pre-build commands
+    env: Option<HashMap<String, String>>, // for environment vars
 }
 
 /* <the build, custom and pre structs> */

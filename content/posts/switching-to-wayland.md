@@ -1,7 +1,7 @@
 ---
 title: "Switching to Wayland"
 date: 2022-07-27T22:09:53+05:30
-draft: true
+draft: false
 tags: ["foo", "bar"]
 ---
 
