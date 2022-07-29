@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rv178.is-a.dev/tags/bar/</loc>
+    <loc>https://rv178.is-a.dev/tags/dotfiles/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
-    <loc>https://rv178.is-a.dev/tags/foo/</loc>
+    <loc>https://rv178.is-a.dev/tags/foot/</loc>
+    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/mako/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/posts/</loc>
+    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/river/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/</loc>
@@ -18,6 +24,12 @@
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/</loc>
+    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/waybar/</loc>
+    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/wayland/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/automation/</loc>

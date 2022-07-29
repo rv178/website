@@ -7,20 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bar</title>
-      <link>https://rv178.is-a.dev/tags/bar/</link>
+      <title>dotfiles</title>
+      <link>https://rv178.is-a.dev/tags/dotfiles/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/bar/</guid>
+      <guid>https://rv178.is-a.dev/tags/dotfiles/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>foo</title>
-      <link>https://rv178.is-a.dev/tags/foo/</link>
+      <title>foot</title>
+      <link>https://rv178.is-a.dev/tags/foot/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/foo/</guid>
+      <guid>https://rv178.is-a.dev/tags/foot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mako</title>
+      <link>https://rv178.is-a.dev/tags/mako/</link>
+      <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/mako/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>river</title>
+      <link>https://rv178.is-a.dev/tags/river/</link>
+      <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/river/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>waybar</title>
+      <link>https://rv178.is-a.dev/tags/waybar/</link>
+      <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/waybar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wayland</title>
+      <link>https://rv178.is-a.dev/tags/wayland/</link>
+      <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/wayland/</guid>
       <description></description>
     </item>
     

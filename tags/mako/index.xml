@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>bar on rv178</title>
-    <link>https://rv178.is-a.dev/tags/bar/</link>
-    <description>Recent content in bar on rv178</description>
+    <title>mako on rv178</title>
+    <link>https://rv178.is-a.dev/tags/mako/</link>
+    <description>Recent content in mako on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/bar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/mako/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switching to Wayland</title>
       <link>https://rv178.is-a.dev/posts/switching-to-wayland/</link>
