@@ -14,13 +14,13 @@ Now what _is_ wayland, you may ask? Wayland is like a replacement to the traditi
 My x11 setup consisted of the following software:
 
 -   [DWM](https://github.com/rv178/dwm) as the window manager.
--   [Polybar](https://github.com/polybar/polybar) for the status bar.
+-   [Polybar](https://github.com/polybar/polybar) as the status bar.
 -   [Dunst](https://github.com/dunst-project/dunst) as the notification daemon.
 -   [ST](https://github.com/rv178/xelph-st-git) as my terminal emulator.
 -   [Betterlockscreen](https://github.com/betterlockscreen/betterlockscreen) as the lockscreen.
 -   [Rofi](https://github.com/davatorium/rofi/) as the app launcher.
 
-Now before switching to wayland, some of these tools listed above straight up break, like betterlockscreen
+Now before switching to wayland, some of these tools listed above straight up break in a wayland environment, like betterlockscreen
 and rofi. ST also behaves weirdly on wayland, but it works. And of course, since DWM is an x11 window manager,
 you cannot use it on wayland.
 
