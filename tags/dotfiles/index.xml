@@ -15,7 +15,7 @@
       <description>Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.
 Now what is wayland, you may ask? Wayland is like a replacement to the traditional x11 display protocol. You can read more about it here.
 My x11 setup consisted of the following software:
-DWM as the window manager. Polybar for the status bar. Dunst as the notification daemon. ST as my terminal emulator.</description>
+DWM as the window manager. Polybar as the status bar. Dunst as the notification daemon. ST as my terminal emulator.</description>
     </item>
     
   </channel>
