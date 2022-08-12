@@ -5,7 +5,18 @@
     <link>https://rv178.is-a.dev/posts/</link>
     <description>Recent content in Posts on rv178</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Aug 2022 18:57:42 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Yew.rs With TailwindCSS</title>
+      <link>https://rv178.is-a.dev/posts/yew-rs-with-tailwind/</link>
+      <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/posts/yew-rs-with-tailwind/</guid>
+      <description>Yew Like a lot of people, I think WASM is the future. Yew is an amazing frontend framework that helps in building web apps using WASM.
+It&amp;rsquo;s incredibly easy to use and the performance of the app is EXTREMELY fast! I&amp;rsquo;m currently re-writing Snowstry with yew.rs for the frontend (switching from NextJS). Here&amp;rsquo;s the repo link.
+Yew + Tailwind Setting up yew with tailwind was very easy as well. If you don&amp;rsquo;t know what tailwind is, here&amp;rsquo;s the link to their website.</description>
+    </item>
+    
     <item>
       <title>Switching to Wayland</title>
       <link>https://rv178.is-a.dev/posts/switching-to-wayland/</link>

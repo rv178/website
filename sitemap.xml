@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rv178.is-a.dev/posts/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/rust/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/tailwind/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/wasm/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/yew/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/posts/yew-rs-with-tailwind/</loc>
+    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+  </url><url>
     <loc>https://rv178.is-a.dev/tags/dotfiles/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
@@ -11,19 +35,10 @@
     <loc>https://rv178.is-a.dev/tags/mako/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
-    <loc>https://rv178.is-a.dev/posts/</loc>
-    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
-  </url><url>
     <loc>https://rv178.is-a.dev/tags/river/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
-    <loc>https://rv178.is-a.dev/</loc>
-    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
-  </url><url>
     <loc>https://rv178.is-a.dev/posts/switching-to-wayland/</loc>
-    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/tags/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/waybar/</loc>
@@ -36,9 +51,6 @@
     <lastmod>2022-07-08T15:20:06+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/gnu-make/</loc>
-    <lastmod>2022-07-08T15:20:06+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/tags/rust/</loc>
     <lastmod>2022-07-08T15:20:06+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</loc>
