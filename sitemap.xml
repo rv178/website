@@ -2,17 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rv178.is-a.dev/tags/bitboards/</loc>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/posts/bitboards-in-rust/</loc>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/chess/</loc>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
+  </url><url>
+    <loc>https://rv178.is-a.dev/tags/chess-engine/</loc>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
+  </url><url>
     <loc>https://rv178.is-a.dev/posts/</loc>
-    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/rust/</loc>
-    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/</loc>
-    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/</loc>
-    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
+    <lastmod>2022-09-28T21:46:16+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/tailwind/</loc>
     <lastmod>2022-08-12T18:57:42+05:30</lastmod>
@@ -55,9 +67,6 @@
   </url><url>
     <loc>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</loc>
     <lastmod>2022-07-08T15:20:06+05:30</lastmod>
-  </url><url>
-    <loc>https://rv178.is-a.dev/tags/chess/</loc>
-    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
   </url><url>
     <loc>https://rv178.is-a.dev/tags/fen/</loc>
     <lastmod>2022-06-29T14:54:23+05:30</lastmod>

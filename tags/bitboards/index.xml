@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>bitboards on rv178</title>
+    <link>https://rv178.is-a.dev/tags/bitboards/</link>
+    <description>Recent content in bitboards on rv178</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 28 Sep 2022 21:46:16 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/bitboards/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitboards in Rust</title>
+      <link>https://rv178.is-a.dev/posts/bitboards-in-rust/</link>
+      <pubDate>Wed, 28 Sep 2022 21:46:16 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/posts/bitboards-in-rust/</guid>
+      <description>Introduction Hello there! I haven&amp;rsquo;t posted in a while because I was working on my chess engine. Specifically, representing the pieces as bitboards. Now you may ask what a bitboard is. You can use bitboards to represent a chess board in a piece-centric manner. What is so special about bitboards then? Doesn&amp;rsquo;t a piece list do the same thing? Well, representing a bitboard only requires a single unsigned 64 bit integer!</description>
+    </item>
+    
+  </channel>
+</rss>
