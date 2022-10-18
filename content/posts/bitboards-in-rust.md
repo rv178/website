@@ -177,33 +177,47 @@ For example:
 const NOT_A_FILE: BitBoard = BitBoard(18374403900871474942);
 const NOT_H_FILE: BitBoard = BitBoard(9187201950435737471);
 
-// east attacks (black pawns)
-BitBoard((board.0 << 9) & NOT_A_FILE.0)
-// west attacks (black pawns)
-BitBoard((board.0 << 7) & NOT_H_FILE.0)
-// east attacks (white pawns)
-BitBoard((board.0 >> 9) & NOT_H_FILE.0)
-// west attacks (white pawns)
-BitBoard((board.0 >> 7) & NOT_A_FILE.0)
-```
-
-I also a made a function for convenience (lookup pawn attacks for a particular square):
-
-```rust
-fn pawn_atk_lookup(square: Square, colour: Colour) -> BitBoard {
-    let board = BitBoard::from_sq(square);
-
+pub fn east(board: BitBoard, colour: Colour) -> BitBoard {
     match colour {
-        Colour::White => wp_all_atk(board),
-        Colour::Black => bp_all_atk(board),
+        Colour::White => BitBoard((board.0 >> 9) & NOT_H_FILE.0),
+        Colour::Black => BitBoard((board.0 << 9) & NOT_A_FILE.0),
+        Colour::Undefined => exit(1),
+    }
+}
+
+pub fn west(board: BitBoard, colour: Colour) -> BitBoard {
+    match colour {
+        Colour::White => BitBoard((board.0 >> 7) & NOT_A_FILE.0),
+        Colour::Black => BitBoard((board.0 << 7) & NOT_H_FILE.0),
         Colour::Undefined => exit(1),
     }
 }
 ```
 
+I also a made a function for convenience (lookup pawn attacks for a particular square):
+
 ```rust
-let p = pawn_atk_lookup(Square::E4, Colour::Black);
-p.print();
+pub fn lookup(square: Square, colour: Colour) -> BitBoard {
+    let board = BitBoard::from_sq(square);
+
+    match colour {
+        Colour::White => BitBoard(east(board, Colour::White).0 | west(board, Colour::White).0),
+        Colour::Black => BitBoard(east(board, Colour::Black).0 | west(board, Colour::Black).0),
+        Colour::Undefined => exit(1),
+    }
+}
+```
+
+And another one for all pawns:
+
+```rust
+pub fn all(board: BitBoard, colour: Colour) -> BitBoard {
+    match colour {
+        Colour::White => BitBoard(east(board, Colour::White).0 | west(board, Colour::White).0),
+        Colour::Black => BitBoard(east(board, Colour::Black).0 | west(board, Colour::Black).0),
+        Colour::Undefined => exit(1),
+    }
+}
 ```
 
 Attacks can be generated in the same manner for knights and kings:
@@ -228,42 +242,60 @@ soWeWe -10   |     |   -6  soEaEa
 const NOT_HG_FILE: BitBoard = BitBoard(4557430888798830399);
 const NOT_AB_FILE: BitBoard = BitBoard(18229723555195321596);
 
-// north north east
-BitBoard((board.0 << 17) & NOT_A_FILE.0)
+pub fn no_no_east(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 17) & NOT_A_FILE.0)
+}
 
-// north north west
-BitBoard((board.0 << 15) & NOT_H_FILE.0)
+pub fn no_no_west(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 15) & NOT_H_FILE.0)
+}
 
-// south south east
-BitBoard((board.0 >> 15) & NOT_A_FILE.0)
+pub fn so_so_east(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 15) & NOT_A_FILE.0)
+}
 
-// south south west
-BitBoard((board.0 >> 17) & NOT_H_FILE.0)
+pub fn so_so_west(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 17) & NOT_H_FILE.0)
+}
 
-// north east east
-BitBoard((board.0 << 10) & NOT_AB_FILE.0)
+pub fn no_ea_east(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 10) & NOT_AB_FILE.0)
+}
 
-// south east east
-BitBoard((board.0 >> 6) & NOT_AB_FILE.0)
+pub fn so_ea_east(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 6) & NOT_AB_FILE.0)
+}
 
-// north west west
-BitBoard((board.0 << 6) & NOT_HG_FILE.0)
+pub fn no_we_west(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 6) & NOT_HG_FILE.0)
+}
 
-// south west west
-BitBoard((board.0 >> 10) & NOT_HG_FILE.0)
+pub fn so_we_west(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 10) & NOT_HG_FILE.0)
+}
 
 // and then just get the intersection of all the other boards
-fn knight_atk_lookup(square: Square) -> BitBoard {
-    let board = BitBoard::from_sq(square);
+pub fn knight(sq: Square) -> BitBoard {
+    let board = BitBoard::from_sq(sq);
+
+    let no_no_east = knight::no_no_east(board);
+    let no_no_west = knight::no_no_west(board);
+    let so_so_east = knight::so_so_east(board);
+    let so_so_west = knight::so_so_west(board);
+    let no_ea_east = knight::no_ea_east(board);
+    let so_ea_east = knight::so_ea_east(board);
+    let no_we_west = knight::no_we_west(board);
+    let so_we_west = knight::so_we_west(board);
+
     BitBoard(
-        north_east.0
-            | north_west.0
-            | south_east.0
-            | south_west.0
-            | east_north.0
-            | east_south.0
-            | west_north.0
-            | west_south.0,
+        no_no_east.0
+            | no_no_west.0
+            | so_so_east.0
+            | so_so_west.0
+            | no_ea_east.0
+            | so_ea_east.0
+            | no_we_west.0
+            | so_we_west.0,
     )
 }
 ```
@@ -286,45 +318,60 @@ Result (knight on e4):
 #### King
 
 ```rust
+
 // north
-BitBoard(board.0 << 8)
+pub fn no(board: BitBoard) -> BitBoard {
+    BitBoard(board.0 << 8)
+}
+
 // south
-BitBoard(board.0 >> 8)
+pub fn so(board: BitBoard) -> BitBoard {
+    BitBoard(board.0 >> 8)
+}
+
 // east
-BitBoard((board.0 << 1) & NOT_A_FILE.0)
+pub fn ea(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 1) & NOT_A_FILE.0)
+}
+
 // west
-BitBoard((board.0 >> 1) & NOT_H_FILE.0)
+pub fn we(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 1) & NOT_H_FILE.0)
+}
+
 // north east
-BitBoard((board.0 << 9) & NOT_A_FILE.0)
+pub fn no_ea(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 9) & NOT_A_FILE.0)
+}
+
 // north west
-BitBoard((board.0 << 7) & NOT_H_FILE.0)
+pub fn no_we(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 << 7) & NOT_H_FILE.0)
+}
+
 // south east
-BitBoard((board.0 >> 7) & NOT_A_FILE.0)
+pub fn so_ea(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 7) & NOT_A_FILE.0)
+}
+
 // south west
-BitBoard((board.0 >> 9) & NOT_H_FILE.0)
+pub fn so_we(board: BitBoard) -> BitBoard {
+    BitBoard((board.0 >> 9) & NOT_H_FILE.0)
+}
 
-fn king_atk_lookup(square: Square) -> BitBoard {
-    let board = BitBoard::from_sq(square);
+pub fn king(sq: Square) -> BitBoard {
+    let board = BitBoard::from_sq(sq);
 
-    let north = north_king_atk(board);
-    let south = south_king_atk(board);
-    let east = east_king_atk(board);
-    let west = west_king_atk(board);
-    let north_east = north_east_king_atk(board);
-    let north_west = north_west_king_atk(board);
-    let south_east = south_east_king_atk(board);
-    let south_west = south_west_king_atk(board);
+    let no = king::no(board);
+    let so = king::so(board);
+    let ea = king::ea(board);
+    let we = king::we(board);
+    let no_ea = king::no_ea(board);
+    let no_we = king::no_we(board);
+    let so_ea = king::so_ea(board);
+    let so_we = king::so_we(board);
 
-    BitBoard(
-        north.0
-            | south.0
-            | east.0
-            | west.0
-            | north_east.0
-            | north_west.0
-            | south_east.0
-            | south_west.0,
-    )
+    BitBoard(no.0 | so.0 | ea.0 | we.0 | no_ea.0 | no_we.0 | so_ea.0 | so_we.0)
 }
 ```
 
