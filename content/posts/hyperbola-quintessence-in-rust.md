@@ -234,7 +234,7 @@ pub fn bishop(sq: Square, occ: BitBoard) -> BitBoard {
 }
 ```
 
-And for generating queen attacks, it's even easier since we can take the intersection of the bishop and rook attack bitboards:
+And for generating queen attacks, it's even easier since we can take the union of the bishop and rook attack bitboards:
 
 ```rust
 pub fn queen(sq: Square, occ: BitBoard) -> BitBoard {

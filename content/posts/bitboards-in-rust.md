@@ -274,7 +274,7 @@ pub fn so_we_west(board: BitBoard) -> BitBoard {
     BitBoard((board.0 >> 10) & NOT_HG_FILE.0)
 }
 
-// and then just get the intersection of all the other boards
+// and then just get the union of all the other boards
 pub fn knight(sq: Square) -> BitBoard {
     let board = BitBoard::from_sq(sq);
 
