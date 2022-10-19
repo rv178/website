@@ -24,7 +24,7 @@ hard for me.
 ```rust
 // hyperbola quintessence
 pub fn hyp_quint(sq: Square, occ: BitBoard, mask: u64) -> BitBoard {
-    let mut forward = occ.. & mask;
+    let mut forward = occ.0 & mask;
     let mut reverse = forward.reverse_bits();
 
     forward = forward.wrapping_sub(BitBoard::from_sq(sq).0);
