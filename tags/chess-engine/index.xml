@@ -12,9 +12,10 @@
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
       <guid>https://rv178.is-a.dev/posts/hyperbola-quintessence-in-rust/</guid>
-      <description>Welcome to part 3 - or 4, (I only know how to count up to 3) of my dev-blog series on writing a chess engine. Like always, suggestions are welcome!
+      <description>Welcome to part 3 - or 4 of my dev-blog series on writing a chess engine. Like always, suggestions are welcome!
 Hyperbola quintessence? This is the definition from chessprogramming.org:
-Hyperbola Quintessence applies the o^(o-2r)-trick also for vertical or diagonal negative Rays - by reversing the bit-order of up to one bit per rank or byte with a vertical flip aka x86-64 bswap.</description>
+Hyperbola Quintessence applies the o^(o-2r)-trick also for vertical or diagonal negative Rays - by reversing the bit-order of up to one bit per rank or byte with a vertical flip aka x86-64 bswap.
+Why did I go for this approach? Because I thought magic bitboards were too hard for me.</description>
     </item>
     
     <item>
