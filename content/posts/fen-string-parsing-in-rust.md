@@ -87,7 +87,7 @@ pub struct GameStatus {
     pub pieces: Vec<Option<Piece>>,
     pub side_to_move: Colour,
     pub castling_id: [bool; 4],
-    pub en_passant: Option<Vec<String>>,
+    pub en_passant: Option<Vec<Square>>,
     pub half_move_clock: u32,
     pub full_move_count: u32,
 }
@@ -169,56 +169,104 @@ fn castling_ability(input: &str) -> [bool; 4] {
 
 For parsing en passant squares the solution I came up with was rather stupid.
 
-Since the input can either be `-` or multiple squares like `e4e5g6` etc., I wanted a vector that contained each square name.
+Since the input can either be `-` or multiple squares like `e4e5g6` etc., I wanted a vector that contained each square.
 
 So basically,
 
-> `e4e5g6` => `["e4", "e5", "g6"]`
+> `e4e5g6` => `[Square::E4, Square::E5, Square::G6]`
+
+(Square is an enum, this change was made later. Check [this blog](https://rv178.is-a.dev/posts/bitboards-in-rust/) for more info. Yes, I updated this blog :D)
 
 ```rust
-fn parse_en_passant_squares(input: &str) -> Vec<String> {
-    let re = Regex::new(r"^-|[a-g]\d$").unwrap(); // check if input is valid
-    if re.is_match(input) {
-        let mut char_vec: Vec<String> = Vec::new(); // for storing all characters
-        let mut split_vec: Vec<String> = Vec::new(); // for joining the characters
-        let mut en_passant_vec: Vec<String> = Vec::new(); // our final vec
-
-        let split_string = input.split(|c: char| c.is_whitespace());
-        for s in split_string {
-            for c in s.chars() {
-                char_vec.push(c.to_string());
-            }
-        }
-        for i in 0..char_vec.len() {
-            if i % 2 == 0 { // check if index is divisible by 2 and then push two times
-                split_vec.push(char_vec[i].to_string());
-                split_vec.push(char_vec[i + 1].to_string());
-                en_passant_vec.push(split_vec.join("")); // join split_vec and push it to our en passant vec
-                split_vec.clear(); // clear split_vec to repeat the process
-            }
-        }
-
-        en_passant_vec
+fn en_passant(input: &str) -> Option<Vec<Square>> {
+    if input.chars().all(char::is_whitespace) | input.contains('-') {
+        None
     } else {
-        println!("Invalid FEN string: Failed to parse en passant squares.");
-        exit(1);
+        let chars = input.chars().collect::<Vec<char>>();
+
+        if chars.len() % 2 == 0 {
+            let mut ep_vec = Vec::new();
+            let mut sq;
+
+            for i in 0..chars.len() {
+                if i % 2 == 0 {
+                    let valid_chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+                    let mut invalid = true;
+
+                    for c in valid_chars.iter() {
+                        if chars[i] == *c {
+                            invalid = false;
+                        }
+                    }
+
+                    if i < chars.len() - 1 {
+                        if !chars[i].is_alphabetic() | !chars[i + 1].is_numeric() {
+                            fen_log!("Invalid FEN string: Failed to parse en passant square.");
+                            exit(1);
+                        }
+
+                        if chars[i + 1]
+                            .to_digit(10)
+                            .expect("Could not parse character to digit (en passant)")
+                            > 8
+                        {
+                            invalid = true;
+                        }
+                    }
+
+                    if invalid {
+                        fen_log!("Invalid FEN string: Failed to parse en passant square.");
+                        exit(1);
+                    }
+
+                    let file;
+
+                    match chars[i] {
+                        'a' => file = 0,
+                        'b' => file = 1,
+                        'c' => file = 2,
+                        'd' => file = 3,
+                        'e' => file = 4,
+                        'f' => file = 5,
+                        'g' => file = 6,
+                        'h' => file = 7,
+                        _ => {
+                            fen_log!("Invalid FEN string: Failed to parse en passant square.");
+                            exit(1);
+                        }
+                    }
+
+                    let rank;
+
+                    match chars[i + 1] {
+                        '1' => rank = 7,
+                        '2' => rank = 6,
+                        '3' => rank = 5,
+                        '4' => rank = 4,
+                        '5' => rank = 3,
+                        '6' => rank = 2,
+                        '7' => rank = 1,
+                        '8' => rank = 0,
+                        _ => {
+                            fen_log!("Invalid FEN string: Failed to parse en passant square.");
+                            exit(1);
+                        }
+                    }
+
+                    sq = rank * 8 + file;
+
+                    ep_vec.push(match_u32_to_sq(sq as u32));
+                }
+            }
+
+            Some(ep_vec)
+        } else {
+            fen_log!("Invalid FEN string: Failed to parse en passant square.");
+            exit(1);
+        }
     }
 }
 ```
-
-```rust
-fn en_passant(input: &str) -> Option<Vec<String>> {
-    if input == "-" {
-        None
-    } else if input.chars().all(char::is_whitespace) {
-        None
-    } else {
-        Some(parse_en_passant_squares(input))
-    }
-}
-```
-
-I'm just an amateur rust developer so there might be 100000 different ways of doing this which are more efficient. For now, it works 😂.
 
 Parsing the halfmove and fullmove counts were rather easy, and I just had to return a u32 from the string input.
 
@@ -294,65 +342,38 @@ You can check out the crate's code for more info.
 
 I want to write my own implementation too but I'm too lazy and it just works.
 
-I also decided to add this function to print out the game state. Since it's a 1d array I wanted to convert it to a 2d array for printing it.
-
-So basically what I did was:
+I also decided to add this function to print out the game state. So basically what I did was:
 
 ```rust
-let mut symbol_vec: Vec<char> = Vec::new(); // 1d vec that contains piece chars
+pub fn print_board(game_state: &GameStatus) {
+    let mut board: Vec<char> = Vec::new();
 
-for i in 0..game_state.pieces.len() {
-    if game_state.pieces[i] == None {
-        symbol_vec.push(' ');
-    } else {
-        symbol_vec.push(game_state.pieces[i].as_ref().unwrap().symbol);
-    }
-}
-```
-
-Then I used a function to make a new 2d vector that contains the piece chars.
-
-```rust
-fn vec_to_2d_vec(vec: Vec<char>) -> Vec<Vec<char>> {
-    let mut vec_2d: Vec<Vec<char>> = Vec::new();
-    let mut vec_1d: Vec<char> = Vec::new();
-    for i in 0..vec.len() {
-        vec_1d.push(vec[i]);
-		if vec_1d.len() == 8 {
-			vec_2d.push(vec_1d);
-			vec_1d = Vec::new();
+    for piece in game_state.pieces {
+        if piece == None {
+            board.push(' ');
+        } else {
+            board.push(piece.as_ref().unwrap().symbol);
         }
     }
-    vec_2d
-}
-```
 
-And finally, print it all out.
-
-```rust
-let board = vec_to_2d_vec(symbol_vec);
-
-fn print_board(array: &Vec<Vec<char>>) -> String {
-    let mut x = 9;
+    let mut x = 8;
     println!("+---+---+---+---+---+---+---+---+");
-    let mut buf = String::new();
-    for (_y, row) in array.iter().enumerate() {
-        for (_x, col) in row.iter().enumerate() {
-            let p_info = format!("| {} ", col);
-            buf.push_str(&p_info);
+    for rank in 0..8 {
+        x -= 1;
+        for file in 0..8 {
+            let square = rank * 8 + file;
+            if board[square] == ' ' {
+                print!("|   ");
+            } else {
+                print!("| {} ", board[square]);
+            }
         }
-        x = x - 1;
-
-        let ranks = format!("| {} \n", x);
-        buf.push_str(&ranks);
-
-        buf.push_str("+---+---+---+---+---+---+---+---+\n");
+        print!("| {} \n", x + 1);
+        println!("+---+---+---+---+---+---+---+---+");
     }
-    buf
-}
 
-print!("{}", print_board(&board));
-println!("  a   b   c   d   e   f   g   h  \n");
+    println!("  a   b   c   d   e   f   g   h  \n");
+}
 ```
 
 Input: `rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/PNBQKB1R b KQkq - 1 2`
