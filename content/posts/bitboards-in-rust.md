@@ -165,9 +165,7 @@ enum Square {
 
 ### Piece attack generation
 
-I found this very interesting. I still haven't finished working on move generation for sliding pieces at the time of writing this
-(although I have managed to generate occupancy bits, see commit [191a4e](https://github.com/rv178/cranium/commit/191a4eca93683e36edf2976d6ee1fa9671b9e022)).
-The engine is still a work-in-progress, so a lot of the code might be "informal"?
+I found this very interesting. I still haven't finished working on move generation for sliding pieces at the time of writing this.
 
 Anyways, for generating pawn attacks, you can shift the bitboard by 7 and 9 in specific directions to achieve the desired result.
 That is, capturing diagonally.
