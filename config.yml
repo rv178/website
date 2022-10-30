@@ -78,7 +78,7 @@ params:
     - name: reddit
       url: "https://reddit.com/u/Idli_codes"
     - name: youtube
-      url: "https://youtube.com/Idlidev"
+      url: "https://youtube.com/@rv178"
     - name: lichess
       url: "https://lichess.org/@/rv107"
 
