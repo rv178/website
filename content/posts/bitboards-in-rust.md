@@ -35,7 +35,7 @@ For example, a bitboard containing all of white's pawns in the starting position
 . . . . . . . .
 ```
 
-As you can observe, the squares containg the pawns have a value of 1 and others have a value of 0. A bitboard representing a
+As you can observe, the squares containing the pawns have a value of 1 and others have a value of 0. A bitboard representing a
 particular piece will have 1 in the squares the piece occupies and 0 in all the other squares.
 
 Before proceding further, I'd like to shed light on the fact that I'm fairly new to the chess engine development scene, so all suggestions
