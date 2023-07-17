@@ -87,7 +87,7 @@ the string.</p><blockquote><p><code>[true, true, true, true]</code> if input is 
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> i <span style=color:#f92672>&lt;</span> chars.len() <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span> {
 </span></span><span style=display:flex><span>                        <span style=color:#66d9ef>if</span> <span style=color:#f92672>!</span>chars[i].is_alphabetic() <span style=color:#f92672>|</span> <span style=color:#f92672>!</span>chars[i <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>].is_numeric() {
-</span></span><span style=display:flex><span>                            fen_log<span style=color:#f92672>!</span>(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
+</span></span><span style=display:flex><span>                            fen_log!(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
 </span></span><span style=display:flex><span>                            exit(<span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>                        }
 </span></span><span style=display:flex><span>
@@ -101,7 +101,7 @@ the string.</p><blockquote><p><code>[true, true, true, true]</code> if input is 
 </span></span><span style=display:flex><span>                    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> invalid {
-</span></span><span style=display:flex><span>                        fen_log<span style=color:#f92672>!</span>(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
+</span></span><span style=display:flex><span>                        fen_log!(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
 </span></span><span style=display:flex><span>                        exit(<span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>                    }
 </span></span><span style=display:flex><span>
@@ -117,7 +117,7 @@ the string.</p><blockquote><p><code>[true, true, true, true]</code> if input is 
 </span></span><span style=display:flex><span>                        <span style=color:#e6db74>&#39;g&#39;</span> <span style=color:#f92672>=&gt;</span> file <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>,
 </span></span><span style=display:flex><span>                        <span style=color:#e6db74>&#39;h&#39;</span> <span style=color:#f92672>=&gt;</span> file <span style=color:#f92672>=</span> <span style=color:#ae81ff>7</span>,
 </span></span><span style=display:flex><span>                        _ <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>                            fen_log<span style=color:#f92672>!</span>(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
+</span></span><span style=display:flex><span>                            fen_log!(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
 </span></span><span style=display:flex><span>                            exit(<span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>                        }
 </span></span><span style=display:flex><span>                    }
@@ -134,7 +134,7 @@ the string.</p><blockquote><p><code>[true, true, true, true]</code> if input is 
 </span></span><span style=display:flex><span>                        <span style=color:#e6db74>&#39;7&#39;</span> <span style=color:#f92672>=&gt;</span> rank <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>,
 </span></span><span style=display:flex><span>                        <span style=color:#e6db74>&#39;8&#39;</span> <span style=color:#f92672>=&gt;</span> rank <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>,
 </span></span><span style=display:flex><span>                        _ <span style=color:#f92672>=&gt;</span> {
-</span></span><span style=display:flex><span>                            fen_log<span style=color:#f92672>!</span>(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
+</span></span><span style=display:flex><span>                            fen_log!(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
 </span></span><span style=display:flex><span>                            exit(<span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>                        }
 </span></span><span style=display:flex><span>                    }
@@ -147,7 +147,7 @@ the string.</p><blockquote><p><code>[true, true, true, true]</code> if input is 
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>            Some(ep_vec)
 </span></span><span style=display:flex><span>        } <span style=color:#66d9ef>else</span> {
-</span></span><span style=display:flex><span>            fen_log<span style=color:#f92672>!</span>(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
+</span></span><span style=display:flex><span>            fen_log!(<span style=color:#e6db74>&#34;Invalid FEN string: Failed to parse en passant square.&#34;</span>);
 </span></span><span style=display:flex><span>            exit(<span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
@@ -220,14 +220,14 @@ joink it 😔.</p><p>There&rsquo;s a struct called <code>Piece</code> that store
 </span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> board[square] <span style=color:#f92672>==</span> <span style=color:#e6db74>&#39; &#39;</span> {
 </span></span><span style=display:flex><span>                print!(<span style=color:#e6db74>&#34;|   &#34;</span>);
 </span></span><span style=display:flex><span>            } <span style=color:#66d9ef>else</span> {
-</span></span><span style=display:flex><span>                print!(<span style=color:#e6db74>&#34;| {} &#34;</span>, board[square]);
+</span></span><span style=display:flex><span>                print!(<span style=color:#e6db74>&#34;| </span><span style=color:#e6db74>{}</span><span style=color:#e6db74> &#34;</span>, board[square]);
 </span></span><span style=display:flex><span>            }
 </span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>        print!(<span style=color:#e6db74>&#34;| {} \n&#34;</span>, x <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
+</span></span><span style=display:flex><span>        print!(<span style=color:#e6db74>&#34;| </span><span style=color:#e6db74>{}</span><span style=color:#e6db74> </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>, x <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>);
 </span></span><span style=display:flex><span>        println!(<span style=color:#e6db74>&#34;+---+---+---+---+---+---+---+---+&#34;</span>);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    println!(<span style=color:#e6db74>&#34;  a   b   c   d   e   f   g   h  \n&#34;</span>);
+</span></span><span style=display:flex><span>    println!(<span style=color:#e6db74>&#34;  a   b   c   d   e   f   g   h  </span><span style=color:#ae81ff>\n</span><span style=color:#e6db74>&#34;</span>);
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>Input: <code>rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/PNBQKB1R b KQkq - 1 2</code></p><p>Output:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>+---+---+---+---+---+---+---+---+
 </span></span><span style=display:flex><span>| r | n | b | q | k | b | n | r | 8

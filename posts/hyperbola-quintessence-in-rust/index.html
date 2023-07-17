@@ -78,7 +78,7 @@ Value: 1095216660480
 1  . . . . . . . . 
 
    a b c d e f g h
-</code></pre><p>Now if we execute the hyperbola quintessence function on this, we get all possible attacks for the rook on the 4th rank.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span>hyp_quint(Square::E4, r, RANKS[<span style=color:#ae81ff>4</span>].<span style=color:#ae81ff>0</span>).print();
+</code></pre><p>Now if we execute the hyperbola quintessence function on this, we get all possible attacks for the rook on the 4th rank.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span>hyp_quint(Square::E4, r, <span style=color:#66d9ef>RANKS</span>[<span style=color:#ae81ff>4</span>].<span style=color:#ae81ff>0</span>).print();
 </span></span></code></pre></div><pre tabindex=0><code>Hex: 6c00000000
 Value: 463856467968
 
@@ -97,9 +97,9 @@ that we also generate an attack on the blocked bits, as they can be captures (un
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> tr <span style=color:#f92672>=</span> sq <span style=color:#66d9ef>as</span> <span style=color:#66d9ef>usize</span> <span style=color:#f92672>/</span> <span style=color:#ae81ff>8</span>;
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> tf <span style=color:#f92672>=</span> sq <span style=color:#66d9ef>as</span> <span style=color:#66d9ef>usize</span> <span style=color:#f92672>%</span> <span style=color:#ae81ff>8</span>;
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    BitBoard(hyp_quint(sq, occ, FILES[tf].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span> <span style=color:#f92672>|</span> hyp_quint(sq, occ, RANKS[tr].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span>)
+</span></span><span style=display:flex><span>    BitBoard(hyp_quint(sq, occ, <span style=color:#66d9ef>FILES</span>[tf].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span> <span style=color:#f92672>|</span> hyp_quint(sq, occ, <span style=color:#66d9ef>RANKS</span>[tr].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span>)
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>Where <code>tr</code> is the target rank, and <code>tf</code> is the target file (for getting the value of file/rank mask).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> RANKS: [BitBoard; <span style=color:#ae81ff>8</span>] <span style=color:#f92672>=</span> [
+</span></span></code></pre></div><p>Where <code>tr</code> is the target rank, and <code>tf</code> is the target file (for getting the value of file/rank mask).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>RANKS</span>: [BitBoard; <span style=color:#ae81ff>8</span>] <span style=color:#f92672>=</span> [
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>255</span>),                  <span style=color:#75715e>// 8th rank
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    BitBoard(<span style=color:#ae81ff>65280</span>),                <span style=color:#75715e>// 7th rank
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    BitBoard(<span style=color:#ae81ff>16711680</span>),             <span style=color:#75715e>// 6th rank
@@ -110,7 +110,7 @@ that we also generate an attack on the blocked bits, as they can be captures (un
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    BitBoard(<span style=color:#ae81ff>18374686479671623680</span>), <span style=color:#75715e>// 1st rank
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>];
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> FILES: [BitBoard; <span style=color:#ae81ff>8</span>] <span style=color:#f92672>=</span> [
+</span></span><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>FILES</span>: [BitBoard; <span style=color:#ae81ff>8</span>] <span style=color:#f92672>=</span> [
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>72340172838076673</span>),   <span style=color:#75715e>// a file
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    BitBoard(<span style=color:#ae81ff>144680345676153346</span>),  <span style=color:#75715e>// b file
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    BitBoard(<span style=color:#ae81ff>289360691352306692</span>),  <span style=color:#75715e>// c file
@@ -121,7 +121,7 @@ that we also generate an attack on the blocked bits, as they can be captures (un
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>    BitBoard(<span style=color:#ae81ff>9259542123273814144</span>), <span style=color:#75715e>// h file
 </span></span></span><span style=display:flex><span><span style=color:#75715e></span>];
 </span></span></code></pre></div><p>For bishops, we can do the same but with diagonal and anti-diagonal masks.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#75715e>// diagonal masks
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> DIAG: [BitBoard; <span style=color:#ae81ff>15</span>] <span style=color:#f92672>=</span> [
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>DIAG</span>: [BitBoard; <span style=color:#ae81ff>15</span>] <span style=color:#f92672>=</span> [
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>0x80</span>),
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>0x8040</span>),
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>0x804020</span>),
@@ -140,7 +140,7 @@ that we also generate an attack on the blocked bits, as they can be captures (un
 </span></span><span style=display:flex><span>];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#75715e>// anti-diagonal masks
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> ANTI_DIAG: [BitBoard; <span style=color:#ae81ff>15</span>] <span style=color:#f92672>=</span> [
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>const</span> <span style=color:#66d9ef>ANTI_DIAG</span>: [BitBoard; <span style=color:#ae81ff>15</span>] <span style=color:#f92672>=</span> [
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>0x1</span>),
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>0x102</span>),
 </span></span><span style=display:flex><span>    BitBoard(<span style=color:#ae81ff>0x10204</span>),
@@ -165,8 +165,8 @@ that we also generate an attack on the blocked bits, as they can be captures (un
 </span></span><span style=display:flex><span>    <span style=color:#66d9ef>let</span> anti_diag_index: <span style=color:#66d9ef>usize</span> <span style=color:#f92672>=</span> tr <span style=color:#f92672>+</span> tf;
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    BitBoard(
-</span></span><span style=display:flex><span>        hyp_quint(sq, occ, DIAG[diag_index].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span>
-</span></span><span style=display:flex><span>            <span style=color:#f92672>|</span> hyp_quint(sq, occ, ANTI_DIAG[anti_diag_index].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span>,
+</span></span><span style=display:flex><span>        hyp_quint(sq, occ, <span style=color:#66d9ef>DIAG</span>[diag_index].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>|</span> hyp_quint(sq, occ, <span style=color:#66d9ef>ANTI_DIAG</span>[anti_diag_index].<span style=color:#ae81ff>0</span>).<span style=color:#ae81ff>0</span>,
 </span></span><span style=display:flex><span>    )
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>And for generating queen attacks, it&rsquo;s even easier since we can take the union of the bishop and rook attack bitboards:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#66d9ef>pub</span> <span style=color:#66d9ef>fn</span> <span style=color:#a6e22e>queen</span>(sq: <span style=color:#a6e22e>Square</span>, occ: <span style=color:#a6e22e>BitBoard</span>) -&gt; <span style=color:#a6e22e>BitBoard</span> {
