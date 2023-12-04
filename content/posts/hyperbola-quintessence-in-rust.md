@@ -7,7 +7,7 @@ tags: ["rust", "chess", "chess engine", "bitboards"]
 
 ---
 
-Welcome to part 3 - or 4 of my dev-blog series on writing a chess engine. Like always, suggestions are welcome!
+Welcome to my dev-blog series on writing a chess engine. This is part 3. Like always, suggestions are welcome!
 
 ### Hyperbola quintessence?
 
