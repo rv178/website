@@ -31,7 +31,7 @@ jobs:
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: "${{ github.event.inputs.hugoVersion }}"
+          hugo-version: "0.112.4"
 
       - name: Build
         run: hugo --buildDrafts --gc --verbose --minify
