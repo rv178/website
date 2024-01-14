@@ -81,6 +81,8 @@ params:
       url: "https://youtube.com/@rv178"
     - name: lichess
       url: "https://lichess.org/@/rv107"
+    - name: mastodon
+      url: "https://fosstodon.org/@rv178"
 
   analytics:
     google:
