@@ -8,7 +8,8 @@ searchHidden: true
 ---
 
 ---
-I use [arch](https://archlinux.org) btw.
-
-You can find my dotfiles [here](https://github.com/rv178/.dotfiles).
-I like writing open source software and most of them are hosted on [GitHub](https://github.com/rv178).
+Welcome to my blog!
+- I am an avid hip-hop listener, Linux enthusiast and a programmer.
+- [GitHub](https://github.com/rv178)
+- Discord handle: `rv178`
+- [dotfiles](https://github.com/rv178/.dotfiles)
