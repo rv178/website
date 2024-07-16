@@ -4,6 +4,10 @@
     <title>Posts on rv178</title>
     <link>https://rv178.is-a.dev/posts/</link>
     <description>Recent content in Posts on rv178</description>
+    <image>
+      <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
+      <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 18 Oct 2022 21:53:57 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/posts/index.xml" rel="self" type="application/rss+xml" />
