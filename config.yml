@@ -18,7 +18,7 @@ params:
   description: "Keep it simple, stupid."
   keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
   #author: rv178
-  #images: ["https://avatars.githubusercontent.com/u/69449141?s=300"]
+  images: ["https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: false
