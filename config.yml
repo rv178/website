@@ -42,11 +42,11 @@ params:
   assets:
     #disableHLJS: true # to disable highlight.js
     #disableFingerprinting: true
-    favicon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
-    favicon16x16: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
-    favicon32x32: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
-    apple_touch_icon: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
-    safari_pinned_tab: "https://media.discordapp.net/attachments/765524394017292309/858181434085867570/1624676782371.png"
+    favicon: "https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"
+    favicon16x16: "https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"
+    favicon32x32: "https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"
+    apple_touch_icon: "https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"
+    safari_pinned_tab: "https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"
 
   label:
     text: " "
