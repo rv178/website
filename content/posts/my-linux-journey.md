@@ -13,13 +13,13 @@ When I asked my friend (who is an expert in Linux), he recommended me Pop!\_OS, 
 
 While Linux seemed harder due to the frequent interaction with the command line, I had a bit of experience using it before (when using WSL). So the initial switch wasn't that hard for me. I was still dual booting Windows with Pop!\_OS during this time, and was still a Linux amateur.
 
-![Alt](https://media.discordapp.net/attachments/789373730777595904/981472343278899250/gnome-rice.png)
+![Alt](https://i.redd.it/kbso05z611p71.png)
 
 Things started to change when I came to know of Arch Linux, a lightweight distribution. I started reading the Arch wiki, and soon installed it on bare metal (after a bit of bullying _ahem_), triple booting Windows, Pop!\_OS and Arch.
 
 And I ABSOLUTELY loved it. I deleted my Pop!\_OS partition a while later, and Arch became my primary OS. It was a great way to learn more about Linux and its components. The first desktop environment I used with Arch, was KDE Plasma.
 
-![Alt](https://media.discordapp.net/attachments/789373730777595904/981472343597654066/kde-rice.png)
+![Alt](https://i.redd.it/g82kpfkv0mq71.png)
 
 While I certainly liked the desktop environment, I soon switched to a tiling window manager called i3. After using i3 for a few hours, I realised it wasn't the best option for me, and switched back to KDE Plasma. A few days later I installed BSPWM, and I liked it a lot. Inspired from a friend, I installed some of his configs and modified them according to my needs.
 
