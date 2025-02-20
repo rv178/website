@@ -15,7 +15,7 @@ minify:
 params:
   env: production
   title: rv178
-  description: "Keep it simple, stupid."
+  description: "Like a Chevy in quicksand"
   keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
   #author: rv178
   images: ["https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"]
@@ -57,7 +57,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     #title: Keep it simple, stupid.
-    subtitle: "Keep it simple, stupid."
+    subtitle: "Like a Chevy in quicksand"
     #imageUrl: "https://media.discordapp.net/attachments/898590979655884810/983039923835793468/20220605_213925.gif"
     imageUrl: "https://avatars.githubusercontent.com/u/69449141?v=4"
     imageWidth: 120
