@@ -67,16 +67,6 @@ Rust has a TOML crate for parsing TOML files.</description>
     </item>
     
     <item>
-      <title>Binary Exponentiation Extended</title>
-      <link>https://rv178.is-a.dev/posts/post-0/</link>
-      <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
-      
-      <guid>https://rv178.is-a.dev/posts/post-0/</guid>
-      <description>I could not find any article or blog on this idea, and felt having one could be helpful to many. There might be unwanted errors, so please feel free to to share any suggestions, corrections or concerns. For those who are unware of Binary Exponentation, this CP-Algorithms article or this video by Errichto can help get familiar with it.
-Introduction Now that we know the idea behind binary exponentiation; let us try expanding the idea.</description>
-    </item>
-    
-    <item>
       <title>FEN String Parsing in Rust</title>
       <link>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
