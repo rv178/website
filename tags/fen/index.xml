@@ -4,6 +4,10 @@
     <title>fen on rv178</title>
     <link>https://rv178.is-a.dev/tags/fen/</link>
     <description>Recent content in fen on rv178</description>
+    <image>
+      <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
+      <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 29 Jun 2022 14:54:23 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/fen/index.xml" rel="self" type="application/rss+xml" />

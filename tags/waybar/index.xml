@@ -4,6 +4,10 @@
     <title>waybar on rv178</title>
     <link>https://rv178.is-a.dev/tags/waybar/</link>
     <description>Recent content in waybar on rv178</description>
+    <image>
+      <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
+      <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
+    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/waybar/index.xml" rel="self" type="application/rss+xml" />
