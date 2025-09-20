@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>coding on rv178</title>
+    <title>Coding on rv178</title>
     <link>https://rv178.is-a.dev/tags/coding/</link>
-    <description>Recent content in coding on rv178</description>
+    <description>Recent content in Coding on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
       <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
@@ -17,8 +17,9 @@
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
       <guid>https://rv178.is-a.dev/posts/my-linux-journey/</guid>
-      <description>So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.
-When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, an Ubuntu based distro. So, I installed it and it was my first Linux distribution. My experience using Pop!_OS was amazing and it still is one of my favourite distributions.</description>
+      <description>&lt;hr&gt;
+&lt;p&gt;So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.&lt;/p&gt;
+&lt;p&gt;When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, an Ubuntu based distro. So, I installed it and it was my first Linux distribution. My experience using Pop!_OS was amazing and it still is one of my favourite distributions.&lt;/p&gt;</description>
     </item>
     
   </channel>

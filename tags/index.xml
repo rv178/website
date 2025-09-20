@@ -10,9 +10,45 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Oct 2022 21:53:57 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>bitboards</title>
+      <title>Bookbot</title>
+      <link>https://rv178.is-a.dev/tags/bookbot/</link>
+      <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/bookbot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Discord</title>
+      <link>https://rv178.is-a.dev/tags/discord/</link>
+      <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/discord/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://rv178.is-a.dev/tags/javascript/</link>
+      <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Typescript</title>
+      <link>https://rv178.is-a.dev/tags/typescript/</link>
+      <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
+      
+      <guid>https://rv178.is-a.dev/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bitboards</title>
       <link>https://rv178.is-a.dev/tags/bitboards/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
@@ -21,7 +57,7 @@
     </item>
     
     <item>
-      <title>chess</title>
+      <title>Chess</title>
       <link>https://rv178.is-a.dev/tags/chess/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
@@ -30,7 +66,7 @@
     </item>
     
     <item>
-      <title>chess-engine</title>
+      <title>Chess Engine</title>
       <link>https://rv178.is-a.dev/tags/chess-engine/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
@@ -39,7 +75,7 @@
     </item>
     
     <item>
-      <title>rust</title>
+      <title>Rust</title>
       <link>https://rv178.is-a.dev/tags/rust/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
@@ -48,7 +84,7 @@
     </item>
     
     <item>
-      <title>tailwind</title>
+      <title>Tailwind</title>
       <link>https://rv178.is-a.dev/tags/tailwind/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
@@ -57,7 +93,7 @@
     </item>
     
     <item>
-      <title>wasm</title>
+      <title>Wasm</title>
       <link>https://rv178.is-a.dev/tags/wasm/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
@@ -66,7 +102,7 @@
     </item>
     
     <item>
-      <title>yew</title>
+      <title>Yew</title>
       <link>https://rv178.is-a.dev/tags/yew/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
@@ -75,7 +111,7 @@
     </item>
     
     <item>
-      <title>dotfiles</title>
+      <title>Dotfiles</title>
       <link>https://rv178.is-a.dev/tags/dotfiles/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
@@ -84,7 +120,7 @@
     </item>
     
     <item>
-      <title>foot</title>
+      <title>Foot</title>
       <link>https://rv178.is-a.dev/tags/foot/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
@@ -93,7 +129,7 @@
     </item>
     
     <item>
-      <title>mako</title>
+      <title>Mako</title>
       <link>https://rv178.is-a.dev/tags/mako/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
@@ -102,7 +138,7 @@
     </item>
     
     <item>
-      <title>river</title>
+      <title>River</title>
       <link>https://rv178.is-a.dev/tags/river/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
@@ -111,7 +147,7 @@
     </item>
     
     <item>
-      <title>waybar</title>
+      <title>Waybar</title>
       <link>https://rv178.is-a.dev/tags/waybar/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
@@ -120,7 +156,7 @@
     </item>
     
     <item>
-      <title>wayland</title>
+      <title>Wayland</title>
       <link>https://rv178.is-a.dev/tags/wayland/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
@@ -129,7 +165,7 @@
     </item>
     
     <item>
-      <title>automation</title>
+      <title>Automation</title>
       <link>https://rv178.is-a.dev/tags/automation/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
@@ -138,7 +174,7 @@
     </item>
     
     <item>
-      <title>GNU make</title>
+      <title>GNU Make</title>
       <link>https://rv178.is-a.dev/tags/gnu-make/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
@@ -147,7 +183,7 @@
     </item>
     
     <item>
-      <title>fen</title>
+      <title>Fen</title>
       <link>https://rv178.is-a.dev/tags/fen/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
@@ -156,7 +192,7 @@
     </item>
     
     <item>
-      <title>coding</title>
+      <title>Coding</title>
       <link>https://rv178.is-a.dev/tags/coding/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
@@ -165,7 +201,7 @@
     </item>
     
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://rv178.is-a.dev/tags/linux/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
@@ -174,7 +210,7 @@
     </item>
     
     <item>
-      <title>ricing</title>
+      <title>Ricing</title>
       <link>https://rv178.is-a.dev/tags/ricing/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       

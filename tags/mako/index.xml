@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>mako on rv178</title>
+    <title>Mako on rv178</title>
     <link>https://rv178.is-a.dev/tags/mako/</link>
-    <description>Recent content in mako on rv178</description>
+    <description>Recent content in Mako on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
       <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
@@ -17,10 +17,21 @@
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
       <guid>https://rv178.is-a.dev/posts/switching-to-wayland/</guid>
-      <description>Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.
-Now what is wayland, you may ask? Wayland is like a replacement to the traditional x11 display protocol. You can read more about it here.
-My x11 setup consisted of the following software:
-DWM as the window manager. Polybar as the status bar. Dunst as the notification daemon. ST as my terminal emulator.</description>
+      <description>&lt;hr&gt;
+&lt;p&gt;Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.&lt;/p&gt;
+&lt;p&gt;Now what &lt;em&gt;is&lt;/em&gt; wayland, you may ask? Wayland is like a replacement to the traditional x11 display protocol. You can read more about it &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;My x11 setup consisted of the following software:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rv178/dwm&#34;&gt;DWM&lt;/a&gt; as the window manager.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/polybar/polybar&#34;&gt;Polybar&lt;/a&gt; as the status bar.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dunst-project/dunst&#34;&gt;Dunst&lt;/a&gt; as the notification daemon.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rv178/xelph-st-git&#34;&gt;ST&lt;/a&gt; as my terminal emulator.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/betterlockscreen/betterlockscreen&#34;&gt;Betterlockscreen&lt;/a&gt; as the lockscreen.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/davatorium/rofi/&#34;&gt;Rofi&lt;/a&gt; as the app launcher.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now before switching to wayland, some of these tools listed above straight up break in a wayland environment, like betterlockscreen
+and rofi. ST also behaves weirdly on wayland, but it works. And of course, since DWM is an x11 window manager,
+you cannot use it on wayland.&lt;/p&gt;</description>
     </item>
     
   </channel>
