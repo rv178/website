@@ -18,6 +18,7 @@
       
       <guid>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</guid>
       <description>&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I &lt;strong&gt;finally&lt;/strong&gt; finished the FEN string parsing part of my chess engine after
 days of procrastinating and I just wanted to share my experience with everyone.&lt;/p&gt;
 &lt;p&gt;So a FEN string looks like this:&lt;/p&gt;

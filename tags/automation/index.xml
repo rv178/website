@@ -18,6 +18,7 @@
       
       <guid>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</guid>
       <description>&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;After using GNU Make for automating the build step in my projects, I had this idea of making my own build automation tool like Make.&lt;/p&gt;
 &lt;p&gt;I originally wanted to use Makefile-like syntax for the config file but instead settled with &lt;a href=&#34;https://toml.io&#34;&gt;TOML&lt;/a&gt; after thinking about it for a while.
 I also used Rust to write this since I am kinda familiar with the language.&lt;/p&gt;

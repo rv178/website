@@ -18,13 +18,13 @@
       
       <guid>https://rv178.is-a.dev/posts/yew-rs-with-tailwind/</guid>
       <description>&lt;hr&gt;
-&lt;h3 id=&#34;yew&#34;&gt;Yew&lt;/h3&gt;
+&lt;h2 id=&#34;yew&#34;&gt;Yew&lt;/h2&gt;
 &lt;p&gt;Like a lot of people, I think &lt;a href=&#34;https://webassembly.org/&#34;&gt;WASM&lt;/a&gt; is the future. &lt;a href=&#34;https://yew.rs&#34;&gt;Yew&lt;/a&gt; is
 an amazing frontend framework that helps in building web apps using WASM.&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s incredibly easy to use and the performance of the app is EXTREMELY fast! I&amp;rsquo;m currently re-writing
 &lt;a href=&#34;https://github.com/snowstry/snowstry&#34;&gt;Snowstry&lt;/a&gt; with yew.rs for the frontend (switching from NextJS).
 Here&amp;rsquo;s the repo &lt;a href=&#34;https://github.com/snowstry/rewrite&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;yew--tailwind&#34;&gt;Yew + Tailwind&lt;/h3&gt;
+&lt;h2 id=&#34;yew--tailwind&#34;&gt;Yew + Tailwind&lt;/h2&gt;
 &lt;p&gt;Setting up yew with tailwind was very easy as well. If you don&amp;rsquo;t know what tailwind is, here&amp;rsquo;s the
 &lt;a href=&#34;https://tailwindcss.com&#34;&gt;link&lt;/a&gt; to their website.&lt;/p&gt;</description>
     </item>

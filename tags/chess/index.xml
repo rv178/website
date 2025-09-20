@@ -19,7 +19,7 @@
       <guid>https://rv178.is-a.dev/posts/hyperbola-quintessence-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Welcome to my dev-blog series on writing a chess engine. This is part 3. Like always, suggestions are welcome!&lt;/p&gt;
-&lt;h3 id=&#34;hyperbola-quintessence&#34;&gt;Hyperbola quintessence?&lt;/h3&gt;
+&lt;h2 id=&#34;hyperbola-quintessence&#34;&gt;Hyperbola quintessence?&lt;/h2&gt;
 &lt;p&gt;This is the definition from &lt;a href=&#34;https://www.chessprogramming.org/Hyperbola_Quintessence&#34;&gt;chessprogramming.org&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hyperbola Quintessence applies the o^(o-2r)-trick also for vertical or diagonal negative Rays - by reversing the bit-order
@@ -35,7 +35,7 @@ hard for me.&lt;/p&gt;</description>
       
       <guid>https://rv178.is-a.dev/posts/bitboards-in-rust/</guid>
       <description>&lt;hr&gt;
-&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hello there! I haven&amp;rsquo;t posted in a while because I was working on my chess engine. Specifically, representing the pieces as
 bitboards. Now you may ask what a bitboard is. You can use bitboards to represent a chess board in a piece-centric manner.
 What is so special about bitboards then? Doesn&amp;rsquo;t a piece list do the same thing? Well, representing a bitboard only requires a
@@ -49,6 +49,7 @@ single unsigned 64 bit integer!&lt;/p&gt;</description>
       
       <guid>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</guid>
       <description>&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I &lt;strong&gt;finally&lt;/strong&gt; finished the FEN string parsing part of my chess engine after
 days of procrastinating and I just wanted to share my experience with everyone.&lt;/p&gt;
 &lt;p&gt;So a FEN string looks like this:&lt;/p&gt;
