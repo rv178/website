@@ -24,7 +24,7 @@ Now before switching to wayland, some of these tools listed above straight up br
 and rofi. ST also behaves weirdly on wayland, but it works. And of course, since DWM is an x11 window manager,
 you cannot use it on wayland.
 
-### Choosing a compositor
+## Choosing a compositor
 
 [Sway](https://github.com/swaywm/sway) was an awesome choice, but I didn't really like the i3-ish aspect of it.
 
@@ -32,27 +32,27 @@ So I was looking for something more DWM-like.
 
 [River](https://github.com/riverwm/river) was a great replacement.
 
-### Choosing a bar
+## Choosing a bar
 
 There are other alternatives like [yambar](https://codeberg.org/dnkl/yambar), but I chose [waybar](https://github.com/Alexays/Waybar).
 
-### Notification daemon
+## Notification daemon
 
 While dunst works in wayland, I opted for a notification daemon called [mako](https://github.com/emersion/mako) instead.
 
-### Terminal emulator
+## Terminal emulator
 
 ST was a great option, but I had to part ways with it. I switched to the [foot](https://github.com/DanteAlighierin/foot) terminal instead.
 
-### Lock screen
+## Lock screen
 
 Since betterlockscreen does not work on wayland, I chose [swaylock](https://github.com/swaywm/swaylock) for the lock screen.
 
-### Application launcher
+## Application launcher
 
 I use [rofi-lbonn-git](https://github.com/lbonn/rofi) for the app launcher.
 
-### My setup
+## My setup
 
 ![Alt](https://raw.githubusercontent.com/rv178/.dotfiles/wayland/.assets/screenshots/2.png)
 

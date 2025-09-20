@@ -7,7 +7,7 @@ tags: ["bitboards", "chess", "chess-engine", "rust"]
 
 ---
 
-### Introduction
+## Introduction
 
 Hello there! I haven't posted in a while because I was working on my chess engine. Specifically, representing the pieces as
 bitboards. Now you may ask what a bitboard is. You can use bitboards to represent a chess board in a piece-centric manner. 
@@ -41,7 +41,7 @@ particular piece will have 1 in the squares the piece occupies and 0 in all the 
 Before proceding further, I'd like to shed light on the fact that I'm fairly new to the chess engine development scene, so all suggestions
 are welcome!
 
-### Implementation
+## Implementation
 
 I decided to go with representing all the bitboards in a single position as a `struct`.
 
@@ -163,7 +163,7 @@ enum Square {
 }
 ```
 
-### Piece attack generation
+## Piece attack generation
 
 I found this very interesting. I still haven't finished working on move generation for sliding pieces at the time of writing this.
 
@@ -220,7 +220,7 @@ pub fn all(board: BitBoard, colour: Colour) -> BitBoard {
 
 Attacks can be generated in the same manner for knights and kings:
 
-#### Knights
+### Knights
 
 ```diff
         noNoWe    noNoEa
@@ -313,7 +313,7 @@ Result (knight on e4):
    a b c d e f g h
 ```
 
-#### King
+### King
 
 ```rust
 
@@ -390,7 +390,7 @@ Result (king on e4):
 
 That's it for this blog, see you soon!
 
-### References
+## References
 
 - [chessprogramming.org/Bitboards](https://www.chessprogramming.org/Bitboards)
 - [Chess engine in C](https://www.youtube.com/playlist?list=PLmN0neTso3Jxh8ZIylk74JpwfiWNI76Cs)

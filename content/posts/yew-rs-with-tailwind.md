@@ -7,7 +7,7 @@ tags: ["rust", "yew", "wasm", "tailwind"]
 
 ---
 
-### Yew
+## Yew
 
 Like a lot of people, I think [WASM](https://webassembly.org/) is the future. [Yew](https://yew.rs) is
 an amazing frontend framework that helps in building web apps using WASM.
@@ -16,7 +16,7 @@ It's incredibly easy to use and the performance of the app is EXTREMELY fast! I'
 [Snowstry](https://github.com/snowstry/snowstry) with yew.rs for the frontend (switching from NextJS).
 Here's the repo [link](https://github.com/snowstry/rewrite).
 
-### Yew + Tailwind
+## Yew + Tailwind
 
 Setting up yew with tailwind was very easy as well. If you don't know what tailwind is, here's the
 [link](https://tailwindcss.com) to their website.

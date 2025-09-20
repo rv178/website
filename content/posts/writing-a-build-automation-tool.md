@@ -7,6 +7,8 @@ tags: ["rust", "automation", "GNU make"]
 
 ---
 
+## Introduction
+
 After using GNU Make for automating the build step in my projects, I had this idea of making my own build automation tool like Make.
 
 I originally wanted to use Makefile-like syntax for the config file but instead settled with [TOML](https://toml.io) after thinking about it for a while.
@@ -54,7 +56,7 @@ macro_rules! printb {
 }
 ```
 
-### Configuring baker
+## Configuring baker
 
 The configuration file is put in the root directory of the project, just like the Makefile.
 If Baker is unable to find a config file (called `recipe.toml`), it auto generates one.

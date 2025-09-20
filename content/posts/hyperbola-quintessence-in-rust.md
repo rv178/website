@@ -9,7 +9,7 @@ tags: ["rust", "chess", "chess engine", "bitboards"]
 
 Welcome to my dev-blog series on writing a chess engine. This is part 3. Like always, suggestions are welcome!
 
-### Hyperbola quintessence?
+## Hyperbola quintessence?
 
 This is the definition from [chessprogramming.org](https://www.chessprogramming.org/Hyperbola_Quintessence):
 
@@ -19,7 +19,7 @@ This is the definition from [chessprogramming.org](https://www.chessprogramming.
 Why did I go for this approach? Because I thought [magic bitboards](https://www.chessprogramming.org/Magic_Bitboards) were too
 hard for me.
 
-### Implementation
+## Implementation
 
 ```rust
 // hyperbola quintessence

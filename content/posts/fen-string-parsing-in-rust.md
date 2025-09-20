@@ -7,6 +7,8 @@ tags: ["fen", "chess", "rust"]
 
 ---
 
+## Introduction
+
 I **finally** finished the FEN string parsing part of my chess engine after
 days of procrastinating and I just wanted to share my experience with everyone.
 
