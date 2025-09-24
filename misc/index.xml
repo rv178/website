@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Bookbot on rv178</title>
-    <link>https://rv178.is-a.dev/tags/bookbot/</link>
-    <description>Recent content in Bookbot on rv178</description>
+    <title>Misc on rv178</title>
+    <link>https://rv178.is-a.dev/misc/</link>
+    <description>Recent content in Misc on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
       <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/bookbot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/misc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Bookbot Situation</title>
       <link>https://rv178.is-a.dev/misc/the-bookbot-situation/</link>

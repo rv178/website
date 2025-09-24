@@ -13,12 +13,11 @@
     <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/discord/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Bookbot Situation</title>
-      <link>https://rv178.is-a.dev/posts/the-bookbot-situation/</link>
+      <link>https://rv178.is-a.dev/misc/the-bookbot-situation/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/the-bookbot-situation/</guid>
+      <guid>https://rv178.is-a.dev/misc/the-bookbot-situation/</guid>
       <description>&lt;hr&gt;
-&lt;p&gt;Hello there! It&amp;rsquo;s been a long time since I have &lt;em&gt;published&lt;/em&gt; a post (with my last post being &lt;a href=&#34;https://rv178.is-a.dev/posts/hyperbola-quintessence-in-rust/&#34;&gt;3 years ago&lt;/a&gt;)  :p&lt;/p&gt;
 &lt;p&gt;This is going to be a relatively short post as I am writing this to shed light on the situation of a bot I built a few years ago called &lt;a href=&#34;https://github.com/rv178/bookbot&#34;&gt;BookBot&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;current-situation&#34;&gt;Current Situation&lt;/h2&gt;
 &lt;p&gt;As part of Discord&amp;rsquo;s safety policy, verified bots have to be periodically re-verified. The last time the bot was verified was 3 years ago.
