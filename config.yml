@@ -2,6 +2,7 @@ baseURL: "https://rv178.is-a.dev"
 title: rv178
 pagination.pagersize: 5
 theme: PaperNord
+pluralizeListTitles: false
 
 enableRobotsTXT: true
 buildDrafts: false

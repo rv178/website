@@ -7,8 +7,6 @@ tags: ["bookbot", "discord", "javascript", "typescript"]
 
 ---
 
-Hello there! It's been a long time since I have *published* a post (with my last post being [3 years ago](/posts/hyperbola-quintessence-in-rust/))  \:p
-
 This is going to be a relatively short post as I am writing this to shed light on the situation of a bot I built a few years ago called [BookBot](https://github.com/rv178/bookbot).
 
 
