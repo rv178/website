@@ -1,3 +1,5 @@
 public/
 .hugo_build.lock
 resources/
+content/posts/linear-image-filters.md
+content/posts/the-kuwahara-filter.md

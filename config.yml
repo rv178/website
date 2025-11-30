@@ -1,5 +1,5 @@
-baseURL: "https://rv178.is-a.dev"
-title: rv178
+baseURL: "https://rohith.net/"
+title: rohith
 pagination.pagersize: 5
 theme: PaperNord
 pluralizeListTitles: false
@@ -15,7 +15,7 @@ minify:
 
 params:
   env: production
-  title: rv178
+  title: rv
   description: "Like a Chevy in quicksand"
   keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
   #author: rv178
