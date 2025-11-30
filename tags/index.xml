@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on rv178</title>
-    <link>https://rv178.is-a.dev/tags/</link>
+    <link>https://rohith.net/tags/</link>
     <description>Recent content in Tags on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
@@ -10,211 +10,211 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rohith.net/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bookbot</title>
-      <link>https://rv178.is-a.dev/tags/bookbot/</link>
+      <link>https://rohith.net/tags/bookbot/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/bookbot/</guid>
+      <guid>https://rohith.net/tags/bookbot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discord</title>
-      <link>https://rv178.is-a.dev/tags/discord/</link>
+      <link>https://rohith.net/tags/discord/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/discord/</guid>
+      <guid>https://rohith.net/tags/discord/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://rv178.is-a.dev/tags/javascript/</link>
+      <link>https://rohith.net/tags/javascript/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/javascript/</guid>
+      <guid>https://rohith.net/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Typescript</title>
-      <link>https://rv178.is-a.dev/tags/typescript/</link>
+      <link>https://rohith.net/tags/typescript/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/typescript/</guid>
+      <guid>https://rohith.net/tags/typescript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bitboards</title>
-      <link>https://rv178.is-a.dev/tags/bitboards/</link>
+      <link>https://rohith.net/tags/bitboards/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/bitboards/</guid>
+      <guid>https://rohith.net/tags/bitboards/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chess</title>
-      <link>https://rv178.is-a.dev/tags/chess/</link>
+      <link>https://rohith.net/tags/chess/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/chess/</guid>
+      <guid>https://rohith.net/tags/chess/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chess Engine</title>
-      <link>https://rv178.is-a.dev/tags/chess-engine/</link>
+      <link>https://rohith.net/tags/chess-engine/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/chess-engine/</guid>
+      <guid>https://rohith.net/tags/chess-engine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>https://rv178.is-a.dev/tags/rust/</link>
+      <link>https://rohith.net/tags/rust/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/rust/</guid>
+      <guid>https://rohith.net/tags/rust/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tailwind</title>
-      <link>https://rv178.is-a.dev/tags/tailwind/</link>
+      <link>https://rohith.net/tags/tailwind/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/tailwind/</guid>
+      <guid>https://rohith.net/tags/tailwind/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wasm</title>
-      <link>https://rv178.is-a.dev/tags/wasm/</link>
+      <link>https://rohith.net/tags/wasm/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/wasm/</guid>
+      <guid>https://rohith.net/tags/wasm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Yew</title>
-      <link>https://rv178.is-a.dev/tags/yew/</link>
+      <link>https://rohith.net/tags/yew/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/yew/</guid>
+      <guid>https://rohith.net/tags/yew/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dotfiles</title>
-      <link>https://rv178.is-a.dev/tags/dotfiles/</link>
+      <link>https://rohith.net/tags/dotfiles/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/dotfiles/</guid>
+      <guid>https://rohith.net/tags/dotfiles/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Foot</title>
-      <link>https://rv178.is-a.dev/tags/foot/</link>
+      <link>https://rohith.net/tags/foot/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/foot/</guid>
+      <guid>https://rohith.net/tags/foot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mako</title>
-      <link>https://rv178.is-a.dev/tags/mako/</link>
+      <link>https://rohith.net/tags/mako/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/mako/</guid>
+      <guid>https://rohith.net/tags/mako/</guid>
       <description></description>
     </item>
     
     <item>
       <title>River</title>
-      <link>https://rv178.is-a.dev/tags/river/</link>
+      <link>https://rohith.net/tags/river/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/river/</guid>
+      <guid>https://rohith.net/tags/river/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Waybar</title>
-      <link>https://rv178.is-a.dev/tags/waybar/</link>
+      <link>https://rohith.net/tags/waybar/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/waybar/</guid>
+      <guid>https://rohith.net/tags/waybar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wayland</title>
-      <link>https://rv178.is-a.dev/tags/wayland/</link>
+      <link>https://rohith.net/tags/wayland/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/wayland/</guid>
+      <guid>https://rohith.net/tags/wayland/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Automation</title>
-      <link>https://rv178.is-a.dev/tags/automation/</link>
+      <link>https://rohith.net/tags/automation/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/automation/</guid>
+      <guid>https://rohith.net/tags/automation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GNU Make</title>
-      <link>https://rv178.is-a.dev/tags/gnu-make/</link>
+      <link>https://rohith.net/tags/gnu-make/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/gnu-make/</guid>
+      <guid>https://rohith.net/tags/gnu-make/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fen</title>
-      <link>https://rv178.is-a.dev/tags/fen/</link>
+      <link>https://rohith.net/tags/fen/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/fen/</guid>
+      <guid>https://rohith.net/tags/fen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coding</title>
-      <link>https://rv178.is-a.dev/tags/coding/</link>
+      <link>https://rohith.net/tags/coding/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/coding/</guid>
+      <guid>https://rohith.net/tags/coding/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://rv178.is-a.dev/tags/linux/</link>
+      <link>https://rohith.net/tags/linux/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/linux/</guid>
+      <guid>https://rohith.net/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ricing</title>
-      <link>https://rv178.is-a.dev/tags/ricing/</link>
+      <link>https://rohith.net/tags/ricing/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/tags/ricing/</guid>
+      <guid>https://rohith.net/tags/ricing/</guid>
       <description></description>
     </item>
     

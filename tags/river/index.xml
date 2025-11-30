@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>River on rv178</title>
-    <link>https://rv178.is-a.dev/tags/river/</link>
+    <link>https://rohith.net/tags/river/</link>
     <description>Recent content in River on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
@@ -10,13 +10,13 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/river/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Jul 2022 22:09:53 +0530</lastBuildDate><atom:link href="https://rohith.net/tags/river/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switching to Wayland</title>
-      <link>https://rv178.is-a.dev/posts/switching-to-wayland/</link>
+      <link>https://rohith.net/posts/switching-to-wayland/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/switching-to-wayland/</guid>
+      <guid>https://rohith.net/posts/switching-to-wayland/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.&lt;/p&gt;
 &lt;p&gt;Now what &lt;em&gt;is&lt;/em&gt; wayland, you may ask? Wayland is like a replacement to the traditional x11 display protocol. You can read more about it &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;

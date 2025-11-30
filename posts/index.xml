@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on rv178</title>
-    <link>https://rv178.is-a.dev/posts/</link>
+    <link>https://rohith.net/posts/</link>
     <description>Recent content in Posts on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
@@ -10,13 +10,13 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 18 Oct 2022 21:53:57 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 Oct 2022 21:53:57 +0530</lastBuildDate><atom:link href="https://rohith.net/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hyperbola Quintessence in Rust</title>
-      <link>https://rv178.is-a.dev/posts/hyperbola-quintessence-in-rust/</link>
+      <link>https://rohith.net/posts/hyperbola-quintessence-in-rust/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/hyperbola-quintessence-in-rust/</guid>
+      <guid>https://rohith.net/posts/hyperbola-quintessence-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Welcome to my dev-blog series on writing a chess engine. This is part 3. Like always, suggestions are welcome!&lt;/p&gt;
 &lt;h2 id=&#34;hyperbola-quintessence&#34;&gt;Hyperbola quintessence?&lt;/h2&gt;
@@ -30,10 +30,10 @@ hard for me.&lt;/p&gt;</description>
     
     <item>
       <title>Bitboards in Rust</title>
-      <link>https://rv178.is-a.dev/posts/bitboards-in-rust/</link>
+      <link>https://rohith.net/posts/bitboards-in-rust/</link>
       <pubDate>Wed, 28 Sep 2022 21:46:16 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/bitboards-in-rust/</guid>
+      <guid>https://rohith.net/posts/bitboards-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hello there! I haven&amp;rsquo;t posted in a while because I was working on my chess engine. Specifically, representing the pieces as
@@ -44,10 +44,10 @@ single unsigned 64 bit integer!&lt;/p&gt;</description>
     
     <item>
       <title>Yew.rs With TailwindCSS</title>
-      <link>https://rv178.is-a.dev/posts/yew-rs-with-tailwind/</link>
+      <link>https://rohith.net/posts/yew-rs-with-tailwind/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/yew-rs-with-tailwind/</guid>
+      <guid>https://rohith.net/posts/yew-rs-with-tailwind/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;yew&#34;&gt;Yew&lt;/h2&gt;
 &lt;p&gt;Like a lot of people, I think &lt;a href=&#34;https://webassembly.org/&#34;&gt;WASM&lt;/a&gt; is the future. &lt;a href=&#34;https://yew.rs&#34;&gt;Yew&lt;/a&gt; is
@@ -62,10 +62,10 @@ Here&amp;rsquo;s the repo &lt;a href=&#34;https://github.com/snowstry/rewrite&#3
     
     <item>
       <title>Switching to Wayland</title>
-      <link>https://rv178.is-a.dev/posts/switching-to-wayland/</link>
+      <link>https://rohith.net/posts/switching-to-wayland/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/switching-to-wayland/</guid>
+      <guid>https://rohith.net/posts/switching-to-wayland/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.&lt;/p&gt;
 &lt;p&gt;Now what &lt;em&gt;is&lt;/em&gt; wayland, you may ask? Wayland is like a replacement to the traditional x11 display protocol. You can read more about it &lt;a href=&#34;https://wayland.freedesktop.org/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -85,10 +85,10 @@ you cannot use it on wayland.&lt;/p&gt;</description>
     
     <item>
       <title>Writing a Build Automation Tool</title>
-      <link>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</link>
+      <link>https://rohith.net/posts/writing-a-build-automation-tool/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/writing-a-build-automation-tool/</guid>
+      <guid>https://rohith.net/posts/writing-a-build-automation-tool/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;After using GNU Make for automating the build step in my projects, I had this idea of making my own build automation tool like Make.&lt;/p&gt;
@@ -100,10 +100,10 @@ It also provides support for deserialization and serialization using &lt;a href=
     
     <item>
       <title>FEN String Parsing in Rust</title>
-      <link>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</link>
+      <link>https://rohith.net/posts/fen-string-parsing-in-rust/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/fen-string-parsing-in-rust/</guid>
+      <guid>https://rohith.net/posts/fen-string-parsing-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I &lt;strong&gt;finally&lt;/strong&gt; finished the FEN string parsing part of my chess engine after
@@ -123,10 +123,10 @@ this string conveys a lot of information.&lt;/p&gt;</description>
     
     <item>
       <title>A brief recap of my Linux journey up until now</title>
-      <link>https://rv178.is-a.dev/posts/my-linux-journey/</link>
+      <link>https://rohith.net/posts/my-linux-journey/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/posts/my-linux-journey/</guid>
+      <guid>https://rohith.net/posts/my-linux-journey/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.&lt;/p&gt;
 &lt;p&gt;When I asked my friend (who is an expert in Linux), he recommended me Pop!_OS, an Ubuntu based distro. So, I installed it and it was my first Linux distribution. My experience using Pop!_OS was amazing and it still is one of my favourite distributions.&lt;/p&gt;</description>

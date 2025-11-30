@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Typescript on rv178</title>
-    <link>https://rv178.is-a.dev/tags/typescript/</link>
+    <link>https://rohith.net/tags/typescript/</link>
     <description>Recent content in Typescript on rv178</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
@@ -10,13 +10,13 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rv178.is-a.dev/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Sep 2025 22:54:54 +0530</lastBuildDate><atom:link href="https://rohith.net/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Bookbot Situation</title>
-      <link>https://rv178.is-a.dev/misc/the-bookbot-situation/</link>
+      <link>https://rohith.net/misc/the-bookbot-situation/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
       
-      <guid>https://rv178.is-a.dev/misc/the-bookbot-situation/</guid>
+      <guid>https://rohith.net/misc/the-bookbot-situation/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;This is going to be a relatively short post as I am writing this to shed light on the situation of a bot I built a few years ago called &lt;a href=&#34;https://github.com/rv178/bookbot&#34;&gt;BookBot&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;current-situation&#34;&gt;Current Situation&lt;/h2&gt;
