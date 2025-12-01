@@ -3,6 +3,13 @@ title: "Hyperbola Quintessence in Rust"
 date: 2022-10-18T21:53:57+05:30
 draft: false
 tags: ["rust", "chess", "chess engine", "bitboards"]
+
+
+cover:
+    image: "cover.png"
+    alt: "Description of image"
+    caption: "Sliding piece attack generation"
+    relative: true
 ---
 
 ---
