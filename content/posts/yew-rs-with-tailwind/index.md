@@ -3,6 +3,11 @@ title: "Yew.rs With TailwindCSS"
 date: 2022-08-12T18:57:42+05:30
 draft: false
 tags: ["rust", "yew", "wasm", "tailwind"]
+
+cover:
+    image: "cover.png"
+    alt: "Description of image"
+    relative: true
 ---
 
 ---

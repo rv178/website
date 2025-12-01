@@ -3,6 +3,11 @@ title: "Switching to Wayland"
 date: 2022-07-27T22:09:53+05:30
 draft: false
 tags: ["wayland", "river", "waybar", "mako", "foot", "dotfiles"]
+
+cover:
+    image: "cover.png"
+    alt: "Description of image"
+    relative: true
 ---
 
 ---

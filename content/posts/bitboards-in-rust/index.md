@@ -7,7 +7,7 @@ tags: ["bitboards", "chess", "chess-engine", "rust"]
 cover:
     image: "cover.png"
     alt: "Description of image"
-    caption: "Bitboard convertion"
+    caption: "Bitboard conversion"
     relative: true
 ---
 

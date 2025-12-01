@@ -3,6 +3,11 @@ title: "Writing a Build Automation Tool"
 date: 2022-07-08T15:20:06+05:30
 draft: false
 tags: ["rust", "automation", "GNU make"]
+
+cover:
+    image: "cover.png"
+    alt: "Description of image"
+    relative: true
 ---
 
 ---

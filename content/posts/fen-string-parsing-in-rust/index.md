@@ -3,6 +3,12 @@ title: "FEN String Parsing in Rust"
 date: 2022-06-29T14:54:23+05:30
 draft: false
 tags: ["fen", "chess", "rust"]
+
+cover:
+    image: "cover.png"
+    alt: "Description of image"
+    caption: "FEN string to chess position"
+    relative: true
 ---
 
 ---
