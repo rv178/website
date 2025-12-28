@@ -15,7 +15,7 @@ minify:
 
 params:
   env: production
-  title: rv
+  title: rohith
   description: "Like a Chevy in quicksand"
   keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
   #author: rv178
