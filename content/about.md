@@ -9,7 +9,9 @@ searchHidden: true
 
 ---
 Welcome to my blog!
-- I am an avid hip-hop listener, Linux enthusiast and a programmer.
-- [GitHub](https://github.com/rv178)
+
+I am a first year engineering undergraduate student interested in Linux and systems programming :P
+- All of my projects are hosted on my [GitHub](https://github.com/rv178).
 - Discord handle: `rv178`
-- [dotfiles](https://github.com/rv178/.dotfiles)
+- You can find my dotfiles [here](https://github.com/rv178/.dotfiles).
+
