@@ -86,6 +86,8 @@ params:
       url: "https://lichess.org/@/rv107"
     - name: mastodon
       url: "https://fosstodon.org/@rv178"
+    - name: email
+      url: "mailto:hey@rohith.net"
 
   analytics:
     google:
