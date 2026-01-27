@@ -39,6 +39,7 @@ params:
   hideSummary: false
   showtoc: true
   tocopen: true
+  snow: true
 
   math: true
 
