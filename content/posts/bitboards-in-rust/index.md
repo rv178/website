@@ -2,7 +2,7 @@
 title: "Bitboards in Rust"
 date: 2022-09-28T21:46:16+05:30
 draft: false
-tags: ["bitboards", "chess", "chess-engine", "rust"]
+tags: ["Rust", "Chess Engine"]
 
 cover:
     image: "cover.png"

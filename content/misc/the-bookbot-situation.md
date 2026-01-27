@@ -2,7 +2,7 @@
 title: "The Bookbot Situation"
 date: 2025-09-19T22:54:54+05:30
 draft: false
-tags: ["bookbot", "discord", "javascript", "typescript"]
+tags: []
 ---
 
 ---

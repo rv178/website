@@ -2,7 +2,7 @@
 title: "A brief recap of my Linux journey up until now"
 date: 2022-01-19T09:47:49+05:30
 draft: false
-tags: ["linux", "ricing", "coding"]
+tags: ["Linux", "Ricing"]
 
 cover:
     image: "cover.png"

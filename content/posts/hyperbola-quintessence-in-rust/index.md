@@ -2,7 +2,7 @@
 title: "Hyperbola Quintessence in Rust"
 date: 2022-10-18T21:53:57+05:30
 draft: false
-tags: ["rust", "chess", "chess engine", "bitboards"]
+tags: ["Rust", "Chess Engine"]
 
 
 cover:

@@ -2,7 +2,7 @@
 title: "Switching to Wayland"
 date: 2022-07-27T22:09:53+05:30
 draft: false
-tags: ["wayland", "river", "waybar", "mako", "foot", "dotfiles"]
+tags: ["Linux", "Ricing", "Wayland"]
 
 cover:
     image: "cover.png"
