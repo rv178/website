@@ -2,35 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rohith.net/tags/bookbot/</loc>
-    <lastmod>2025-09-19T22:54:54+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/discord/</loc>
-    <lastmod>2025-09-19T22:54:54+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/javascript/</loc>
-    <lastmod>2025-09-19T22:54:54+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/misc/</loc>
     <lastmod>2025-09-19T22:54:54+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/</loc>
     <lastmod>2025-09-19T22:54:54+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/tags/</loc>
-    <lastmod>2025-09-19T22:54:54+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/misc/the-bookbot-situation/</loc>
     <lastmod>2025-09-19T22:54:54+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/typescript/</loc>
-    <lastmod>2025-09-19T22:54:54+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/bitboards/</loc>
-    <lastmod>2022-10-18T21:53:57+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/chess/</loc>
-    <lastmod>2022-10-18T21:53:57+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/tags/chess-engine/</loc>
     <lastmod>2022-10-18T21:53:57+05:30</lastmod>
@@ -44,67 +23,37 @@
     <loc>https://rohith.net/tags/rust/</loc>
     <lastmod>2022-10-18T21:53:57+05:30</lastmod>
   </url><url>
+    <loc>https://rohith.net/tags/</loc>
+    <lastmod>2022-10-18T21:53:57+05:30</lastmod>
+  </url><url>
     <loc>https://rohith.net/posts/bitboards-in-rust/</loc>
     <lastmod>2022-09-28T21:46:16+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/tags/tailwind/</loc>
-    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/tags/wasm/</loc>
-    <lastmod>2022-08-12T18:57:42+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/yew/</loc>
     <lastmod>2022-08-12T18:57:42+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/posts/yew-rs-with-tailwind/</loc>
     <lastmod>2022-08-12T18:57:42+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/tags/dotfiles/</loc>
+    <loc>https://rohith.net/tags/linux/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/tags/foot/</loc>
-    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/mako/</loc>
-    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/river/</loc>
+    <loc>https://rohith.net/tags/ricing/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/posts/switching-to-wayland/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/tags/waybar/</loc>
-    <lastmod>2022-07-27T22:09:53+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/tags/wayland/</loc>
     <lastmod>2022-07-27T22:09:53+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/tags/automation/</loc>
-    <lastmod>2022-07-08T15:20:06+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/gnu-make/</loc>
-    <lastmod>2022-07-08T15:20:06+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/posts/writing-a-build-automation-tool/</loc>
     <lastmod>2022-07-08T15:20:06+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/fen/</loc>
-    <lastmod>2022-06-29T14:54:23+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/posts/fen-string-parsing-in-rust/</loc>
     <lastmod>2022-06-29T14:54:23+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/posts/my-linux-journey/</loc>
-    <lastmod>2022-01-19T09:47:49+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/coding/</loc>
-    <lastmod>2022-01-19T09:47:49+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/linux/</loc>
-    <lastmod>2022-01-19T09:47:49+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/ricing/</loc>
     <lastmod>2022-01-19T09:47:49+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/about/</loc>

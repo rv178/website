@@ -42,5 +42,28 @@ What is so special about bitboards then? Doesn&amp;rsquo;t a piece list do the s
 single unsigned 64 bit integer!&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>FEN String Parsing in Rust</title>
+      <link>https://rohith.net/posts/fen-string-parsing-in-rust/</link>
+      <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
+      
+      <guid>https://rohith.net/posts/fen-string-parsing-in-rust/</guid>
+      <description>&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;I &lt;strong&gt;finally&lt;/strong&gt; finished the FEN string parsing part of my chess engine after
+days of procrastinating and I just wanted to share my experience with everyone.&lt;/p&gt;
+&lt;p&gt;So a FEN string looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but
+this string conveys a lot of information.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

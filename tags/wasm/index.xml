@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Wasm on rohith</title>
+    <title>WASM on rohith</title>
     <link>https://rohith.net/tags/wasm/</link>
-    <description>Recent content in Wasm on rohith</description>
+    <description>Recent content in WASM on rohith</description>
     <image>
       <url>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</url>
       <link>https://raw.githubusercontent.com/rv178/website/main/static/favicon.png</link>
