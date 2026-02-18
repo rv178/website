@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rohith.net/misc/</loc>
-    <lastmod>2025-09-19T22:54:54+05:30</lastmod>
+    <loc>https://rohith.net/tags/c&#43;&#43;/</loc>
+    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/tags/kde/</loc>
+    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/posts/</loc>
+    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/</loc>
+    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/posts/sok-status-update-1/</loc>
+    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/tags/</loc>
+    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/misc/</loc>
     <lastmod>2025-09-19T22:54:54+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/misc/the-bookbot-situation/</loc>
@@ -17,13 +32,7 @@
     <loc>https://rohith.net/posts/hyperbola-quintessence-in-rust/</loc>
     <lastmod>2022-10-18T21:53:57+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/posts/</loc>
-    <lastmod>2022-10-18T21:53:57+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/tags/rust/</loc>
-    <lastmod>2022-10-18T21:53:57+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/</loc>
     <lastmod>2022-10-18T21:53:57+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/posts/bitboards-in-rust/</loc>
