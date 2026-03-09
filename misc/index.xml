@@ -15,7 +15,6 @@
       <title>The Bookbot Situation</title>
       <link>https://rohith.net/misc/the-bookbot-situation/</link>
       <pubDate>Fri, 19 Sep 2025 22:54:54 +0530</pubDate>
-      
       <guid>https://rohith.net/misc/the-bookbot-situation/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;This is going to be a relatively short post as I am writing this to shed light on the situation of a bot I built a few years ago called &lt;a href=&#34;https://github.com/rv178/bookbot&#34;&gt;BookBot&lt;/a&gt;.&lt;/p&gt;
@@ -26,3 +25,4 @@ It used to be added to around ~2850 servers and actively running before Discord 
     
   </channel>
 </rss>
+

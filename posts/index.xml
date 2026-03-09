@@ -15,14 +15,14 @@
       <title>Season of KDE Status Update #1</title>
       <link>https://rohith.net/posts/sok-status-update-1/</link>
       <pubDate>Sun, 01 Feb 2026 21:47:43 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/sok-status-update-1/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Recently, me and my friend &lt;a href=&#34;https://github.com/shivkr6/&#34;&gt;Shivang&lt;/a&gt; got selected for KDE&amp;rsquo;s mentorship programme,
 &lt;a href=&#34;https://mentorship.kde.org/sok/&#34;&gt;Season of KDE&lt;/a&gt; 2026.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&#34;&gt;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&#34;&gt;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Our proposal included implementing font subsetting in their PDF reader, &lt;a href=&#34;https://okular.kde.org/&#34;&gt;Okular&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;a-brief-overview-of-fonts&#34;&gt;A Brief Overview of Fonts&lt;/h3&gt;
 &lt;p&gt;Font files are of many extensions; the most common ones include TrueType &lt;em&gt;(.ttf)&lt;/em&gt; and OpenType &lt;em&gt;(.otf)&lt;/em&gt; which are binary files containing
@@ -36,7 +36,6 @@ cubic ones.&lt;/p&gt;</description>
       <title>Hyperbola Quintessence in Rust</title>
       <link>https://rohith.net/posts/hyperbola-quintessence-in-rust/</link>
       <pubDate>Tue, 18 Oct 2022 21:53:57 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/hyperbola-quintessence-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Welcome to my dev-blog series on writing a chess engine. This is part 3. Like always, suggestions are welcome!&lt;/p&gt;
@@ -44,7 +43,8 @@ cubic ones.&lt;/p&gt;</description>
 &lt;p&gt;This is the definition from &lt;a href=&#34;https://www.chessprogramming.org/Hyperbola_Quintessence&#34;&gt;chessprogramming.org&lt;/a&gt;:&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Hyperbola Quintessence applies the o^(o-2r)-trick also for vertical or diagonal negative Rays - by reversing the bit-order
-of up to one bit per rank or byte with a vertical flip aka x86-64 bswap.&lt;/p&gt;&lt;/blockquote&gt;
+of up to one bit per rank or byte with a vertical flip aka x86-64 bswap.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Why did I go for this approach? Because I thought &lt;a href=&#34;https://www.chessprogramming.org/Magic_Bitboards&#34;&gt;magic bitboards&lt;/a&gt; were too
 hard for me.&lt;/p&gt;</description>
     </item>
@@ -53,7 +53,6 @@ hard for me.&lt;/p&gt;</description>
       <title>Bitboards in Rust</title>
       <link>https://rohith.net/posts/bitboards-in-rust/</link>
       <pubDate>Wed, 28 Sep 2022 21:46:16 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/bitboards-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -67,7 +66,6 @@ single unsigned 64 bit integer!&lt;/p&gt;</description>
       <title>Yew.rs With TailwindCSS</title>
       <link>https://rohith.net/posts/yew-rs-with-tailwind/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/yew-rs-with-tailwind/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;yew&#34;&gt;Yew&lt;/h2&gt;
@@ -85,7 +83,6 @@ Here&amp;rsquo;s the repo &lt;a href=&#34;https://github.com/snowstry/rewrite&#3
       <title>Switching to Wayland</title>
       <link>https://rohith.net/posts/switching-to-wayland/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/switching-to-wayland/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.&lt;/p&gt;
@@ -108,7 +105,6 @@ you cannot use it on wayland.&lt;/p&gt;</description>
       <title>Writing a Build Automation Tool</title>
       <link>https://rohith.net/posts/writing-a-build-automation-tool/</link>
       <pubDate>Fri, 08 Jul 2022 15:20:06 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/writing-a-build-automation-tool/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -123,19 +119,18 @@ It also provides support for deserialization and serialization using &lt;a href=
       <title>FEN String Parsing in Rust</title>
       <link>https://rohith.net/posts/fen-string-parsing-in-rust/</link>
       <pubDate>Wed, 29 Jun 2022 14:54:23 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/fen-string-parsing-in-rust/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I &lt;strong&gt;finally&lt;/strong&gt; finished the FEN string parsing part of my chess engine after
 days of procrastinating and I just wanted to share my experience with everyone.&lt;/p&gt;
 &lt;p&gt;So a FEN string looks like this:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;
 &lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#6c6f74&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+&lt;pre tabindex=&#34;0&#34; style=&#34;color:#d8dee9;background-color:#2e3440;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;This is the FEN string of the starting position in standard chess. It looks like random crap at first glance but
@@ -146,7 +141,6 @@ this string conveys a lot of information.&lt;/p&gt;</description>
       <title>A brief recap of my Linux journey up until now</title>
       <link>https://rohith.net/posts/my-linux-journey/</link>
       <pubDate>Wed, 19 Jan 2022 09:47:49 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/my-linux-journey/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;So hi! I have been using Linux for almost 5 months now and I have learned a lot! Just wanted to share my experience with everyone.&lt;/p&gt;
@@ -155,3 +149,4 @@ this string conveys a lot of information.&lt;/p&gt;</description>
     
   </channel>
 </rss>
+

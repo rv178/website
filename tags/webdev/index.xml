@@ -15,7 +15,6 @@
       <title>Yew.rs With TailwindCSS</title>
       <link>https://rohith.net/posts/yew-rs-with-tailwind/</link>
       <pubDate>Fri, 12 Aug 2022 18:57:42 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/yew-rs-with-tailwind/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;yew&#34;&gt;Yew&lt;/h2&gt;
@@ -31,3 +30,4 @@ Here&amp;rsquo;s the repo &lt;a href=&#34;https://github.com/snowstry/rewrite&#3
     
   </channel>
 </rss>
+

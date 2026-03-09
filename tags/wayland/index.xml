@@ -15,7 +15,6 @@
       <title>Switching to Wayland</title>
       <link>https://rohith.net/posts/switching-to-wayland/</link>
       <pubDate>Wed, 27 Jul 2022 22:09:53 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/switching-to-wayland/</guid>
       <description>&lt;hr&gt;
 &lt;p&gt;Hello! 11 days ago I switched from x11 to wayland, because 60 FPS scrolling is a feature too good to miss.&lt;/p&gt;
@@ -36,3 +35,4 @@ you cannot use it on wayland.&lt;/p&gt;</description>
     
   </channel>
 </rss>
+

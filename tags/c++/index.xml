@@ -15,14 +15,14 @@
       <title>Season of KDE Status Update #1</title>
       <link>https://rohith.net/posts/sok-status-update-1/</link>
       <pubDate>Sun, 01 Feb 2026 21:47:43 +0530</pubDate>
-      
       <guid>https://rohith.net/posts/sok-status-update-1/</guid>
       <description>&lt;hr&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Recently, me and my friend &lt;a href=&#34;https://github.com/shivkr6/&#34;&gt;Shivang&lt;/a&gt; got selected for KDE&amp;rsquo;s mentorship programme,
 &lt;a href=&#34;https://mentorship.kde.org/sok/&#34;&gt;Season of KDE&lt;/a&gt; 2026.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&#34;&gt;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&#34;&gt;https://mentorship.kde.org/blog/2026-01-21-sok-26-welcome/#implement-font-subsetting-when-saving-files-in-okular&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Our proposal included implementing font subsetting in their PDF reader, &lt;a href=&#34;https://okular.kde.org/&#34;&gt;Okular&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;a-brief-overview-of-fonts&#34;&gt;A Brief Overview of Fonts&lt;/h3&gt;
 &lt;p&gt;Font files are of many extensions; the most common ones include TrueType &lt;em&gt;(.ttf)&lt;/em&gt; and OpenType &lt;em&gt;(.otf)&lt;/em&gt; which are binary files containing
@@ -34,3 +34,4 @@ cubic ones.&lt;/p&gt;</description>
     
   </channel>
 </rss>
+
