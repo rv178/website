@@ -1,8 +1,8 @@
 ---
 title: "Season of KDE Status Update #1"
 date: 2026-02-01T21:47:43+05:30
-draft: true
-tags: ["C++"]
+draft: false
+tags: ["C++", "KDE"]
 
 cover:
     image: "cover.png"
@@ -10,10 +10,6 @@ cover:
     caption: "We are so back"
     relative: true
 ---
-
-<!--- TODO: finish subsetting section --->
-<!--- subsetted font file suffix --->
-<!--- TODO: add diagrams in implementation section --->
 
 ---
 
@@ -374,10 +370,6 @@ includes the ability to choose fonts.
 
 So for all `AnnotFreeText` objects, we need to intercept the font stream before it gets embedded into the PDF and then subset it.
 
-### Subsetting the font data in `addFontToDefaultResources()`
-
-[ WIP ]
-
 ### Current Implementation (Font Embedding Into Global Resource)
 
 When the user creates an annotation, selects a font (eg. Arial) and clicks apply, Poppler does two things:
@@ -403,4 +395,7 @@ subsetted for that specific string.
 
 ## References
 
-[ Will add once draft is complete ]
+- https://gitlab.freedesktop.org/poppler/poppler
+- https://youtu.be/BfEvIjTQkIE?si=GSV6CbWuBMePFYnc
+- https://www.youtube.com/watch?v=SO83KQuuZvg
+- https://harfbuzz.github.io/
