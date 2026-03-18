@@ -308,22 +308,33 @@ kde-builder poppler --refresh-build --no-include-dependencies
 ### Linking the HarfBuzz library in Poppler
 
 Since Poppler uses `CMake` as its build system, I edited `CMakeLists.txt` to include HarfBuzz as a dependency to enable the use of header
-files like `hb.h` and `hb-subset.h`.
+files like `hb.h` and `hb-subset.h`. As per the suggestion of my mentor, I found out that the way I was linking HarfBuzz was outdated.
+Hence, I have edited this part of the blog to include the newer way, which uses `PkgConfig` (instead of `target_include_directories`).
+
+#### `cmake/modules/FindHarfBuzz.cmake:`
 
 ```cmake
-pkg_check_modules(HARFBUZZ REQUIRED harfbuzz>=2.0.0 harfbuzz-subset)
+include(FindPackageHandleStandardArgs)
+
+find_package(PkgConfig REQUIRED)
+
+pkg_check_modules(HARFBUZZ IMPORTED_TARGET "harfbuzz>=${HARFBUZZ_VERSION}" harfbuzz-subset)
+
+find_package_handle_standard_args(HarfBuzz DEFAULT_MSG HARFBUZZ_LIBRARIES HARFBUZZ_CFLAGS)
+```
+
+#### `CMakeLists.txt:`
+
+```cmake
+set(HARFBUZZ_VERSION "2.0.0")
 ```
 
 ```cmake
-set(poppler_LIBS 
-    Freetype::Freetype 
-    ZLIB::ZLIB 
-    ${HARFBUZZ_LIBRARIES}
-)
+find_package(HarfBuzz ${HARFBUZZ_VERSION} REQUIRED)
 ```
 
 ```cmake
-target_include_directories(poppler SYSTEM PRIVATE ${HARFBUZZ_INCLUDE_DIRS})
+set(poppler_LIBS Freetype::Freetype ZLIB::ZLIB PkgConfig::HARFBUZZ)
 ```
 
 ## Poppler Integration
