@@ -10,7 +10,31 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Feb 2026 21:47:43 +0530</lastBuildDate><atom:link href="https://rohith.net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jun 2026 01:48:05 +0530</lastBuildDate><atom:link href="https://rohith.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Game of Thrones</title>
+      <link>https://rohith.net/reviews/got/</link>
+      <pubDate>Mon, 01 Jun 2026 01:48:05 +0530</pubDate>
+      <guid>https://rohith.net/reviews/got/</guid>
+      <description>Has been great so far!</description>
+    </item>
+    
+    <item>
+      <title>Hollow Knight: Silksong</title>
+      <link>https://rohith.net/reviews/silksong/</link>
+      <pubDate>Mon, 01 Jun 2026 01:39:06 +0530</pubDate>
+      <guid>https://rohith.net/reviews/silksong/</guid>
+      <description>Stunningly beautiful but unforgiving at times. Might be my favourite game of the year.</description>
+    </item>
+    
+    <item>
+      <title>Nine Sols</title>
+      <link>https://rohith.net/reviews/nine-sols/</link>
+      <pubDate>Mon, 01 Jun 2026 01:20:52 +0530</pubDate>
+      <guid>https://rohith.net/reviews/nine-sols/</guid>
+      <description>Played this right after Silksong. Absolute banger of a game with the most satisfying combat mechanics.</description>
+    </item>
+    
     <item>
       <title>Season of KDE Status Update #1</title>
       <link>https://rohith.net/posts/sok-status-update-1/</link>
