@@ -3,6 +3,7 @@ title: "Season of KDE Status Update #1"
 date: 2026-02-01T21:47:43+05:30
 draft: false
 tags: ["C++", "KDE"]
+summary: "SoK status update on adding font subsetting to Okular, covering how fonts work and getting HarfBuzz set up with Poppler."
 
 cover:
     image: "cover.png"

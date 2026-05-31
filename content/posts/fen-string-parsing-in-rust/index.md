@@ -3,6 +3,7 @@ title: "FEN String Parsing in Rust"
 date: 2022-06-29T14:54:23+05:30
 draft: false
 tags: ["Rust", "Chess Engine"]
+summary: "Breaking down a FEN string and parsing it into a usable game state for a chess engine."
 
 cover:
     image: "cover.png"

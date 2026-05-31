@@ -3,6 +3,7 @@ title: "Switching to Wayland"
 date: 2022-07-27T22:09:53+05:30
 draft: false
 tags: ["Linux", "Ricing", "Wayland"]
+summary: "Switching from X11 to Wayland and finding a Wayland replacement for each part of the old setup."
 
 cover:
     image: "cover.png"

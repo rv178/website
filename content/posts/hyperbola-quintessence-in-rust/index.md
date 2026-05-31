@@ -3,6 +3,7 @@ title: "Hyperbola Quintessence in Rust"
 date: 2022-10-18T21:53:57+05:30
 draft: false
 tags: ["Rust", "Chess Engine"]
+summary: "Generating sliding piece attacks for rooks, bishops and queens with hyperbola quintessence."
 
 
 cover:

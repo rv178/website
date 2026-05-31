@@ -3,6 +3,7 @@ title: "Bitboards in Rust"
 date: 2022-09-28T21:46:16+05:30
 draft: false
 tags: ["Rust", "Chess Engine"]
+summary: "Representing the pieces of a chess board as bitboards (using 64-bit integers) and using them to generate piece attacks."
 
 cover:
     image: "cover.png"

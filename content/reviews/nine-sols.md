@@ -1,7 +1,7 @@
 ---
 title: "Nine Sols"
 date: 2026-06-01T01:20:52+05:30
-draft: false
+draft: true
 category: "Games"
 creator: "Red Candle Games"
 year: 2024

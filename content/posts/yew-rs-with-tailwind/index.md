@@ -3,6 +3,7 @@ title: "Yew.rs With TailwindCSS"
 date: 2022-08-12T18:57:42+05:30
 draft: false
 tags: ["Rust", "Webdev"]
+summary: "Setting up Yew.rs with TailwindCSS to build a web frontend in Rust using WASM."
 
 cover:
     image: "cover.png"

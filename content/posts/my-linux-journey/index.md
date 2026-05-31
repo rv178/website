@@ -3,6 +3,7 @@ title: "A brief recap of my Linux journey up until now"
 date: 2022-01-19T09:47:49+05:30
 draft: false
 tags: ["Linux", "Ricing"]
+summary: "Recap of my Linux journey, from starting out on Pop!_OS to ending up on Arch Linux."
 
 cover:
     image: "cover.png"
