@@ -128,14 +128,18 @@ menu:
       name: Posts
       url: /posts/
       weight: 20
+    - identifier: reviews
+      name: Reviews
+      url: /reviews/
+      weight: 30
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 30
+      weight: 40
     - identifier: search
       name: Search
       url: /search/
-      weight: 40
+      weight: 50
 
 outputs:
   home:

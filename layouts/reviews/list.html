@@ -1,0 +1,90 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- if .Content }}
+<div class="post-content">
+  {{ .Content }}
+</div>
+{{- end }}
+
+{{- $pages := .RegularPages }}
+{{- $categories := slice }}
+{{- range $pages }}
+  {{- with .Params.category }}{{ $categories = $categories | append . }}{{ end }}
+{{- end }}
+{{- $categories = uniq $categories }}
+
+{{- with $pages }}
+<nav class="reviews-filters">
+  <button class="reviews-filter active" data-filter="all">All</button>
+  {{- range $categories }}
+  <button class="reviews-filter" data-filter="{{ . | urlize }}">{{ . }}</button>
+  {{- end }}
+</nav>
+
+<div class="reviews-grid">
+  {{- range . }}
+  {{- $cat := .Params.category }}
+  {{- $title := .Title }}
+  {{- $hasBody := gt .WordCount 0 }}
+  {{- if $hasBody }}
+  <a class="review-card" href="{{ .Permalink }}" data-category="{{ $cat | urlize }}">
+  {{- else }}
+  <div class="review-card review-card-static" data-category="{{ $cat | urlize }}">
+  {{- end }}
+    <div class="review-banner">
+      {{- with .Params.banner }}
+      <img src="{{ . | relURL }}" alt="{{ $title }} banner" loading="lazy">
+      {{- else }}
+      <span class="review-banner-placeholder">{{ substr .Title 0 1 }}</span>
+      {{- end }}
+      {{- with .Params.rating }}<span class="review-score">{{ . }}<small>/10</small></span>{{- end }}
+    </div>
+    <div class="review-card-body">
+      <div class="review-badges">
+        {{- with $cat }}<span class="review-badge">{{ . }}</span>{{ end }}
+        {{- range .Params.labels }}<span class="review-label">{{ . }}</span>{{ end }}
+      </div>
+      <h3 class="review-title">{{ .Title }}</h3>
+      {{- if or .Params.creator .Params.year }}
+      <p class="review-meta">
+        {{- with .Params.creator }}{{ . }}{{ end }}
+        {{- if and .Params.creator .Params.year }} · {{ end }}
+        {{- with .Params.year }}{{ . }}{{ end }}
+      </p>
+      {{- end }}
+      {{- with .Summary }}<p class="review-note">{{ . | plainify | htmlUnescape }}</p>{{- end }}
+    </div>
+  {{- if $hasBody }}</a>{{ else }}</div>{{ end }}
+  {{- end }}
+</div>
+{{- end }}
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.reviews-filter');
+    var cards = document.querySelectorAll('.review-card');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var filter = btn.getAttribute('data-filter');
+        buttons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        cards.forEach(function (card) {
+          var show = filter === 'all' || card.getAttribute('data-category') === filter;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+  })();
+</script>
+
+{{- end }}{{- /* end main */ -}}

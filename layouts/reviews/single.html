@@ -1,0 +1,45 @@
+{{- define "main" }}
+
+<article class="post-single review-single">
+  <header class="post-header">
+    {{ partial "breadcrumbs.html" . }}
+    <h1 class="post-title">
+      {{ .Title }}
+      {{- if .Draft }}<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>{{- end }}
+    </h1>
+    <div class="post-meta review-single-meta">
+      {{- with .Params.category }}<span class="review-badge">{{ . }}</span>{{ end }}
+      {{- range .Params.labels }}<span class="review-label">{{ . }}</span>{{ end }}
+      {{- $bits := slice }}
+      {{- with .Params.creator }}{{ $bits = $bits | append . }}{{ end }}
+      {{- with .Params.year }}{{ $bits = $bits | append (printf "%v" .) }}{{ end }}
+      {{- if not .Date.IsZero }}{{ $bits = $bits | append (.Date.Format (site.Params.DateFormat | default "January 2, 2006")) }}{{ end }}
+      {{- with $bits }}<span class="review-info">{{ delimit . " · " }}</span>{{ end }}
+    </div>
+  </header>
+
+  <div class="review-banner review-banner-hero">
+    {{- with .Params.banner }}
+    <img src="{{ . | relURL }}" alt="{{ $.Title }} banner">
+    {{- else }}
+    <span class="review-banner-placeholder">{{ substr .Title 0 1 }}</span>
+    {{- end }}
+    {{- with .Params.rating }}<span class="review-score">{{ . }}<small>/10</small></span>{{- end }}
+  </div>
+
+  {{- if .Content }}
+  <div class="post-content">
+    {{- if not (.Param "disableAnchoredHeadings") }}
+    {{- partial "anchored_headings.html" .Content -}}
+    {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  <footer class="post-footer">
+    {{- if (.Param "ShowPostNavLinks") }}
+    {{- partial "post_nav_links.html" . }}
+    {{- end }}
+  </footer>
+</article>
+
+{{- end }}{{/* end main */}}
