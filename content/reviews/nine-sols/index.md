@@ -6,7 +6,7 @@ category: "Games"
 creator: "Red Candle Games"
 year: 2024
 rating: 9.5
-banner: "/reviews/9sols.jpg"
+banner: "/reviews/nine-sols/cover.jpg"
 labels: ["Recommended"]
 summary: "Played this right after Silksong. Absolute banger of a game with the most satisfying combat mechanics."
 ---
