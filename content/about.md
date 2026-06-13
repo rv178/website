@@ -10,7 +10,7 @@ searchHidden: true
 ---
 Welcome to my blog!
 
-I am a first year engineering undergraduate student interested in Linux and systems programming :P
+I am an engineering undergraduate student interested in Linux and systems programming :P
 - You can reach me at `hey@rohith.net`.
 - All of my projects are hosted on my [GitHub](https://github.com/rv178).
 - Discord handle: `rv178`
