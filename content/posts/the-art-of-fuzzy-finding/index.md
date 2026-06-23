@@ -266,7 +266,7 @@ Reversing this, we get the string "acf" (the LCS).
 I have referenced [this video](https://www.youtube.com/watch?v=4ClOkX0SWW4) for this explanation, the animation makes it very intuitive
 to understand.
 
-## Needleman Wunsch
+## Needleman-Wunsch
 
 ## Smith-Waterman
 

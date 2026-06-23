@@ -1,5 +1,5 @@
 ---
-title: "Season of KDE Status Update #1"
+title: "Season of KDE Status Update"
 date: 2026-02-01T21:47:43+05:30
 draft: false
 tags: ["C++", "KDE"]
