@@ -38,7 +38,7 @@ This is an example taken from [Wikipedia](https://en.wikipedia.org/wiki/Levensht
 >       1. uninformed → uniformed (deletion of "n").
 
 The next morning, I was wondering if this could be used for fuzzy finding. However, this particular algorithm is more suited for programs like
-spell checkers (it's a [global alignment]() algorithm).
+spell checkers (it is a [global alignment]() algorithm).
 
 The funny part is that fuzzy searching (in tools like [fff](https://github.com/dmtrKovalenko/fff)) is also done by the same algorithm used for local sequence alignment in bioinformatics.
 After checking out [frizbee](https://github.com/saghen/frizbee/#smith-waterman), I decided to write my own fuzzy searching tool implementing
@@ -49,25 +49,235 @@ the Smith-Waterman algorithm.
 Fuzzy finding is a tool we often take for granted (atleast in my workflow), whether it be sifting through directories, or opening files,
 or even just searching through things in general. I wanted to know the concept behind it.
 
+
+## Longest Common Subsequence
+
+Let's consider a simpler problem space.
+
+Consider two strings, `s1 = "ccdegf"` and `s2 = "def"`.
+
+We need to find the longest sequence of characters that appear in the same string, but not necessarily adjacent to each other.
+
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
-\begin{array}{r | c c c c}
-  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{ }}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{o}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{o}}} \\[0.5em] \hline \\[-0.5em]
-  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{s}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
-  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{o}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \; \sq & \; \sq \\[1em]
-  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{m}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq \\[1em]
-  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq
+\begin{array}{r | c c c c c c}
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{ccdegf}}} \hspace{0.5em}
+  & \; \htmlClass{jbmono}{\text{c}} & \; 
+  \htmlClass{jbmono}{\text{c}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{d}}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{e}}} & \; 
+  \htmlClass{jbmono}{\text{g}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{f}}} & \; 
 \end{array}
 $$
 
-## Longest Common Sub Sequence
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c}
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{def}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\htmlClass{jbmono}{\text{d}}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{e}}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{f}}} & \; 
+\end{array}
+$$
 
-### Needleman-Wunsch
+The LCS here is `def`.
 
-### Smith-Waterman
+In the first string, *all* the characters are not adjacent to each other, but they still appear in the same *order*.
 
-## Gap Affinities
+Taking a second example with `s1 = abcdef` and `s2 = aacf`:
 
-## Bit Vectors
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c}
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{abcdef}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\htmlClass{jbmono}{\text{a}}} & \; 
+  \htmlClass{jbmono}{\text{b}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{c}}} & \; 
+  \htmlClass{jbmono}{\text{d}} & \; 
+  \htmlClass{jbmono}{\text{e}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{f}}} & \; 
+\end{array}
+$$
 
-## SIMD Acceleration
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c}
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{aacf}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\htmlClass{jbmono}{\text{a}}} & \; 
+  \htmlClass{jbmono}{\text{a}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{c}}} & \; 
+  \textcolor{#bf616a}{\htmlClass{jbmono}{\text{f}}} & \; 
+\end{array}
+$$
+
+Here, the LCS is `acf`.
+
+Hence, it can also be a sequence that is scattered across *both* strings.
+
+### Dynamic Programming Solution
+
+Let's initialize a matrix with `m+1` rows and `n+1` columns where:
+- `m` is the length of `s2`
+- `n` is the length of `s1`
+- first row and column is filled with `0`s
+
+Taking `s1 = abcdef` and `s2 = aacf`, it is a `5x7` matrix.
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq
+\end{array}
+$$
+
+Let's establish a few rules:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{p}} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{q}} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{r}} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{s}} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq
+\end{array}
+$$
+
+- If the characters of current square `s` match (in this case, `a` and `a`), then the value of `s` is `p + 1` (upper left diagonal + 1).
+- If they don't match, we take $max(r, q)$.
+
+Considering the first unfilled square (marked in red), the characters *do* match (`a` and `a`):
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \colorbox{#b48ead}{\htmlClass{jbmono}{0}} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq
+\end{array}
+$$
+
+Hence, we write the value of this square as the value of the upper left diagonal square (marked in purple) + 1, which is `0 + 1 = 1`.
+
+Considering the second unfilled square:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq
+\end{array}
+$$
+
+The characters *do not* match, (`a` and `b`). So we take the maximum value of left square and top square.
+In this case, $max(1, 0)$, which is 1.
+
+Filling out the rest of the row and moving to the second iteration:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \colorbox{#b48ead}{\htmlClass{jbmono}{0}} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq
+\end{array}
+$$
+
+The characters match (`a` and `a`), so we put the value as `0 + 1 = 1`.
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq & \; \sq
+\end{array}
+$$
+
+Filling out the rest of the squares:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{3}}
+\end{array}
+$$
+
+Now this value `3` is the length of the longest subsequence. (LCS in this case is `acf`).
+
+In order to obtain the actual LCS, we can backtrack from the bottom right corner of the matrix (which holds the LCS length) 
+   with the following rules:
+   
+- If characters match, then go back to the upper left diagonal square.
+- If they don't match, then move in the direction of the larger value, either up or left.
+
+Then we can obtain the following path:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c}
+  \hspace{0.5em} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{b}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{d}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{e}}} & \; \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{.}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{0} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{0}} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{a}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \colorbox{#b48ead}{\htmlClass{jbmono}{1}} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{1}} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{c}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \colorbox{#b48ead}{\htmlClass{jbmono}{2}} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{2}} & \; \colorbox{#bf616a}{\htmlClass{jbmono}{2}} & \; \htmlClass{jbmono}{2} \\[1em]
+  \textcolor{#81a1c1}{\htmlClass{jbmono}{\text{f}}} \hspace{0.5em} & \; \htmlClass{jbmono}{0} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{1} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} & \; \htmlClass{jbmono}{2} & \; \colorbox{#b48ead}{\htmlClass{jbmono}{3}}
+\end{array}
+$$
+
+Going in the direction `3` -> `2` -> `2` -> `2` -> `1` -> `1` -> `0`.
+
+In every purple marked square, we move to the upper left diagonal square, since the characters are equal (in the case of `3`, `f` = `f`).
+Then we add the character to our string.
+
+| **Character** 	| **Row** 	| **Column** 	|
+|---	|:---:	|---	|
+| f 	| 5 	| 7 	|
+| c 	| 4 	| 4 	|
+| a 	| 3 	| 2 	|
+
+Reversing this, we get the string "acf" (the LCS).
+
+I have referenced [this video](https://www.youtube.com/watch?v=4ClOkX0SWW4) for this explanation, the animation makes it very intuitive
+to understand.
+
+## Needleman Wunsch
+
+## Smith-Waterman
+
+### Gap Affinities
+
+### Bit Vectors
+
+### SIMD Acceleration
+
+## Results
+
+## References
+
+- https://www.youtube.com/watch?v=4ClOkX0SWW4
