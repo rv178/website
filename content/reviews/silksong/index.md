@@ -1,7 +1,7 @@
 ---
 title: "Hollow Knight: Silksong"
 date: 2026-06-01T01:39:06+05:30
-draft: true
+draft: false
 category: "Games"
 creator: "Team Cherry"
 year: 2025
@@ -10,5 +10,3 @@ banner: "/reviews/silksong/cover.jpg"
 labels: ["Recommended"]
 summary: "Stunningly beautiful but unforgiving at times. Might be my favourite game of the year."
 ---
-
-[ WIP ]

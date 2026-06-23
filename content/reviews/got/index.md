@@ -1,7 +1,7 @@
 ---
 title: "A Game of Thrones"
 date: 2026-06-01T01:48:05+05:30
-draft: true
+draft: false
 category: "Books"
 creator: "George RR Martin"
 year: 1996
