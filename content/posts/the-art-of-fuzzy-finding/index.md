@@ -38,7 +38,7 @@ This is an example taken from [Wikipedia](https://en.wikipedia.org/wiki/Levensht
 >       1. uninformed → uniformed (deletion of "n").
 
 The next morning, I was wondering if this could be used for fuzzy finding. However, this particular algorithm is more suited for programs like
-spell checkers (it is a [global alignment]() algorithm).
+spell checkers (it is a [global alignment](https://en.wikipedia.org/wiki/Sequence_alignment#Global_and_local_alignments) algorithm).
 
 The funny part is that fuzzy searching (in tools like [fff](https://github.com/dmtrKovalenko/fff)) is also done by the same algorithm used for local sequence alignment in bioinformatics.
 After checking out [frizbee](https://github.com/saghen/frizbee/#smith-waterman), I decided to write my own fuzzy searching tool implementing
@@ -114,6 +114,11 @@ $$
 Here, the LCS is `acf`.
 
 Hence, it can also be a sequence that is scattered across *both* strings.
+
+One interesting characteristic of this problem is that the LCS can be computed incrementally, by calculating the LCS of substrings
+(more on this later).
+
+This is why the most efficient solution is to use dynamic programming.
 
 ### Dynamic Programming Solution
 
@@ -246,12 +251,14 @@ In order to obtain the actual LCS, we can backtrack from the bottom right corner
 - If characters match, then go back to the upper left diagonal square.
 - If they don't match, then move in the direction of the larger value, either up or left.
 
+`s1` and `s2` are our strings:
 $$
 s_1 = s_1[1]\,s_1[2]\cdots s_1[m]
 \qquad
 s_2 = s_2[1]\,s_2[2]\cdots s_2[n]
 $$
 
+This is what I meant when I said the LCS is computed incrementally with the LCS of substrings:
 $$
 d_{i-1,\,j} = \mathrm{LCS}\bigl(
   s_1[1\ldots i-1],\ s_2[1\ldots j]
@@ -300,11 +307,178 @@ Reversing this, we get the string "acf" (the LCS).
 I have referenced [this video](https://www.youtube.com/watch?v=4ClOkX0SWW4) for the explanation, the animation makes it very intuitive
 to understand.
 
+### Why LCS is a global alignment problem
+
+In the introduction, I mentioned *global alignment problems*. LCS is also a global alignment problem.
+
+- To find the LCS, the algorithm evaluates the *entirety* of both strings. It looks for a subsequence
+that spans the entire global length of the strings, even if that pattern is stretched out.
+- It preserves the *order* of the entire string.
+
+Also one characteristic of LCS is that mismatches are treated the same way as gaps (there is no gap penalty).
+
+$$\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c}
+  \textcolor{#81a1c1}{\texttt{\text{plan}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\texttt{\text{p}}} & \; 
+  \texttt{\text{l}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{a}}} & \; 
+  \texttt{\text{-}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{n}}} & \; 
+  \texttt{\text{-}} \\[0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{paint}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\texttt{\text{p}}} & \; 
+  \texttt{\text{-}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{a}}} & \; 
+  \texttt{\text{i}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{n}}} & \; 
+  \texttt{\text{t}}
+\end{array}$$
+
+Example with "plan" and "paint", LCS is `pan`.
+
 ## Needleman-Wunsch
+
+In bioinformatics, NW is an algorithm used to align protein or nucleotide sequences. Just like the LCS solution, NW is also a global 
+alignment algorithm. In fact, the LCS solution is actually a simplified version of NW.
+Generally, NW is used when two sequences are similar and they need to be aligned to check how they have mutated.
+
+If we convert this to a plain text analogy, consider two strings that are *supposed* to be similar but aren't (like in the case of spelling
+mistakes and such). If we want to see *how much* they have diverged, we use NW.
+
+With NW, you can assign an alignment "score" to every possible alignment that can exist with two strings. It is an optimal algorithm,
+so it produces the best possible alignment for the chosen scoring system.
+
+### Implementation
+
+1. Definition:
+
+```go
+type Nw struct {
+	match    int
+	mismatch int
+	gap      int
+	dp       [][]int
+}
+```
+
+2. Filling the alignment matrix:
+
+```go
+func (nw *Nw) fillTable(a []byte, b []byte) {
+	for i := 0; i < len(a)+1; i++ {
+		nw.dp[i][0] = nw.gap * i
+	}
+
+	for j := 0; j < len(b)+1; j++ {
+		nw.dp[0][j] = nw.gap * j
+	}
+
+	for i := 1; i < len(a)+1; i++ {
+		for j := 1; j < len(b)+1; j++ {
+			diagDelta := nw.mismatch
+			if a[i-1] == b[j-1] {
+				diagDelta = nw.match
+			}
+			fromDiagScore := nw.dp[i-1][j-1] + diagDelta
+			fromTopScore := nw.dp[i-1][j] + nw.gap
+			fromLeftScore := nw.dp[i][j-1] + nw.gap
+			nw.dp[i][j] = max(fromDiagScore, fromTopScore, fromLeftScore)
+		}
+	}
+}
+```
+
+3. Traceback:
+
+```go
+func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
+    // (a) initialize buffers and pos
+    // (b) while both sequences have chars, check if chars match / determine path taken
+    // (c) handling edge cases (string 1 chars running out before string 2 or vice versa)
+    // (d) return trimmed bufA, bufB
+}
+```
+
+(a) Initializing buffers and `pos`
+
+```go
+maxLen := len(a) + len(b)
+bufA := make([]byte, maxLen)
+bufB := make([]byte, maxLen)
+pos := maxLen - 1
+```
+
+(b) Backtracking loop
+
+```go
+i, j := len(a), len(b)
+
+for i > 0 && j > 0 {
+    score := nw.mismatch
+
+    if a[i-1] == b[j-1] {
+        score = nw.match
+    }
+
+    switch nw.dp[i][j] {
+        // handling diagonal, top and left
+    }
+}
+```
+
+`Diagonal`
+```go
+case nw.dp[i-1][j-1] + score:
+    bufA[pos] = a[i-1]
+    bufB[pos] = b[j-1]
+    i--
+    j--
+    pos--
+```
+
+`Top`
+```go
+case nw.dp[i-1][j] + nw.gap:
+    bufA[pos] = a[i-1]
+    bufB[pos] = '_'
+    i--
+    pos--
+```
+
+`Left/default`
+```go
+default:
+    bufA[pos] = '_'
+    bufB[pos] = b[j-1]
+    j--
+    pos--
+```
+
+(c) Edge cases (string 1 characters run out before string 2 or vice versa):
+
+```go
+for ; i > 0; i-- {
+    bufA[pos] = a[i-1]
+    bufB[pos] = '_'
+    pos--
+}
+
+for ; j > 0; j-- {
+    bufA[pos] = '_'
+    bufB[pos] = b[j-1]
+    pos--
+}
+```
+
+And finally, returning the trimmed buffers:
+```go
+return bufA[pos+1:], bufB[pos+1:]
+```
 
 ## Smith-Waterman
 
-### Gap Affinities
+### Affine Gaps
 
 ### Bit Vectors
 
@@ -314,4 +488,8 @@ to understand.
 
 ## References
 
-- https://www.youtube.com/watch?v=4ClOkX0SWW4
+- [Frizbee](https://github.com/saghen/frizbee)
+- [Longest Common Subsequence Problem Visually Explained](https://www.youtube.com/watch?v=4ClOkX0SWW4)
+- [How similar are two words? | Needleman–Wunsch #SoME4](https://www.youtube.com/watch?v=xbcpnItE3_4)
+- [Tinyalign](https://github.com/0xMukesh/tinyalign/)
+
