@@ -115,10 +115,8 @@ Here, the LCS is `acf`.
 
 Hence, it can also be a sequence that is scattered across *both* strings.
 
-One interesting characteristic of this problem is that the LCS can be computed incrementally, by calculating the LCS of substrings
+The most efficient solution to this problem involves the use of *dynamic programming*, where we recursively compute the LCS of substrings
 (more on this later).
-
-This is why the most efficient solution is to use dynamic programming.
 
 ### Dynamic Programming Solution
 
@@ -258,12 +256,14 @@ s_1 = s_1[1]\,s_1[2]\cdots s_1[m]
 s_2 = s_2[1]\,s_2[2]\cdots s_2[n]
 $$
 
-This is what I meant when I said the LCS is computed incrementally with the LCS of substrings:
+This is what I meant when I said the LCS is computed recursively with the LCS of substrings:
 $$
 d_{i-1,\,j} = \mathrm{LCS}\bigl(
   s_1[1\ldots i-1],\ s_2[1\ldots j]
 \bigr)
 $$
+
+We can define our movement with the following formula:
 
 $$
 \text{move}(i,j) = \left\{
@@ -337,17 +337,98 @@ $$\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
 
 Example with "plan" and "paint", LCS is `pan`.
 
-## Needleman-Wunsch
+## Basic Needleman-Wunsch
 
 In bioinformatics, NW is an algorithm used to align protein or nucleotide sequences. Just like the LCS solution, NW is also a global 
-alignment algorithm. In fact, the LCS solution is actually a simplified version of NW.
+alignment algorithm. In fact, the LCS solution is actually a simplified version of NW (this is why we use the suspiciously similar
+alignment matrix).
+
 Generally, NW is used when two sequences are similar and they need to be aligned to check how they have mutated.
 
-If we convert this to a plain text analogy, consider two strings that are *supposed* to be similar but aren't (like in the case of spelling
+If we use a plain text analogy, consider two strings that are *supposed* to be similar but aren't (like in the case of spelling
 mistakes and such). If we want to see *how much* they have diverged, we use NW.
 
 With NW, you can assign an alignment "score" to every possible alignment that can exist with two strings. It is an optimal algorithm,
 so it produces the best possible alignment for the chosen scoring system.
+
+Before we begin, I would like to introduce the following terms:
+
+- Substitution score
+- Gap penalty
+
+Just like in the LCS solution, we define `s1` and `s2` as our strings, having lengths `m` and `n` respectively.
+
+$$
+s_1 = s_1[1]\,s_1[2]\cdots s_1[m]
+\qquad
+s_2 = s_2[1]\,s_2[2]\cdots s_2[n]
+$$
+
+Mathematically, we define the substition score as:
+
+$$
+\text{sub}(s1_i, s2_j) := 
+\begin{cases} 
+    +2 & \text{if } s1_i = s2_j \\ 
+    -1 & \text{if } s1_i \neq s2_j 
+\end{cases} 
+\qquad \text{and} \qquad \text{gap} := -1.
+$$
+
+This just means that for the $i$th character of `s1` and $j$th character of `s2`,
+- If they match, add our *match* score (in this case, 2)
+- If they don't match, add our *mismatch* score (in this case, -1)
+
+Then we also define our *gap penalty* as -1.
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c}
+  \textcolor{#81a1c1}{\texttt{\text{plan}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\texttt{\text{p}}} & \; 
+  \texttt{\text{l}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{a}}} & \; 
+  \texttt{\text{-}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{n}}} & \; 
+  \texttt{\text{-}} \\[0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{paint}}} \hspace{0.5em}
+  & \; \textcolor{#bf616a}{\texttt{\text{p}}} & \; 
+  \texttt{\text{-}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{a}}} & \; 
+  \texttt{\text{i}} & \; 
+  \textcolor{#bf616a}{\texttt{\text{n}}} & \; 
+  \texttt{\text{t}} \\[0.5em]
+  \hline
+  & \; \textcolor{#a3be8c}{\texttt{\text{+2}}} & \; 
+  \texttt{\text{-1}} & \; 
+  \textcolor{#a3be8c}{\texttt{\text{+2}}} & \; 
+  \texttt{\text{-1}} & \; 
+  \textcolor{#a3be8c}{\texttt{\text{+2}}} & \; 
+  \texttt{\text{-1}}
+\end{array}
+$$
+
+For this alignment, the score would be `2 + -1 + 2 + -1 + 2 + -1 = 3`.
+
+Consider two strings, `s1="plan"` and `s2="paint"`.
+
+We map out the alignment matrix like we did in the case of LCS:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq
+\end{array}
+$$
 
 ### Implementation
 
