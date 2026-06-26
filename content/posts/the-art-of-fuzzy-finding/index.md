@@ -118,6 +118,9 @@ Hence, it can also be a sequence that is scattered across *both* strings.
 The most efficient solution to this problem involves the use of *dynamic programming*, where we recursively compute the LCS of substrings
 (more on this later).
 
+$\textcolor{#b48ead}{\texttt{\text{fᵤₙ fₐcₜ (˙𐃷˙)}}}$ `diff` (and by extension, `git diff`) uses [LCS under the hood](https://en.wikipedia.org/wiki/Diff#Algorithm) 
+to find the smallest set of changes between two files.
+
 ### Dynamic Programming Solution
 
 Let's initialize a matrix with `m+1` rows and `n+1` columns where:
@@ -307,7 +310,7 @@ Reversing this, we get the string "acf" (the LCS).
 I have referenced [this video](https://www.youtube.com/watch?v=4ClOkX0SWW4) for the explanation, the animation makes it very intuitive
 to understand.
 
-### Why LCS is a global alignment problem
+### LCS and Global Alignment
 
 In the introduction, I mentioned *global alignment problems*. LCS is also a global alignment problem.
 
@@ -386,7 +389,7 @@ This just means that for the $i$th character of `a` and $j$th character of `b`,
 - If they match, add our *match* score (in this case, 2)
 - If they don't match, add our *mismatch* score (in this case, -1)
 
-### Gap Penalty And Scoring Matrix
+### Gap Penalty and Scoring Matrix
 
 Then we also define our *gap penalty* as -1.
 
@@ -439,7 +442,7 @@ $$
 \end{array}
 $$
 
-### Sub-alignment Maximum Score
+### Sub-Alignment Maximum Score
 
 Think of sub-alignment maximum scores as the squares in the scoring matrix.
 
@@ -551,7 +554,7 @@ I have referenced [this master's thesis by Oliver Boes](https://github.com/oboes
 
 ### Implementation
 
-1. We define our NW struct like so:
+1. Defining the NW struct:
 
 ```go
 type Nw struct {
@@ -697,6 +700,10 @@ $$
 
 3. Traceback:
 
+In order to actually get our traceback sequences, we need to backtrack from the bottom right corner of the scoring matrix.
+
+We define another method, `traceback` which takes in `a` and `b` and outputs two sequences.
+
 ```go
 func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
     // (a) initialize buffers and pos
@@ -709,27 +716,34 @@ func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
 (a) Initializing buffers and `pos`
 
 ```go
-maxLen := len(a) + len(b)
-bufA := make([]byte, maxLen)
-bufB := make([]byte, maxLen)
-pos := maxLen - 1
+func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
+    maxLen := len(a) + len(b)
+    bufA := make([]byte, maxLen)
+    bufB := make([]byte, maxLen)
+    pos := maxLen - 1
+    // ...
+}
 ```
 
 (b) Backtracking loop
 
 ```go
-i, j := len(a), len(b)
+func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
+    // ...
+    i, j := len(a), len(b)
 
-for i > 0 && j > 0 {
-    score := nw.mismatch
+    for i > 0 && j > 0 {
+        score := nw.mismatch
 
-    if a[i-1] == b[j-1] {
-        score = nw.match
+        if a[i-1] == b[j-1] {
+            score = nw.match
+        }
+
+        switch nw.dp[i][j] {
+            // handling diagonal, top and left
+        }
     }
-
-    switch nw.dp[i][j] {
-        // handling diagonal, top and left
-    }
+    // ...
 }
 ```
 
@@ -764,22 +778,28 @@ default:
 (c) Edge cases (string 1 characters run out before string 2 or vice versa):
 
 ```go
-for ; i > 0; i-- {
-    bufA[pos] = a[i-1]
-    bufB[pos] = '_'
-    pos--
-}
+func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
+    // ...
+    for ; i > 0; i-- {
+        bufA[pos] = a[i-1]
+        bufB[pos] = '_'
+        pos--
+    }
 
-for ; j > 0; j-- {
-    bufA[pos] = '_'
-    bufB[pos] = b[j-1]
-    pos--
+    for ; j > 0; j-- {
+        bufA[pos] = '_'
+        bufB[pos] = b[j-1]
+        pos--
 }
 ```
 
 And finally, returning the trimmed buffers:
+
 ```go
-return bufA[pos+1:], bufB[pos+1:]
+func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
+    // ...
+    return bufA[pos+1:], bufB[pos+1:]
+}
 ```
 
 ## Smith-Waterman
