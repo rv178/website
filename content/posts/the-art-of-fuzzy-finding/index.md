@@ -698,6 +698,54 @@ S(i-1, j-1) + \text{sub}(a_i, b_j)
 \end{cases}
 $$
 
+Consider an example where we compute $S(1,1)$:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \colorbox{#bf616a}{\texttt{0}} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{-1}} & \mkern-10mu  \mkern-10mu & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-5} \\[0.2em]
+   &  & \mkern-10mu \searrow \mkern-10mu & \downarrow & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \colorbox{#bf616a}{\texttt{-1}} & \mkern-10mu \rightarrow \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \texttt{-2} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \texttt{-3} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \texttt{-4} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq
+\end{array}
+$$
+
+Case 1: 0 + `diagDelta` = 0 + 2 = 2
+
+Case 2: -1 + `gap` = -1 + -1 = -2
+
+Case 3: -1 + `gap` = -1 + -1 = -2
+
+$=> S(1,1) = max(2, -2, -2) = 2$.
+
+Filling out the whole matrix like this would give us:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-5} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{3} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{4} & \mkern-10mu  \mkern-10mu & \texttt{3}
+\end{array}
+$$
+
+Where 3 is our most optimal alignment score. Note that you can move to a square in multiple ways if the values of `fromDiagScore`,
+`fromTopScore` or `fromLeftScore` are same. In that case, during traceback, we will find the alignment with the most optimal 
+alignment score (3 in this case).
+
 3. Traceback:
 
 In order to actually get our traceback sequences, we need to backtrack from the bottom right corner of the scoring matrix.
@@ -715,6 +763,9 @@ func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
 
 (a) Initializing buffers and `pos`
 
+We initialize two empty buffers that will contain the characters for seq A and seq B. The idea is that we push to these buffers starting from
+the position `[len(a) + len(b)] - 1` and then trim out the rest of the 0s to avoid a redundant `slices.Reverse()` or something similar.
+
 ```go
 func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
     maxLen := len(a) + len(b)
@@ -724,6 +775,16 @@ func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
     // ...
 }
 ```
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{0}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{1}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{.....}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos-1}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{seq A}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{0} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{seq B}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{0}
+\end{array}
+$$
 
 (b) Backtracking loop
 
