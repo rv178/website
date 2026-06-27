@@ -22,7 +22,7 @@ to the abstract idea of "employment" (foreign to many, including myself).
 Anyhow, we were talking about the things we were working on, and he mentioned that he was building a bioinformatics sequence alignment
 toolkit (mainly to understand SIMD).
 
-The crux of the conversation was that sequence aligners in bioinformatics borrow the concept of [edit distance](https://en.wikipedia.org/wiki/Edit_distance)
+The crux of the conversation was that sequence aligners in bioinformatics borrow the concept of [edit distance](https://en.wikipedia.org/wiki/Edit_distance),
 which is a way of quantifying how dissimilar two strings are (in their case, taking sequences of DNA, RNA, etc. and trying to align and analyze the patterns).
 
 This is an example taken from [Wikipedia](https://en.wikipedia.org/wiki/Levenshtein_distance):
@@ -54,7 +54,7 @@ or even just searching through things in general. I wanted to know the concept b
 
 Let's consider a simpler problem space.
 
-Consider two strings, `s1 = "ccdegf"` and `s2 = "def"`.
+Consider two strings, `a = "def"` and `b = "ccdegf"`.
 
 We need to find the longest sequence of characters that appears in both strings in the same relative order.
 
@@ -83,9 +83,9 @@ $$
 
 The LCS here is `def`.
 
-In the first string, *not all* the characters are adjacent to each other, but they still appear in the same *order*.
+In "ccdegf" , *not all* the characters are adjacent to each other, but they still appear in the same *order*.
 
-Taking a second example with `s1 = abcdef` and `s2 = aacf`:
+Taking a second example with `a = "aacf"` and `b = "abcdef"`:
 
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
@@ -115,7 +115,7 @@ Here, the LCS is `acf`.
 
 Hence, it can also be a sequence that is scattered across *both* strings.
 
-The most efficient solution to this problem involves the use of *dynamic programming*, where we recursively compute the LCS of substrings
+The standard efficient solution to this problem involves the use of *dynamic programming*, where we recursively compute the LCS of substrings
 (more on this later).
 
 $\textcolor{#b48ead}{\texttt{\text{fᵤₙ fₐcₜ (˙𐃷˙)}}}$ `diff` (and by extension, `git diff`) uses [LCS under the hood](https://en.wikipedia.org/wiki/Diff#Algorithm) 
@@ -124,11 +124,11 @@ to find the smallest set of changes between two files.
 ### Dynamic Programming Solution
 
 Let's initialize a matrix with `m+1` rows and `n+1` columns where:
-- `m` is the length of `s2`
-- `n` is the length of `s1`
+- `m` is the length of `a`
+- `n` is the length of `b`
 - first row and column are filled with `0`s
 
-Taking `s1 = abcdef` and `s2 = aacf`, it is a `5x7` matrix.
+Taking `a = "aacf"` and `b = "abcdef"`, it is a `5x7` matrix.
 
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
@@ -156,20 +156,20 @@ $$
 \end{array}
 $$
 
-- If the characters of the current square `s` match (in this case, `a` and `a`), then the value of `s` is `p + 1` (upper left diagonal + 1).
+- If the characters of the current square `s` match (in this case, 'a' and 'a'), then the value of `s` is `p + 1` (upper left diagonal + 1).
 - If they don't match, we take $max(r, q)$.
 
 $$
 \text{s} =
 \begin{cases}
-\text{p} + 1            & \text{if } s_1[i] = s_2[j] \\
-\max(\text{r}, \text{q}) & \text{if } s_1[i] \neq s_2[j]
+\text{p} + 1            & \text{if } a[i] = b[j] \\
+\max(\text{r}, \text{q}) & \text{if } a[i] \neq b[j]
 \end{cases}
 $$
 
-Where $(i, j)$ are the coordinates of the current square, and `s1` and `s2` are the strings we defined.
+Where $(i, j)$ are the coordinates of the current square, and `a` and `b` are the strings we defined.
 
-Considering the first unfilled square (marked in red), the characters *do* match (`a` and `a`):
+Considering the first unfilled square (marked in red), the characters *do* match ('a' and 'a'):
 
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
@@ -199,7 +199,7 @@ $$
 \end{array}
 $$
 
-The characters *do not* match (`a` and `b`). So we take the maximum value of the left square and the top square.
+The characters *do not* match ('a' and 'b'). So we take the maximum value of the left square and the top square.
 In this case, $max(1, 0)$, which is 1.
 
 Filling out the rest of the row and moving to the second iteration:
@@ -216,7 +216,7 @@ $$
 \end{array}
 $$
 
-The characters match (`a` and `a`), so we put the value as `0 + 1 = 1`.
+The characters match ('a' and 'a'), so we put the value as `0 + 1 = 1`.
 
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
@@ -252,17 +252,17 @@ In order to obtain the actual LCS, we can backtrack from the bottom right corner
 - If characters match, then go back to the upper left diagonal square.
 - If they don't match, then move in the direction of the larger value, either up or left.
 
-`s1` and `s2` are our strings:
+`a` and `b` are our strings:
 $$
-s_1 = s_1[1]\,s_1[2]\cdots s_1[m]
+a = a[1]\,a[2]\cdots a[m]
 \qquad
-s_2 = s_2[1]\,s_2[2]\cdots s_2[n]
+b = b[1]\,b[2]\cdots b[n]
 $$
 
 This is what I meant when I said the LCS is computed recursively with the LCS of substrings:
 $$
 d_{i-1,\,j} = \mathrm{LCS}\bigl(
-  s_1[1\ldots i-1],\ s_2[1\ldots j]
+  a[1\ldots i-1],\ b[1\ldots j]
 \bigr)
 $$
 
@@ -271,9 +271,9 @@ We can define our movement with the following formula:
 $$
 \text{move}(i,j) = \left\{
 \begin{array}{l c l}
-  \nwarrow   & \text{if } s_1[i] = s_2[j]    & \\
-  \uparrow   & \text{if } s_1[i] \neq s_2[j] & \text{and } \max(d_{i-1,j},\, d_{i,j-1}) = d_{i-1,j} \\
-  \leftarrow   & \text{if } s_1[i] \neq s_2[j] & \text{and } \max(d_{i-1,j},\, d_{i,j-1}) = d_{i,j-1}
+  \nwarrow   & \text{if } a[i] = b[j]    & \\
+  \uparrow   & \text{if } a[i] \neq b[j] & \text{and } \max(d_{i-1,j},\, d_{i,j-1}) = d_{i-1,j} \\
+  \leftarrow   & \text{if } a[i] \neq b[j] & \text{and } \max(d_{i-1,j},\, d_{i,j-1}) = d_{i,j-1}
 \end{array}
 \right.
 $$
@@ -393,7 +393,7 @@ This just means that for the $i$th character of `a` and $j$th character of `b`,
 
 Then we also define our *gap penalty* as -1.
 
-Consider two strings, `a = plan` and `b = paint`.
+Consider two strings, `a = "plan"` and `b = "paint"`.
 
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
@@ -489,68 +489,23 @@ We set $S(0,0) = 0$ (an empty alignment is worth 0 points).
 
 *Side note: we cannot move in any direction other than these three because that would result in using the same characters again.*
 
-### Example Path
-
-$$
-\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
-\begin{array}{r | c c c c c c}
-  \textcolor{#81a1c1}{\texttt{\text{plan}}} \hspace{0.5em}
-  & \; \textcolor{#bf616a}{\texttt{\text{p}}} & \; 
-  \texttt{\text{l}} & \; 
-  \textcolor{#bf616a}{\texttt{\text{a}}} & \; 
-  \texttt{\text{-}} & \; 
-  \textcolor{#bf616a}{\texttt{\text{n}}} & \; 
-  \texttt{\text{-}} \\[0.5em]
-  \textcolor{#81a1c1}{\texttt{\text{paint}}} \hspace{0.5em}
-  & \; \textcolor{#bf616a}{\texttt{\text{p}}} & \; 
-  \texttt{\text{-}} & \; 
-  \textcolor{#bf616a}{\texttt{\text{a}}} & \; 
-  \texttt{\text{i}} & \; 
-  \textcolor{#bf616a}{\texttt{\text{n}}} & \; 
-  \texttt{\text{t}} \\[0.5em]
-  \hline
-  & \; \textcolor{#a3be8c}{\texttt{\text{+2}}} & \; 
-  \texttt{\text{-1}} & \; 
-  \textcolor{#a3be8c}{\texttt{\text{+2}}} & \; 
-  \texttt{\text{-1}} & \; 
-  \textcolor{#a3be8c}{\texttt{\text{+2}}} & \; 
-  \texttt{\text{-1}}
-\end{array}
-$$
-
-The path for this alignment would look like so:
+For example, the path for `pla-n-`/`p-aint` would look like this:
 
 $$
 \def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
 \begin{array}{r | c c c c c c c c c c c}
   \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
-  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \colorbox{#b48ead}{\texttt{0}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \fcolorbox{#d8dee9}{#b48ead}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
    &  & \mkern-10mu \searrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
   \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu & \downarrow & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
    &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \searrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
-  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
-   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu & \downarrow & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
-  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
-   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \searrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
-  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu \rightarrow \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu \rightarrow \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}}
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu \rightarrow \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \searrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \sq & \mkern-10mu  \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}} & \mkern-10mu \rightarrow \mkern-10mu & \fcolorbox{#d8dee9}{#bf616a}{\phantom{\rule{0.7em}{0.7em}}}
 \end{array}
 $$
-
-
-| a[i] | b[j] | next move | type  | score delta      | seq A | seq B |
-|-------|:-----:|-----------|-------|------------------|-------|-------|
-| p     | p     | diagonal  | match | match (+2)       | p     | p     |
-| a     | l     | down      | gap   | gap penalty (-1) | l     | -     |
-| a     | a     | diagonal  | match | match (+2)       | a     | a     |
-| i     | n     | right     | gap   | gap penalty (-1) | -     | i     |
-| n     | n     | diagonal  | match | match (+2)       | n     | n     |
-| t     | n     | right     | gap   | gap penalty (-1) | -     | t     |
-
-This example doesn't have a case where we move diagonally AND the characters mismatch, but if that happens, the score delta would be 
-the mismatch value.
-
-I have referenced [this master's thesis by Oliver Boes](https://github.com/oboes/gotoh/blob/master/doc/thesis.pdf) and 
-[this youtube video](https://www.youtube.com/watch?v=xbcpnItE3_4) for the explanation.
 
 ### Implementation
 
@@ -743,7 +698,7 @@ $$
 $$
 
 Where 3 is our most optimal alignment score. Note that you can move to a square in multiple ways if the values of `fromDiagScore`,
-`fromTopScore` or `fromLeftScore` are same. In that case, during traceback, we will find the alignment with the most optimal 
+`fromTopScore` or `fromLeftScore` are the same. In that case, during traceback, we will find the alignment with the most optimal 
 alignment score (3 in this case).
 
 3. Traceback:
@@ -808,6 +763,31 @@ func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
 }
 ```
 
+We start from the bottom right corner ($S(len(a), len(b))$). We have three options:
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-5} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{3} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \colorbox{#b48ead}{\texttt{1}} & \mkern-10mu  \mkern-10mu & \colorbox{#b48ead}{\texttt{0}} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \nwarrow \mkern-10mu & \uparrow \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \colorbox{#b48ead}{\texttt{4}} & \mkern-10mu \leftarrow \mkern-10mu & \colorbox{#bf616a}{\texttt{3}}
+\end{array}
+$$
+
+We limit our movement to going `top`, `left`, or `diagonally upwards` (we're backtracking), since when we filled the matrix
+we limited our movement to `down`, `right` or `diagonally downwards`.
+
+In the code, we check if the current square is
+
+- $S(i-1, j-1) + sub(a_i, b_j)$ -> "diagonal" case, where score delta is the substitution score:
+
 `Diagonal`
 ```go
 case nw.dp[i-1][j-1] + score:
@@ -818,23 +798,121 @@ case nw.dp[i-1][j-1] + score:
     pos--
 ```
 
+- $S(i-1, j) + gap$ -> "top" case, where score delta is the gap penalty:
+
 `Top`
 ```go
 case nw.dp[i-1][j] + nw.gap:
     bufA[pos] = a[i-1]
-    bufB[pos] = '_'
+    bufB[pos] = '-'
     i--
     pos--
 ```
 
+- $S(i, j-1) + gap$ -> "left" case, where score delta is the gap penalty:
+
 `Left/default`
 ```go
 default:
-    bufA[pos] = '_'
+    bufA[pos] = '-'
     bufB[pos] = b[j-1]
     j--
     pos--
 ```
+
+In our case, step 1 is going left (4 + -1 (*gap penalty*) = 3):
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-5} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{3} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \colorbox{#b48ead}{\texttt{4}} & \mkern-10mu \leftarrow \mkern-10mu & \colorbox{#bf616a}{\texttt{3}}
+\end{array}
+$$
+
+We do two things:
+- Add '-' to seq A and $b[j-1]$ to seq B. (len(a) = $i$ and len(b) = $j$)
+- Decrement $j$ and $pos$ by 1.
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{0}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{1}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{.....}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+1}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{seq A}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{-}} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{seq B}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{t}}
+\end{array}
+$$
+
+In the case of a diagonal (for example, 4 -> 2; `2 + 2 (match) = 4`):
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-5} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{3} & \mkern-10mu  \mkern-10mu & \colorbox{#b48ead}{\texttt{2}} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \nwarrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{4}} & \mkern-10mu \leftarrow \mkern-10mu & \colorbox{#bf616a}{\texttt{3}}
+\end{array}
+$$
+
+- We add $a[i-1]$ to seq A and $b[j-1]$ to seq B.
+- Also decrement $i$, $j$, and $pos$ by 1.
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{0}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{.....}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+1}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+2}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{seq A}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{n}} & \mkern-10mu  \mkern-10mu & \texttt{-} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{seq B}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{n}} & \mkern-10mu  \mkern-10mu & \texttt{t}
+\end{array}
+$$
+
+In the case of upwards movement (for example, 1 -> 2; `2 + -1 (gap) = 1`):
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{.}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{p}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{a}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{i}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{n}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{t}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{.}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} & \mkern-10mu  \mkern-10mu & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-5} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{p}}} \hspace{0.5em} & \texttt{-1} & \mkern-10mu  \mkern-10mu & \colorbox{#b48ead}{\texttt{2}} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu & \uparrow & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{l}}} \hspace{0.5em} & \texttt{-2} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{1}} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{-2} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \nwarrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{a}}} \hspace{0.5em} & \texttt{-3} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{3}} & \mkern-10mu \leftarrow \mkern-10mu & \colorbox{#bf616a}{\texttt{2}} & \mkern-10mu  \mkern-10mu & \texttt{1} & \mkern-10mu  \mkern-10mu & \texttt{0} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu \nwarrow \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{n}}} \hspace{0.5em} & \texttt{-4} & \mkern-10mu  \mkern-10mu & \texttt{-1} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \texttt{2} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{4}} & \mkern-10mu \leftarrow \mkern-10mu & \colorbox{#bf616a}{\texttt{3}}
+\end{array}
+$$
+
+- We add $a[i-1]$ to seq A and '-' to seq B.
+- Also decrement $i$ and $pos$ by 1.
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{0}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{.....}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+1}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+2}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+3}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+4}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{pos+5}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{seq A}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{l}} & \mkern-10mu  \mkern-10mu & \texttt{a} & \mkern-10mu  \mkern-10mu & \texttt{-} & \mkern-10mu  \mkern-10mu & \texttt{n} & \mkern-10mu  \mkern-10mu & \texttt{-} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{seq B}}} \hspace{0.5em} & \texttt{0} & \mkern-10mu  \mkern-10mu & \texttt{.....} & \mkern-10mu  \mkern-10mu & \texttt{0} & \mkern-10mu  \mkern-10mu & \colorbox{#bf616a}{\texttt{-}} & \mkern-10mu  \mkern-10mu & \texttt{a} & \mkern-10mu  \mkern-10mu & \texttt{i} & \mkern-10mu  \mkern-10mu & \texttt{n} & \mkern-10mu  \mkern-10mu & \texttt{t}
+\end{array}
+$$
 
 (c) Edge cases (string 1 characters run out before string 2 or vice versa):
 
@@ -843,18 +921,19 @@ func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
     // ...
     for ; i > 0; i-- {
         bufA[pos] = a[i-1]
-        bufB[pos] = '_'
+        bufB[pos] = '-'
         pos--
     }
 
     for ; j > 0; j-- {
-        bufA[pos] = '_'
+        bufA[pos] = '-'
         bufB[pos] = b[j-1]
         pos--
+    }
 }
 ```
 
-And finally, returning the trimmed buffers:
+(d) And finally, returning the trimmed buffers:
 
 ```go
 func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
@@ -862,6 +941,19 @@ func (nw *Nw) traceback(a []byte, b []byte) ([]byte, []byte) {
     return bufA[pos+1:], bufB[pos+1:]
 }
 ```
+
+$$
+\def\sq{\boxed{\phantom{\rule{0.7em}{0.7em}}}}
+\begin{array}{r | c c c c c c c c c c c}
+  \hspace{0.5em} & \textcolor{#81a1c1}{\texttt{\text{0}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{1}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{2}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{3}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{4}}} & \mkern-10mu  \mkern-10mu & \textcolor{#81a1c1}{\texttt{\text{5}}} \\[0.5em] \hline \\[-0.5em]
+  \textcolor{#81a1c1}{\texttt{\text{seq A}}} \hspace{0.5em} & \texttt{p} & \mkern-10mu  \mkern-10mu & \texttt{l} & \mkern-10mu  \mkern-10mu & \texttt{a} & \mkern-10mu  \mkern-10mu & \texttt{-} & \mkern-10mu  \mkern-10mu & \texttt{n} & \mkern-10mu  \mkern-10mu & \texttt{-} \\[0.2em]
+   &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  & \mkern-10mu  \mkern-10mu &  \\[0.2em]
+  \textcolor{#81a1c1}{\texttt{\text{seq B}}} \hspace{0.5em} & \texttt{p} & \mkern-10mu  \mkern-10mu & \texttt{-} & \mkern-10mu  \mkern-10mu & \texttt{a} & \mkern-10mu  \mkern-10mu & \texttt{i} & \mkern-10mu  \mkern-10mu & \texttt{n} & \mkern-10mu  \mkern-10mu & \texttt{t}
+\end{array}
+$$
+
+I have referenced [this master's thesis by Oliver Boes](https://github.com/oboes/gotoh/blob/master/doc/thesis.pdf) and 
+[this video](https://www.youtube.com/watch?v=xbcpnItE3_4) for the explanation.
 
 ## Smith-Waterman
 
