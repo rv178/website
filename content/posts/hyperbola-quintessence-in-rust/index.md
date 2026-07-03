@@ -9,7 +9,7 @@ summary: "Generating sliding piece attacks for rooks, bishops and queens with hy
 cover:
     image: "cover.png"
     alt: "Description of image"
-    caption: "Sliding piece attack generation"
+    caption: "Generating sliding piece attacks for rooks, bishops and queens with hyperbola quintessence."
     relative: true
 ---
 

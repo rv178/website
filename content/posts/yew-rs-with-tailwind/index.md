@@ -8,6 +8,7 @@ summary: "Setting up Yew.rs with TailwindCSS to build a web frontend in Rust usi
 cover:
     image: "cover.png"
     alt: "Description of image"
+    caption: "Setting up Yew.rs with TailwindCSS to build a web frontend in Rust using WASM."
     relative: true
 ---
 

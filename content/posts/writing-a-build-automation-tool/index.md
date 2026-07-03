@@ -3,11 +3,12 @@ title: "Writing a Build Automation Tool"
 date: 2022-07-08T15:20:06+05:30
 draft: false
 tags: ["Rust"]
-summary: "Building Baker, a build automation tool written in Rust that uses TOML for configuration."
+summary: "Building a build automation tool written in Rust that uses TOML for configuration."
 
 cover:
     image: "cover.png"
     alt: "Description of image"
+    caption: "Building a build automation tool written in Rust that uses TOML for configuration."
     relative: true
 ---
 

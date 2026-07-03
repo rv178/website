@@ -8,6 +8,7 @@ summary: "Switching from X11 to Wayland and finding a Wayland replacement for ea
 cover:
     image: "cover.png"
     alt: "Description of image"
+    caption: "Switching from X11 to Wayland and finding a Wayland replacement for each part of the old setup."
     relative: true
 ---
 

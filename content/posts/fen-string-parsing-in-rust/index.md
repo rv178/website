@@ -8,7 +8,7 @@ summary: "Breaking down a FEN string and parsing it into a usable game state for
 cover:
     image: "cover.png"
     alt: "Description of image"
-    caption: "FEN string to chess position"
+    caption: "Breaking down a FEN string and parsing it into a usable game state for a chess engine."
     relative: true
 ---
 

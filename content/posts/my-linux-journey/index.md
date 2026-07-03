@@ -8,6 +8,7 @@ summary: "Recap of my Linux journey, from starting out on Pop!_OS to ending up o
 cover:
     image: "cover.png"
     alt: "Description of image"
+    caption: "Recap of my Linux journey, from starting out on Pop!_OS to ending up on Arch Linux."
     relative: true
 ---
 

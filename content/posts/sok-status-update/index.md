@@ -8,7 +8,7 @@ summary: "SoK status update on adding font subsetting to Okular, covering how fo
 cover:
     image: "cover.png"
     alt: "Cover"
-    caption: "We are so back"
+    caption: "SoK status update on adding font subsetting to Okular, covering how fonts work and getting HarfBuzz set up with Poppler."
     relative: true
 ---
 

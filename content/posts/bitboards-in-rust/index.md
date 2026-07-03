@@ -8,7 +8,7 @@ summary: "Representing the pieces of a chess board as bitboards (using 64-bit in
 cover:
     image: "cover.png"
     alt: "Description of image"
-    caption: "Bitboard conversion"
+    caption: "Representing the pieces of a chess board as bitboards (using 64-bit integers) and using them to generate piece attacks."
     relative: true
 ---
 
