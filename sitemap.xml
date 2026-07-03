@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rohith.net/reviews/</loc>
-    <lastmod>2026-06-06T06:23:58+05:30</lastmod>
+    <loc>https://rohith.net/tags/go/</loc>
+    <lastmod>2026-06-22T12:29:33+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/posts/</loc>
+    <lastmod>2026-06-22T12:29:33+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/</loc>
+    <lastmod>2026-06-22T12:29:33+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/tags/</loc>
+    <lastmod>2026-06-22T12:29:33+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/posts/the-art-of-fuzzy-finding/</loc>
+    <lastmod>2026-06-22T12:29:33+05:30</lastmod>
+  </url><url>
+    <loc>https://rohith.net/reviews/</loc>
     <lastmod>2026-06-06T06:23:58+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/reviews/whiplash/</loc>
@@ -29,13 +41,7 @@
     <loc>https://rohith.net/tags/kde/</loc>
     <lastmod>2026-02-01T21:47:43+05:30</lastmod>
   </url><url>
-    <loc>https://rohith.net/posts/</loc>
-    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
-  </url><url>
     <loc>https://rohith.net/posts/sok-status-update/</loc>
-    <lastmod>2026-02-01T21:47:43+05:30</lastmod>
-  </url><url>
-    <loc>https://rohith.net/tags/</loc>
     <lastmod>2026-02-01T21:47:43+05:30</lastmod>
   </url><url>
     <loc>https://rohith.net/misc/</loc>
