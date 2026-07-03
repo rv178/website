@@ -26,7 +26,7 @@ Anyhow, we were talking about the things we were working on, and he mentioned th
 toolkit (mainly to understand SIMD).
 
 The crux of the conversation was that sequence aligners in bioinformatics borrow the concept of [edit distance](https://en.wikipedia.org/wiki/Edit_distance),
-which is a way of quantifying how dissimilar two strings are (in their case, taking sequences of DNA, RNA, etc. and trying to align and analyze the patterns).
+which is a way of quantifying how dissimilar two strings are (in their case, taking sequences of DNA, RNA, etc. and trying to align and analyse the patterns).
 
 This is an example taken from [Wikipedia](https://en.wikipedia.org/wiki/Levenshtein_distance):
 
@@ -86,7 +86,7 @@ $$
 
 The LCS here is `def`.
 
-In "ccdegf" , *not all* the characters are adjacent to each other, but they still appear in the same *order*.
+In "ccdegf", *not all* the characters are adjacent to each other, but they still appear in the same *order*.
 
 Taking a second example with `a = "aacf"` and `b = "abcdef"`:
 
@@ -345,11 +345,11 @@ Example with "plan" and "paint", LCS is `pan`.
 
 ## Needleman-Wunsch
 
-In bioinformatics, Needleman-Wunsch (NW) is an algorithm used to align protein or nucleotide sequences. Just like the LCS solution, NW is also a global 
+In bioinformatics, Needleman-Wunsch (NW) is an algorithm used to align amino acid or nucleotide sequences. Just like the LCS solution, NW is also a global 
 alignment algorithm. In fact, the LCS solution is actually a simplified version of NW (this is why we use the suspiciously similar
 alignment matrix).
 
-Generally, NW is used when two sequences are similar and they need to be aligned to check how they have mutated.
+Generally, NW is used to check whether two sequences are similar or not, one usecase being to gauge how much they have mutated.
 
 If we use a plain text analogy, consider two strings that are *supposed* to be similar but aren't (like in the case of spelling
 mistakes and such). If we want to see *how much* they have diverged, we use NW.
