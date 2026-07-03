@@ -11,14 +11,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 22 Jun 2026 12:29:33 +0530</lastBuildDate><atom:link href="https://rohith.net/tags/go/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The Art of Fuzzy Finding</title>
-      <link>https://rohith.net/posts/the-art-of-fuzzy-finding/</link>
-      <pubDate>Mon, 22 Jun 2026 12:29:33 +0530</pubDate>
-      <guid>https://rohith.net/posts/the-art-of-fuzzy-finding/</guid>
-      <description>Writing a SIMD accelerated fuzzy finder that uses the Smith-Waterman algorithm.</description>
-    </item>
-    
   </channel>
 </rss>
 
