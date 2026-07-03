@@ -1,6 +1,9 @@
 ---
 title: "The Art of Fuzzy Finding"
 date: 2026-06-22T12:29:33+05:30
+build:
+  list: never
+  render: always
 draft: true
 tags: ["Go"]
 summary: "Writing a SIMD accelerated fuzzy finder that uses the Smith-Waterman algorithm."
