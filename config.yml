@@ -15,9 +15,9 @@ minify:
 
 params:
   env: production
-  title: rohith
+  title: rohith vinod
   description: "Like a Chevy in quicksand"
-  keywords: [Blog, Portfolio, Linux, rv178, Idlidev]
+  keywords: [Blog, Portfolio, Linux, rv178, Idlidev, Rohith, Rohith Vinod]
   #author: rv178
   images: ["https://raw.githubusercontent.com/rv178/website/main/static/favicon.png"]
   DateFormat: "January 2, 2006"
