@@ -17,4 +17,7 @@ I am a second year engineering undergraduate student interested in Linux and sys
 - Discord handle: `rv178`
 - You can find my dotfiles [here](https://github.com/rv178/.dotfiles).
 
-{{< buttons "/88x31/rohith.png|/88x31/rohith-light.png" "/88x31/namish.png|https://namishh.com" "/88x31/nithi.png|https://nithitsuki.com/">}}
+{{< buttons "/88x31/rohith.png|/88x31/rohith-light.png" 
+    "/88x31/namish.png|https://namishh.com" 
+        "/88x31/nithi.png|https://nithitsuki.com/"
+        "/88x31/harsha.png|https://haarshmap.github.io/">}}
