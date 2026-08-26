@@ -1,17 +1,17 @@
 ---
-title: "The Art of Fuzzy Finding"
+title: "The Art of Fuzzy Finding, Part 1"
 date: 2026-06-22T12:29:33+05:30
 build:
   list: never
   render: always
 draft: true
 tags: ["Go"]
-summary: "Writing a SIMD accelerated fuzzy finder that uses the Smith-Waterman algorithm."
+summary: "Exploring Needleman-Wunsch and Smith-Waterman for fuzzy finding."
 
 cover:
     image: "cover.png"
     alt: "Cover"
-    caption: "Writing a SIMD accelerated fuzzy finder that uses the Smith-Waterman algorithm."
+    caption: "Exploring Needleman-Wunsch and Smith-Waterman for fuzzy finding."
     relative: true
 ---
 
@@ -960,13 +960,7 @@ I have referenced [this master's thesis by Oliver Boes](https://github.com/oboes
 
 ## Smith-Waterman
 
-### Affine Gaps
-
-### Bit Vectors
-
-### SIMD Acceleration
-
-## Results
+### Affine Gap Penalties
 
 ## References
 

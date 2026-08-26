@@ -20,4 +20,5 @@ I am a second year engineering undergraduate student interested in Linux and sys
 {{< buttons "/88x31/rohith.png|/88x31/rohith-light.png" 
     "/88x31/namish.png|https://namishh.com" 
         "/88x31/nithi.png|https://nithitsuki.com/"
-        "/88x31/harsha.png|https://haarshmap.github.io/">}}
+        "/88x31/harsha.png|https://https://harsha.is-a.dev/"
+        "/88x31/mukesh.png|https://mukesh.0xc84.fyi/">}}
