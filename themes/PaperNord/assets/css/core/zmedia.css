@@ -1,0 +1,139 @@
+@media screen and (max-width: 768px) {
+    /* theme-vars */
+    :root {
+        --gap: 14px;
+    }
+
+    /* reset: comfortable base size for monospace on narrow screens */
+    body {
+        font-size: 16px;
+    }
+
+    /* main: list & section page titles (Posts, Reviews, Tags…) */
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    /* profile-mode */
+    .profile img {
+        transform: scale(0.85);
+    }
+
+    .profile .profile_inner h1 {
+        font-size: 28px;
+    }
+
+    /* post-single: scale down content for narrow viewports */
+    .post-title {
+        font-size: 30px;
+    }
+
+    .post-content {
+        font-size: 16px;
+    }
+
+    .post-content h1 {
+        margin: 32px auto 24px;
+        font-size: 28px;
+    }
+
+    .post-content h2 {
+        margin: 28px auto 20px;
+        font-size: 24px;
+    }
+
+    .post-content h3 {
+        font-size: 20px;
+    }
+
+    /* post-entry */
+    .first-entry {
+        min-height: 260px;
+    }
+
+    .first-entry .entry-header h1 {
+        font-size: 26px;
+    }
+
+    .entry-header h2 {
+        font-size: 20px;
+    }
+
+    /* 404 */
+    .not-found {
+        font-size: 96px;
+    }
+
+    /* archive */
+    .archive-month {
+        flex-direction: column;
+    }
+
+    .archive-year {
+        margin-top: 20px;
+    }
+
+    /* footer */
+    .footer {
+        padding: calc((var(--footer-height) - var(--gap) - 10px) / 2) var(--gap);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* reset */
+    ::-webkit-scrollbar {
+        width: 19px;
+        height: 11px;
+    }
+}
+
+/* small phones: rein in the largest headings so they don't overflow */
+@media screen and (max-width: 480px) {
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    .profile .profile_inner h1 {
+        font-size: 24px;
+    }
+
+    .post-title {
+        font-size: 26px;
+    }
+
+    .post-content h1 {
+        font-size: 24px;
+    }
+
+    .post-content h2 {
+        font-size: 21px;
+    }
+
+    .first-entry .entry-header h1 {
+        font-size: 22px;
+    }
+
+    .not-found {
+        font-size: 72px;
+    }
+}
+
+/* footer */
+@media screen and (max-width: 900px) {
+    .list .top-link {
+        transform: translateY(-5rem);
+    }
+}
+
+@media (prefers-reduced-motion) {
+    /* terms; profile-mode; post-single; post-entry; post-entry; search; search */
+    .terms-tags a:active,
+    .button:active,
+    .share-buttons svg:active,
+    .post-entry:active,
+    .top-link,
+    #searchResults .focus,
+    #searchResults li:active {
+        transform: none;
+    }
+}

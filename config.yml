@@ -165,4 +165,4 @@ markup:
     guessSyntax: true
     lineNos: true
     #noClasses: false
-    style: nord
+    style: rose-pine-moon

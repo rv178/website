@@ -1,0 +1,15 @@
+{{- /* Head custom content area start */ -}}
+{{- /*     Insert any custom code (web-analytics, resources, etc.) - it will appear in the <head></head> section of every page. */ -}}
+{{- /*     Can be overwritten by partial with the same name in the global layouts. */ -}}
+{{- /* Head custom content area end */ -}}
+<style>
+.btn88{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center}
+.post-content .btn88 a{box-shadow:none;background:none;text-decoration:none;border:0;line-height:0}
+.btn88 .btn88-dark{display:none}
+body.dark .btn88 .btn88-dark{display:inline}
+body.dark .btn88 .btn88-light{display:none}
+</style>
+
+{{ if or .Params.math .Site.Params.math }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+{{ end }}

@@ -1,0 +1,13 @@
+{{- /* args: "img|url" or "darkImg|lightImg|url". lightImg detected by image extension; url optional. */ -}}
+{{- $imgExt := slice ".png" ".gif" ".jpg" ".jpeg" ".webp" ".svg" ".avif" }}
+<div class="btn88">
+{{- range .Params }}{{ $p := split . "|" }}
+{{- $dark := index $p 0 }}
+{{- $light := $dark }}{{ $url := "" }}
+{{- range after 1 $p }}{{ if in $imgExt (path.Ext . | lower) }}{{ $light = . }}{{ else }}{{ $url = . }}{{ end }}{{ end }}
+{{ if $url }}<a href="{{ $url }}">{{ end }}
+{{- if eq $dark $light }}<img src="{{ $dark | relURL }}" width="88" height="31" alt="88x31 button" loading="lazy">
+{{- else }}<img class="btn88-light" src="{{ $light | relURL }}" width="88" height="31" alt="88x31 button" loading="lazy"><img class="btn88-dark" src="{{ $dark | relURL }}" width="88" height="31" alt="88x31 button" loading="lazy">{{ end }}
+{{- if $url }}</a>{{ end }}
+{{- end }}
+</div>

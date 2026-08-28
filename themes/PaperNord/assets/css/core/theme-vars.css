@@ -1,0 +1,32 @@
+:root {
+	--gap: 24px;
+	--content-gap: 20px;
+	--nav-width: 1000px;
+	--main-width: 900px;
+	--header-height: 60px;
+	--footer-height: 60px;
+	--radius: 0px;
+	--theme: #faf4ed;
+	--entry: #fffaf3;
+	--primary: #b4637a;
+	--secondary: #797593;
+	--tertiary: #f2e9e1;
+	--content: #575279;
+	--hljs-bg: #fffaf3;
+	--code-bg: #f2e9e1;
+	--border: #b4637a;
+}
+
+.dark {
+	--theme: #232136;
+	--entry: #2a273f;
+	--primary: #eb6f92;
+	--secondary: #908caa;
+	--tertiary: #393552;
+	--content: #e0def4;
+	--hljs-bg: #2a273f;
+	--code-bg: #393552;
+	--border: #eb6f92;
+}
+
+
