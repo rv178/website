@@ -23,7 +23,8 @@
 /* KaTeX \texttt{...}; override KaTeX's typewriter font with Departure Mono */
 .katex .texttt,
 .katex .texttt * {
-	font-family: "JetBrains Mono", monospace !important;
+	/* font-family: "JetBrains Mono", monospace !important; */
+	font-family: "Departure Mono", monospace !important;
 }
 
 /* Wide display math (e.g. NW grids) scrolls instead of overflowing the page */
@@ -52,6 +53,7 @@ h6 {
 
 body {
 	font-family: "JetBrains Mono", monospace;
+	font-family: "Departure Mono", monospace;
 	font-size: 18px;
 	line-height: 1.6;
 	word-break: break-word;
@@ -75,6 +77,7 @@ table {
 code,
 pre {
     font-family: "JetBrains Mono", monospace;
+    font-family: "Departure Mono", monospace;
 }
 
 h1,

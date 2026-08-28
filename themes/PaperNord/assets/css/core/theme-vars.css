@@ -20,13 +20,13 @@
 .dark {
 	--theme: #232136;
 	--entry: #2a273f;
-	--primary: #eb6f92;
+	--primary: hsl(343deg 46% 68%);
 	--secondary: #908caa;
 	--tertiary: #393552;
 	--content: #e0def4;
 	--hljs-bg: #2a273f;
 	--code-bg: #393552;
-	--border: #eb6f92;
+	--border: hsl(343deg 46% 68%);
 }
 
 
