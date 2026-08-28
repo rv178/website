@@ -6,7 +6,8 @@ tags: ["Linux", "Ricing"]
 summary: "Recap of my Linux journey, from starting out on Pop!_OS to ending up on Arch Linux."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Description of image"
     caption: "Recap of my Linux journey, from starting out on Pop!_OS to ending up on Arch Linux."
     relative: true

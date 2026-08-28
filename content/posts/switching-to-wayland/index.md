@@ -6,7 +6,8 @@ tags: ["Linux", "Ricing", "Wayland"]
 summary: "Switching from X11 to Wayland and finding a Wayland replacement for each part of the old setup."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Description of image"
     caption: "Switching from X11 to Wayland and finding a Wayland replacement for each part of the old setup."
     relative: true

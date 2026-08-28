@@ -6,7 +6,8 @@ tags: ["Rust", "Webdev"]
 summary: "Setting up Yew.rs with TailwindCSS to build a web frontend in Rust using WASM."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Description of image"
     caption: "Setting up Yew.rs with TailwindCSS to build a web frontend in Rust using WASM."
     relative: true

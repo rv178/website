@@ -6,7 +6,8 @@ tags: ["Rust"]
 summary: "Building a build automation tool written in Rust that uses TOML for configuration."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Description of image"
     caption: "Building a build automation tool written in Rust that uses TOML for configuration."
     relative: true
