@@ -91,6 +91,18 @@
 	text-align: center;
 }
 
+.entry-cover .cover-dark {
+	display: none;
+}
+
+body.dark .entry-cover .cover-light {
+	display: none;
+}
+
+body.dark .entry-cover .cover-dark {
+	display: block;
+}
+
 .entry-cover img {
 	border-radius: var(--radius);
 	pointer-events: none;

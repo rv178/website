@@ -1,12 +1,23 @@
 {{- with .cxt}} {{/* Apply proper context from dict */}}
-{{- if (and .Params.cover.image (not $.isHidden)) }}
+{{- $page := . }}
+{{- $defaultImage := .Params.cover.image }}
+{{- $lightImage := .Params.cover.imagelight | default $defaultImage | default .Params.cover.imagedark }}
+{{- $darkImage := .Params.cover.imagedark | default $defaultImage | default $lightImage }}
+{{- if (and $lightImage (not $.isHidden)) }}
 {{- $alt := (.Params.cover.alt | default .Params.cover.caption | plainify) }}
 <figure class="entry-cover">
     {{- $responsiveImages := (.Params.cover.responsiveImages | default site.Params.cover.responsiveImages) | default true }}
     {{- $addLink := (and site.Params.cover.linkFullImages (not $.IsHome)) }}
-    {{- $cover := (.Resources.ByType "image").GetMatch (printf "*%s*" (.Params.cover.image)) }}
+    {{- $images := slice (dict "src" $lightImage "class" "") }}
+    {{- if ne $lightImage $darkImage }}
+        {{- $images = slice (dict "src" $lightImage "class" "cover-light") (dict "src" $darkImage "class" "cover-dark") }}
+    {{- end }}
+    {{- range $images }}
+    {{- $image := .src }}
+    <div{{ with .class }} class="{{ . }}"{{ end }}>
+    {{- $cover := ($page.Resources.ByType "image").GetMatch (printf "*%s*" $image) }}
     {{- if $cover -}}{{/* i.e it is present in page bundle */}}
-        {{- if $addLink }}<a href="{{ (path.Join .RelPermalink .Params.cover.image) | absURL }}" target="_blank"
+        {{- if $addLink }}<a href="{{ (path.Join $page.RelPermalink $image) | absURL }}" target="_blank"
             rel="noopener noreferrer">{{ end -}}
         {{- $sizes := (slice "360" "480" "720" "1080" "1500") }}
         {{- $processableFormats := (slice "jpg" "jpeg" "png" "tif" "bmp" "gif") -}}
@@ -23,17 +34,19 @@
             sizes="(min-width: 768px) 720px, 100vw" src="{{ $cover.Permalink }}" alt="{{ $alt }}" 
             width="{{ $cover.Width }}" height="{{ $cover.Height }}">
         {{- else }}{{/* Unprocessable image or responsive images disabled */}}
-        <img loading="lazy" src="{{ (path.Join .RelPermalink .Params.cover.image) | absURL }}" alt="{{ $alt }}">
+        <img loading="lazy" src="{{ (path.Join $page.RelPermalink $image) | absURL }}" alt="{{ $alt }}">
         {{- end }}
     {{- else }}{{/* For absolute urls and external links, no img processing here */}}
-        {{- if $addLink }}<a href="{{ (.Params.cover.image) | absURL }}" target="_blank"
+        {{- if $addLink }}<a href="{{ $image | absURL }}" target="_blank"
             rel="noopener noreferrer">{{ end -}}
-            <img loading="lazy" src="{{ (.Params.cover.image) | absURL }}" alt="{{ $alt }}">
+            <img loading="lazy" src="{{ $image | absURL }}" alt="{{ $alt }}">
     {{- end }}
     {{- if $addLink }}</a>{{ end -}}
+    </div>
+    {{- end }}
     {{/*  Display Caption  */}}
     {{- if not $.IsHome }}
-        {{ with .Params.cover.caption }}<p>{{ . | markdownify }}</p>{{- end }}
+        {{ with $page.Params.cover.caption }}<p>{{ . | markdownify }}</p>{{- end }}
     {{- end }}
 </figure>
 {{- end }}{{/* End image */}}

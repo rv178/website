@@ -6,7 +6,8 @@ tags: ["Rust", "Chess Engine"]
 summary: "Breaking down a FEN string and parsing it into a usable game state for a chess engine."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Description of image"
     caption: "Breaking down a FEN string and parsing it into a usable game state for a chess engine."
     relative: true

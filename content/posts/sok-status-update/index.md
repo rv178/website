@@ -6,7 +6,8 @@ tags: ["C++", "KDE"]
 summary: "SoK status update on adding font subsetting to Okular, covering how fonts work and getting HarfBuzz set up with Poppler."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Cover"
     caption: "SoK status update on adding font subsetting to Okular, covering how fonts work and getting HarfBuzz set up with Poppler."
     relative: true

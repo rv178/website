@@ -6,7 +6,8 @@ tags: ["Rust", "Chess Engine"]
 summary: "Representing the pieces of a chess board as bitboards (using 64-bit integers) and using them to generate piece attacks."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Description of image"
     caption: "Representing the pieces of a chess board as bitboards (using 64-bit integers) and using them to generate piece attacks."
     relative: true
