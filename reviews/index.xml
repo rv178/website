@@ -12,6 +12,14 @@
     <language>en</language>
     <lastBuildDate>Sat, 15 Aug 2026 13:13:01 +0530</lastBuildDate><atom:link href="https://rohith.net/reviews/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Buckshot Roulette</title>
+      <link>https://rohith.net/reviews/buckshot/</link>
+      <pubDate>Sat, 15 Aug 2026 13:13:01 +0530</pubDate>
+      <guid>https://rohith.net/reviews/buckshot/</guid>
+      <description>This game makes you feel like a badass while gambling your life away for in-game USD dollars. Relatively short though. Kinda felt bad for the dealer sometimes.</description>
+    </item>
+    
+    <item>
       <title>Celeste</title>
       <link>https://rohith.net/reviews/celeste/</link>
       <pubDate>Sat, 15 Aug 2026 13:13:01 +0530</pubDate>
@@ -44,19 +52,19 @@
     </item>
     
     <item>
-      <title>Hollow Knight: Silksong</title>
-      <link>https://rohith.net/reviews/silksong/</link>
+      <title>Nine Sols</title>
+      <link>https://rohith.net/reviews/nine-sols/</link>
       <pubDate>Mon, 01 Jun 2026 01:39:06 +0530</pubDate>
-      <guid>https://rohith.net/reviews/silksong/</guid>
-      <description>Stunningly beautiful but unforgiving at times. Might be my favourite game of the year.</description>
+      <guid>https://rohith.net/reviews/nine-sols/</guid>
+      <description>Played this right after Silksong. Absolute banger of a game with the most satisfying combat mechanics. Exploration and some instances of platforming were the only weak-ish parts.</description>
     </item>
     
     <item>
-      <title>Nine Sols</title>
-      <link>https://rohith.net/reviews/nine-sols/</link>
+      <title>Hollow Knight: Silksong</title>
+      <link>https://rohith.net/reviews/silksong/</link>
       <pubDate>Mon, 01 Jun 2026 01:20:52 +0530</pubDate>
-      <guid>https://rohith.net/reviews/nine-sols/</guid>
-      <description>Played this right after Silksong. Absolute banger of a game with the most satisfying combat mechanics. Exploration and some instances of platforming were the only weak-ish parts.</description>
+      <guid>https://rohith.net/reviews/silksong/</guid>
+      <description>Stunningly beautiful but unforgiving at times. Might be my favourite game of the year.</description>
     </item>
     
   </channel>
