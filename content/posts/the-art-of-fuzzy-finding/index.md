@@ -1,17 +1,18 @@
 ---
-title: "The Art of Fuzzy Finding, Part 1"
+title: "The Art of Fuzzy Finding, Part 0"
 date: 2026-06-22T12:29:33+05:30
 build:
   list: never
   render: always
 draft: true
 tags: ["Go"]
-summary: "Exploring Needleman-Wunsch and Smith-Waterman for fuzzy finding."
+summary: "An introduction to Needleman-Wunsch and Smith-Waterman."
 
 cover:
-    image: "cover.png"
+    imageLight: "cover-light.png"
+    imageDark: "cover-dark.png"
     alt: "Cover"
-    caption: "Exploring Needleman-Wunsch and Smith-Waterman for fuzzy finding."
+    caption: "An introduction to Needleman-Wunsch and Smith-Waterman."
     relative: true
 ---
 

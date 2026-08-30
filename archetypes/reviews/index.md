@@ -6,7 +6,7 @@ category: "Games"
 creator: ""
 year: 2024
 rating: 8
-banner: ""
+banner: "/reviews/{{ .File.ContentBaseName }}/cover.jpg"
 labels: []   # eg. ["Recommended"]
 summary: "Insert summary"
 ---
