@@ -6,7 +6,7 @@ category: "Games"
 creator: "Maddy Makes Games"
 year: 2018
 rating: 9.5
-banner: "/reviews/celeste/cover.jpg"
+banner: "/reviews/celeste/cover.webp"
 labels: ["Platformer", "★"]   # eg. ["Recommended"]
 summary: "Really amazing, finished the base game, yet to do the additional content."
 ---

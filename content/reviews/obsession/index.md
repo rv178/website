@@ -6,7 +6,7 @@ category: "Movies"
 creator: "Curry Barker"
 year: 2026
 rating: 10
-banner: "/reviews/obsession/cover.jpg"
+banner: "/reviews/obsession/cover.webp"
 labels: ["Horror"]
 summary: "Phenomenal acting and amazing sound design. 
 A lot of the elements severely lean into uncanny valley territory which really creeps me out."

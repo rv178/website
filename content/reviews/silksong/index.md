@@ -6,7 +6,7 @@ category: "Games"
 creator: "Team Cherry"
 year: 2025
 rating: 10
-banner: "/reviews/silksong/cover.jpg"
+banner: "/reviews/silksong/cover.webp"
 labels: ["Metroidvania", "★"]
 summary: "Stunningly beautiful but unforgiving at times. Might be my favourite game of the year."
 ---

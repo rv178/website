@@ -6,7 +6,7 @@ category: "Music"
 creator: ""
 year: 2013
 rating: 9.5
-banner: "/reviews/random-access-memories/cover.png"
+banner: "/reviews/random-access-memories/cover.webp"
 labels: ["Electronic", "★"]
 summary: "Checked this album out after hearing a cover of Instant Crush in a reel. This was my first Daft
 Punk album and it immediately made me a fan."

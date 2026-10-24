@@ -6,7 +6,7 @@ category: "Movies"
 creator: "Destin Daniel Cretton"
 year: 2026
 rating: 8
-banner: "/reviews/spiderman-brand-new-day/cover.jpg"
+banner: "/reviews/spiderman-brand-new-day/cover.webp"
 labels: ["Action", "Superhero"]
 summary: "Standard superhero movie, was a nice watch."
 ---

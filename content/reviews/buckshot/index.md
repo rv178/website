@@ -6,7 +6,7 @@ category: "Games"
 creator: "Mike Klubnika"
 year: 2023
 rating: 8
-banner: "/reviews/buckshot/cover.jpg"
+banner: "/reviews/buckshot/cover.webp"
 labels: ["Power Fantasy"]
 summary: "This game makes you feel like a badass while gambling your life away for in-game USD dollars. Relatively short though.
 Kinda felt bad for the dealer sometimes."

@@ -6,7 +6,7 @@ category: "Movies"
 creator: "David Fincher"
 year: 1999
 rating: 9
-banner: "/reviews/fight-club/cover.png"
+banner: "/reviews/fight-club/cover.webp"
 labels: ["Thriller", "★"]
 summary: "Went into this completely blind, really surprised me (no spoilers)."
 ---
