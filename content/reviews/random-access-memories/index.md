@@ -26,8 +26,8 @@ Least favourite track: Love Yourself to Dance
 | Lose Yourself to Dance (feat. Pharrell Williams)     | 8/10  |
 | Touch (feat. Paul Williams)                          | 10/10 |
 | Get Lucky (feat. Pharrell Williams and Nile Rodgers) | 9/10  |
-| Beyond                                               | x/10  |
-| Motherboard                                          | x/10  |
-| Fragments of Time (feat. Todd Edwards)               | x/10  |
-| Doin’ It Right (feat. Panda Bear)                    | x/10  |
-| Contact                                              | x/10  |
+| Beyond                                               | 9/10  |
+| Motherboard                                          | 8/10  |
+| Fragments of Time (feat. Todd Edwards)               | 9/10  |
+| Doin’ It Right (feat. Panda Bear)                    | 8/10  |
+| Contact                                              | 8/10  |
