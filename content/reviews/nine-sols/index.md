@@ -2,7 +2,7 @@
 title: "Nine Sols"
 date: 2026-06-01T01:39:06+05:30
 draft: false
-category: "Games"
+category: "Game"
 creator: "Red Candle Games"
 year: 2024
 rating: 9.5

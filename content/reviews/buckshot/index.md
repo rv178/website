@@ -2,7 +2,7 @@
 title: "Buckshot Roulette"
 date: 2026-08-15T13:13:01+05:30
 draft: true
-category: "Games"
+category: "Game"
 creator: "Mike Klubnika"
 year: 2023
 rating: 8

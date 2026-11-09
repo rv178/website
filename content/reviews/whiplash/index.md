@@ -2,7 +2,7 @@
 title: "Whiplash"
 date: 2026-06-06T06:23:58+05:30
 draft: false
-category: "Movies"
+category: "Movie"
 creator: "Damien Chazelle"
 year: 2014
 rating: 7

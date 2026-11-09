@@ -2,7 +2,7 @@
 title: "Hollow Knight: Silksong"
 date: 2026-06-01T01:20:52+05:30
 draft: false
-category: "Games"
+category: "Game"
 creator: "Team Cherry"
 year: 2025
 rating: 10

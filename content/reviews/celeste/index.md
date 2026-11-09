@@ -2,7 +2,7 @@
 title: "Celeste"
 date: 2026-08-15T13:13:01+05:30
 draft: true
-category: "Games"
+category: "Game"
 creator: "Maddy Makes Games"
 year: 2018
 rating: 9.5

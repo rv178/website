@@ -7,7 +7,7 @@ creator: "Bartosz Sztybor"
 year: 2026
 rating: 8.5
 banner: "/reviews/edgerunners-2/cover.webp"
-labels: []
+labels: ["Action"]
 summary: "AWESOME sequel. Gave me a lot of cowboy bebop vibes at the beginning. Maybe it's all the retro-futurism with Roman's
 VHS tapes."
 ---

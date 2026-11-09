@@ -2,7 +2,7 @@
 title: "Obsession"
 date: 2026-06-06T06:23:52+05:30
 draft: false
-category: "Movies"
+category: "Movie"
 creator: "Curry Barker"
 year: 2026
 rating: 10
