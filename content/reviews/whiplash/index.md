@@ -5,7 +5,7 @@ draft: false
 category: "Movies"
 creator: "Damien Chazelle"
 year: 2014
-rating: 8
+rating: 7
 banner: "/reviews/whiplash/cover.webp"
 labels: ["Musical"]
 summary: "I feel like I lack the musical literacy required to comprehend a lot of the more technical stuff in the movie. 
