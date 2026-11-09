@@ -1,7 +1,7 @@
 ---
 title: "Cyberpunk: Edgerunners 2"
 date: 2026-11-10T00:21:19+05:30
-draft: true
+draft: false
 category: "TV Series"
 creator: "Bartosz Sztybor"
 year: 2026
